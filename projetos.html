@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio de projetos SCIE realizados em Portugal. Sprinklers EN 12845, SADI, espuma NFPA 11, projetos RTSCIE, piping industrial e consultoria.">
+    <meta name="keywords" content="projetos SCIE Portugal, portfolios sprinklers, RTSCIE, ANEPC, projeto deteção incêndio, projetos espuma, piping industrial, SADI">
+    <meta name="author" content="Engenharia e SCIE">
+    <title>Projetos Realizados SCIE | Portfólio de Engenharia e Segurança Contra Incêndio em Portugal</title>
+    <style>
+        :root{--primary:#1a3a5c;--accent:#e05c1a;--light:#f4f7fb;--text:#2d2d2d;--muted:#6b7280;--white:#ffffff;--border:#dde3ec}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Segoe UI',Arial,sans-serif;color:var(--text);background:var(--white);line-height:1.7}
+        nav{background:var(--primary);position:sticky;top:0;z-index:999;display:flex;justify-content:space-between;align-items:center;padding:0 5%;height:64px}
+        .nav-logo{color:var(--white);font-size:1.2rem;font-weight:700;letter-spacing:1px;text-decoration:none}
+        .nav-logo span{color:var(--accent)}
+        nav ul{list-style:none;display:flex;gap:24px}
+        nav ul li a{color:#ccd8e8;text-decoration:none;font-size:0.95rem;transition:color 0.2s}
+        nav ul li a:hover,nav ul li a.active{color:var(--accent)}
+        .hero{background:linear-gradient(135deg,var(--primary) 60%,#2a5298 100%);color:var(--white);padding:80px 5%;text-align:center}
+        .hero h1{font-size:2.4rem;margin-bottom:12px}
+        .hero p{font-size:1.1rem;color:#b8cde2;max-width:600px;margin:0 auto}
+        section{padding:60px 5%}
+        .section-label{font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--accent);margin-bottom:8px}
+        .section-title{font-size:2rem;color:var(--primary);margin-bottom:12px}
+        .section-sub{color:var(--muted);font-size:1rem;max-width:600px;margin-bottom:48px}
+        .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px}
+        .project-card{background:var(--white);border-radius:12px;border:1px solid var(--border);overflow:hidden;transition:box-shadow 0.2s,transform 0.2s}
+        .project-card:hover{box-shadow:0 12px 32px rgba(26,58,92,0.14);transform:translateY(-3px)}
+        .project-header{background:var(--primary);color:var(--white);padding:18px 22px;display:flex;justify-content:space-between;align-items:center}
+        .project-header .ph-title{font-size:1.1rem;font-weight:700}
+        .project-header .ph-type{background:var(--accent);color:var(--white);padding:4px 10px;border-radius:20px;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px}
+        .project-body{padding:22px}
+        .project-body p{color:var(--muted);font-size:0.92rem;margin-bottom:14px}
+        .challenge{font-size:0.88rem;color:var(--muted);border:1px solid var(--border);border-radius:8px;padding:10px 14px;background:var(--light);margin-bottom:16px;font-style:italic}
+        .project-details{display:grid;grid-template-columns:120px 1fr;gap:6px 14px;margin-bottom:16px}
+        .detail-item{display:flex;align-items:baseline;border-bottom:1px dashed var(--border);padding-bottom:4px}
+        .d-label{font-size:0.8rem;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:0.5px}
+        .d-val{font-size:0.85rem;color:var(--text)}
+        .project-tags{display:flex;flex-wrap:wrap;gap:6px}
+        .tag{font-size:0.75rem;padding:4px 10px;border-radius:16px;background:var(--light);color:var(--muted);border:1px solid var(--border)}
+        .tag.accent{background:rgba(224,92,26,0.1);color:var(--accent);border-color:rgba(224,92,26,0.3)}
+        details{border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden}
+        summary{list-style:none;padding:16px 18px;cursor:pointer;font-weight:600;color:var(--primary);background:var(--light);transition:background 0.2s;display:flex;justify-content:space-between;align-items:center}
+        summary:hover{background:#e8eef5}
+        summary::after{content:"+";font-size:1.2rem;color:var(--accent);font-weight:400}
+        details[open] summary::after{content:"-"}
+        details[open] summary{border-bottom:1px solid var(--border);background:#e8eef5}
+        .faq-answer{padding:16px 18px;font-size:0.9rem;color:var(--muted);line-height:1.7}
+        .cta-section{background:var(--primary);color:var(--white);text-align:center;padding:80px 5%}
+        .cta-section h2{font-size:1.8rem;margin-bottom:16px}
+        .cta-section p{color:#b8cde2;max-width:500px;margin:0 auto 28px}
+        .cta-section a{display:inline-block;background:var(--accent);color:var(--white);padding:14px 32px;border-radius:8px;font-weight:700;text-decoration:none;transition:transform 0.2s,background 0.2s}
+        .cta-section a:hover{transform:translateY(-2px);background:#c44c0e}
+        footer{background:#0d1f33;color:#9aa6b7;text-align:center;padding:42px 5%;font-size:0.88rem}
+        footer a{color:#ccd8e8;text-decoration:none;margin:0 8px}
+        footer a:hover{color:var(--accent)}
+        @media(max-width:600px){nav ul{display:none}.hero h1{font-size:1.8rem}.projects-grid{grid-template-columns:1fr}.section-title{font-size:1.5rem}}
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="nav-logo">Eng<span>.SCIE</span></a>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="projetos.html" class="active">Projetos</a></li>
+            <li><a href="blog.html">Artigos</a></li>
+            <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Projetos Realizados</h1>
+        <p>Conheça alguns dos trabalhos desenvolvidos nas áreas de SCIE, sprinklers, espuma, SADI, piping e projetos de engenharia mecânica industrial.</p>
+    </header>
+
+    <section>
+        <div class="section-label">Segurança Contra Incêndio</div>
+        <h2 class="section-title">SPRINKLERS & SISTEMAS DE INCÊNDIO</h2>
+        <p class="section-sub">Concebemos e dimensionamos sistemas automáticos de extinção de incêndio por aspersão, obedecendo à EN 12845 e normas NFPA, com enfoque em edifícios industriais, comerciais e de habitação.</p>
+
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="ph-title">Centro Logístico &mdash; Maia</span>
+                    <span class="ph-type">Sprinklers</span>
+                </div>
+                <div class="project-body">
+                    <p>Sistema de sprinklers para armazém de 3.500 m² com risco de armazenamento elevado (Classe III). Cálculo hidráulico e selecção de bombas.</p>
+                    <div class="challenge">Desafio: Área de reserva com prateleiras até 12m. Necessário garantir cobertura total com 150 sprinklers.</div>
+                    <div class="project-details">
+                        <div class="detail-item"><div class="d-label">Área</div><div class="d-val">3.500 m²</div></div>
+                        <div class="detail-item"><div class="d-label">Risco</div><div class="d-val">Alto (Cl. III)</div></div>
+                        <div class="detail-item"><div class="d-label">Norma</div><div class="d-val">EN 12845</div></div>
+                        <div class="detail-item"><div class="d-label">Estado</div><div class="d-val">Executado 2023</div></div>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag accent">EN 12845</span><span class="tag">Cálculo Hidráulico</span><span class="tag">NFPA 13</span><span class="tag">Maia</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="ph-title">Edifício de Serviços &mdash; Porto</span>
+                    <span class="ph-type">SCIE</span>
+                </div>
+                <div class="project-body">
+                    <p>Projeto completo de segurança contra incêndio para edifício de escritórios em 5 pisos. Deteção, alarme, iluminação de emergência e compartimentação.</p>
+                    <div class="challenge">Desafio: Edifício existente com limitações de espaço para instalação de canalização.</div>
+                    <div class="project-details">
+                        <div class="detail-item"><div class="d-label">Categoria</div><div class="d-val">3ª (DL 224/2015)</div></div>
+                        <div class="detail-item"><div class="d-label">Área</div><div class="d-val">1.800 m²</div></div>
+                        <div class="detail-item"><div class="d-label">Norma</div><div class="d-val">RTSCIE</div></div>
+                        <div class="detail-item"><div class="d-label">Estado</div><div class="d-val">Em obra</div></div>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag accent">RTSCIE</span><span class="tag">Deteção</span><span class="tag">Alarme</span><span class="tag">Porto</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-label">Supressão e Espuma</div>
+        <h2 class="section-title">ESPUMA & SISTEMAS DE FOAM</h2>
+        <p class="section-sub">Sistemas de espuma para risco especializado (combustíveis, solventes, hangares), dimensionamento NFPA 11 e conceção de estações de bombeamento.</p>
+
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="ph-title">Terminal de Combustíveis &mdash; Sines</span>
+                    <span class="ph-type">Foam</span>
+                </div>
+                <div class="project-body">
+                    <p>Sistema de espuma para tanques de armazenamento de combustíveis líquidos. Cálculo de caudais, selecção de geradores e conceção de tubagem.</p>
+                    <div class="challenge">Desafio: Tanque de 15.000 litros com teto flutuante. Necessário espuma AFFF 3% e monitoramento remoto.</div>
+                    <div class="project-details">
+                        <div class="detail-item"><div class="d-label">Volume</div><div class="d-val">15.000 L</div></div>
+                        <div class="detail-item"><div class="d-label">Produto</div><div class="d-val">AFFF 3%</div></div>
+                        <div class="detail-item"><div class="d-label">Norma</div><div class="d-val">NFPA 11</div></div>
+                        <div class="detail-item"><div class="d-label">Estado</div><div class="d-val">Concluído</div></div>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag accent">NFPA 11</span><span class="tag">AFFF</span><span class="tag">Combustíveis</span><span class="tag">Sines</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="ph-title">Hangar Aeronáutico &mdash; Lisboa</span>
+                    <span class="ph-type">Foam</span>
+                </div>
+                <div class="project-body">
+                    <p>Projeto de sistema de espuma por baixa expansão para proteção de área de reabastecimento de aeronaves.</p>
+                    <div class="challenge">Desafio: Grande área de cobertura com requisitos de caudal elevado e redundância de bombas.</div>
+                    <div class="project-details">
+                        <div class="detail-item"><div class="d-label">Área</div><div class="d-val">8.200 m²</div></div>
+                        <div class="detail-item"><div class="d-label">Tipo</div><div class="d-val">Baixa Expansão</div></div>
+                        <div class="detail-item"><div class="d-label">Norma</div><div class="d-val">NFPA 415</div></div>
+                        <div class="detail-item"><div class="d-val">Em projeto</div></div>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag accent">NFPA 415</span><span class="tag">Aeronáutico</span><span class="tag">Baixa Expansão</span><span class="tag">Lisboa</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-label">Sistemas de Áudio/Deteção de Incêndio</div>
+        <h2 class="section-title">SADI & DEDEÇÃO AUTOMÁTICA</h2>
+        <p class="section-sub">Sistemas Automáticos de Deteção de Incêndio (SADI) com central analógica ou convencional, detetores de fumo, temperatura e temporizadores de resposta.</p>
+
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="ph-title">Centro Comercial &mdash; Braga</span>
+                    <span class="ph-type">SADI</span>
+                </div>
+                <div class="project-body">
+                    <p>Sistema de deteção automática de incêndio analógico para centro comercial com 4 pisos e área comercial de 5.000 m².</p>
+                    <div class="challenge">Desafio: Zonas com tetos altos e grande fluxo de pessoas. Necessário selecionar detetores com imunidade a poeiras e falsos alarmes.</div>
+                    <div class="project-details">
+                        <div class="detail-item"><div class="d-label">Tipo</div><div class="d-val">Analógico</div></div>
+                        <div class="detail-item"><div class="d-label">Área</div><div class="d-val">5.000 m²</div></div>
+                        <div class="detail-item"><div class="d-label">Norma</div><div class="d-val">NP 4428</div></div>
+                        <div class="detail-item"><div class="d-val">Executado 2024</div></div>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag accent">NP 4428</span><span class="tag">Analógico</span><span class="tag">Detetores Fumo</span><span class="tag">Braga</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="ph-title">Hospital Privado &mdash; Coimbra</span>
+                    <span class="ph-type">SADI</span>
+                </div>
+                <div class="project-body">
+                    <p>Sistema de deteção convencional para unidade hospitalar com salas de operações e unidades de cuidados intensivos.</p>
+                    <div class="challenge">Desafio: Sensibilidade em ambientes estéreis. Integração com sistema de gestão de edifícios (BMS).</div>
+                    <div class="project-details">
+                        <div class="detail-item"><div class="d-label">Tipo</div><div class="d-val">Convencional</div></div>
+                        <div class="detail-item"><div class="d-label">Zonas</div><div class="d-val">24 zonas</div></div>
+                        <div class="detail-item"><div class="d-label">Norma</div><div class="d-val">RTSCIE</div></div>
+                        <div class="detail-item"><div class="d-val">Em manutenção</div></div>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag accent">RTSCIE</span><span class="tag">BMS</span><span class="tag">Saúde</span><span class="tag">Coimbra</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-label">Piping Industrial</div>
+        <h2 class="section-title">PIPING & MECÂNICA INDUSTRIAL</h2>
+        <p class="section-sub">Dimensionamento e conceção de redes de piping para ar comprimido, água de refrigeração, CO₂ e vapor. Modelação isométrica em AutoCAD Plant 3D conforme ASME B31.x.</p>
+
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="ph-title">Rede de Ar Comprimido Industrial &mdash; Aveiro</span>
+                    <span class="ph-type">Piping</span>
+                </div>
+                <div class="project-body">
+                    <p>Rede de ar comprimido para fábrica metalomecânica. Tubagem em alumínio, anel principal com 200m e múltiplos pontos de consumo.</p>
+                    <div class="challenge">Desafio: Minimizar perdas de carga em percurso longo com múltiplos pontos de consumo.</div>
+                    <div class="project-details">
+                        <div class="detail-item"><div class="d-label">Compressor</div><div class="d-val">75 kW</div></div>
+                        <div class="detail-item"><div class="d-label">Rede</div><div class="d-val">200 m</div></div>
+                        <div class="detail-item"><div class="d-label">Pressão</div><div class="d-val">8 bar</div></div>
+                        <div class="detail-item"><div class="d-val">Em obra</div></div>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag accent">Ar Comprimido</span><span class="tag">AutoCAD</span><span class="tag">P&ID</span><span class="tag">Aveiro</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="ph-title">P&ID Central Térmica &mdash; Leiria</span>
+                    <span class="ph-type">Piping</span>
+                </div>
+                <div class="project-body">
+                    <p>Elaboração de P&ID e isométricos para rede de vapor e condensado de central termoelétrica. Documentação técnica conforme ASME B31.1.</p>
+                    <div class="challenge">Desafio: Documentação incompleta no local. Necessária recriação de esquema a partir de inspeção visual.</div>
+                    <div class="project-details">
+                        <div class="detail-item"><div class="d-label">Desenhos</div><div class="d-val">45 P&ID</div></div>
+                        <div class="detail-item"><div class="d-val">120 isométricos</div></div>
+                        <div class="detail-item"><div class="d-label">Norma</div><div class="d-val">ASME B31.1</div></div>
+                        <div class="detail-item"><div class="d-val">Concluído</div></div>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag accent">ASME B31.1</span><span class="tag">P&ID</span><span class="tag">Isométricos</span><span class="tag">Leiria</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="ph-title">Rede CO₂ Industrial &mdash; Setúbal</span>
+                    <span class="ph-type">Piping</span>
+                </div>
+                <div class="project-body">
+                    <p>Dimensionamento de rede de CO₂ para sistema de refrigeração industrial. Cálculo de diâmetros, pressões e distâncias críticas.</p>
+                    <div class="challenge">Desafio: Ambiente corrosivo exigindo seleção de material em aço inoxidável 316L.</div>
+                    <div class="project-details">
+                        <div class="detail-item"><div class="d-val">Capacidade 40 toneladas/dia</div></div>
+                        <div class="detail-item"><div class="d-val">Material 316L</div></div>
+                        <div class="detail-item"><div class="d-label">Software</div><div class="d-val">Pipe-Flo</div></div>
+                        <div class="detail-item"><div class="d-val">Em projeto</div></div>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag accent">CO₂</span><span class="tag">Refrigeração</span><span class="tag">316L</span><span class="tag">Setúbal</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-label">Perguntas Frequentes</div>
+        <h2 class="section-title">FAQ</h2>
+        <p class="section-sub">Respostas às questões mais comuns sobre projetos SCIE e engenharia mecânica.</p>
+
+        <div style="max-width:900px;margin:0 auto">
+            <details>
+                <summary>Quais normas regulam os projetos SCIE em Portugal?</summary>
+                <div class="faq-answer">Em Portugal, os projetos de Segurança Contra Incêndio são regidos pelo Decreto-Lei 224/2015 (RTSCIE), que define as condições de segurança em edifícios. Para sistemas de sprinklers aplica-se ainda a norma EN 12845 e, em alguns casos, as normas NFPA (NFPA 13 para sprinklers, NFPA 11 para espuma).</div>
+            </details>
+
+            <details>
+                <summary>Que tipo de projeto preciso para a minha construção?</summary>
+                <div class="faq-answer">Depende da categoria e tipologia do edifício. Edifícios de habitação da 3ª categoria necessitam de projeto SCIE simplificado. Edifícios industriais, comerciais ou de serviços requerem projeto completo incluindo dimensionamento de sprinklers, deteção, compartimentação, vias de evacuação e sinalização. Conheça as <a href="servicos.html" style="color:var(--primary)">fases do projeto SCIE</a>.</div>
+            </details>
+
+            <details>
+                <summary>Quanto custa um projeto SCIE?</summary>
+                <div class="faq-answer">O custo varia consoante a área, categoria de risco, tipologia do edifício e complexidade da instalação. Para obter um orçamento gratuito e personalizado, <a href="index.html#contacto" style="color:var(--primary)">entre em contacto</a> com os detalhes da sua obra.</div>
+            </details>
+
+            <details>
+                <summary>Incluem licenças e aprovações junto da ANEPC?</summary>
+                <div class="faq-answer">O projeto SCIE elaborado inclui toda a documentação técnica necessária para submissão à ANEPC (Autoridade Nacional de Emergência e Proteção Civil). O processo de aprovação é conduzido em coordenação com a entidade licenciadora, podendo incluir vistorias e alterações técnicas.</div>
+            </details>
+
+            <details>
+                <summary>Fazem projetos para obras já em execução?</summary>
+                <div class="faq-answer">Sim, atuamos em edifícios em fase de projeto, em construção ou já existentes que careçam de regularização SCIE. Em edifícios existentes, realizamos uma avaliação técnica prévia para identificar as não conformidades e definir as medidas corretivas necessárias.</div>
+            </details>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Tem um projeto em mente?</h2>
+        <p>Entre em contacto para uma análise preliminar gratuita. Respondo em até 24 horas.</p>
+        <a href="index.html#contacto">Pedir Orçamento</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Engenharia e SCIE. Todos os direitos reservados.</p>
+        <p style="margin-top:8px">Engenheiro Mecânico membro da Ordem dos Engenheiros &middot; Projetista reconhecido pela ANEPC</p>
+        <p style="margin-top:12px;font-size:0.82rem">
+            <a href="index.html">Início</a> &middot;
+            <a href="projetos.html">Projetos</a> &middot;
+            <a href="blog.html">Artigos</a> &middot;
+            <a href="ferramentas.html">Ferramentas</a> &middot;
+            <a href="index.html#contacto">Contacto</a>
+        </p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('details').forEach(d => {
+            d.addEventListener('toggle', () => {
+                if(d.open) {
+                    document.querySelectorAll('details').forEach(o => {
+                        if(o !== d) o.removeAttribute('open');
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
