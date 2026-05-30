@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Artigos e guias sobre Engenharia Mecânica, SCIE, Sprinklers EN 12845, SADI, Piping Industrial, HVAC e normas RTSCIE. Conteúdo técnico para profissionais em Portugal.">
+    <meta name="keywords" content="blog SCIE Portugal, artigos engenharia mecânica, sprinklers EN 12845, SADI, piping industrial, HVAC, RTSCIE, ANEPC, deteção incêndio, espuma NFPA 11, projetos incêndio">
+    <meta name="author" content="Engenharia e SCIE">
+    <title>Artigos de Engenharia e SCIE | Blog Técnico — Sprinklers, SADI, Piping, HVAC</title>
+    <style>
+        :root {--primary:#1a3a5c;--accent:#e05c1a;--light:#f4f7fb;--text:#2d2d2d;--muted:#6b7280;--white:#ffffff;--border:#dde3ec}
+        * {margin:0;padding:0;box-sizing:border-box}
+        body {font-family:'Segoe UI', Arial, sans-serif;color:var(--text);background:var(--white);line-height:1.7}
+        nav {background:var(--primary);position:sticky;top:0;z-index:999;display:flex;justify-content:space-between;align-items:center;padding:0 5%;height:64px;box-shadow:0 2px 8px rgba(0,0,0,0.18)}
+        .nav-logo {color:var(--white);font-size:1.2rem;font-weight:700;letter-spacing:1px;text-decoration:none}
+        .nav-logo span {color:var(--accent)}
+        nav ul {list-style:none;display:flex;gap:24px}
+        nav ul li a {color:#ccd8e8;text-decoration:none;font-size:0.95rem;transition:color 0.2s}
+        nav ul li a:hover, nav ul li a.active {color:var(--accent)}
+        .hero {background:linear-gradient(135deg,var(--primary) 60%,#2a5298 100%);color:var(--white);padding:80px 5%;text-align:center}
+        .hero h1 {font-size:2.4rem;margin-bottom:12px}
+        .hero p {font-size:1.1rem;color:#b8cde2;max-width:600px;margin:0 auto}
+        section {padding:60px 5%}
+        .section-label {font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--accent);margin-bottom:8px}
+        .section-title {font-size:2rem;color:var(--primary);margin-bottom:12px}
+        .section-sub {color:var(--muted);font-size:1rem;max-width:600px;margin-bottom:48px}
+        .blog-filters {display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px}
+        .filter-btn {background:var(--light);border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:0.85rem;color:var(--text);cursor:pointer;transition:all 0.2s}
+        .filter-btn:hover, .filter-btn.active {background:var(--primary);color:var(--white);border-color:var(--primary)}
+        .blog-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:28px}
+        .blog-card {background:var(--white);border-radius:12px;border:1px solid var(--border);overflow:hidden;transition:box-shadow 0.2s,transform 0.2s;display:flex;flex-direction:column}
+        .blog-card:hover {box-shadow:0 12px 32px rgba(26,58,92,0.14);transform:translateY(-3px)}
+        .blog-card .card-img {background:var(--primary);height:160px;display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--accent)}
+        .blog-card .card-body {padding:22px;flex:1;display:flex;flex-direction:column}
+        .blog-card .card-meta {display:flex;gap:12px;margin-bottom:10px}
+        .blog-card .card-category {background:#e8f0fb;color:var(--primary);padding:3px 10px;border-radius:12px;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px}
+        .blog-card .card-date {font-size:0.78rem;color:var(--muted)}
+        .blog-card h3 {font-size:1.15rem;color:var(--primary);margin-bottom:8px;line-height:1.3}
+        .blog-card p {font-size:0.92rem;color:var(--muted);margin-bottom:16px;flex:1}
+        .blog-card .read-more {color:var(--accent);font-weight:600;font-size:0.92rem;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+        .blog-card .read-more:hover {text-decoration:underline}
+        .blog-card .read-more::after {content:"→"}
+        .article-section {padding:60px 5%;background:var(--light)}
+        .article-content {max-width:760px;margin:0 auto;background:var(--white);border-radius:12px;padding:40px;border:1px solid var(--border)}
+        .article-content h2 {font-size:1.5rem;color:var(--primary);margin:28px 0 14px}
+        .article-content h2:first-child {margin-top:0}
+        .article-content p {color:var(--text);margin-bottom:16px}
+        .article-content ul, .article-content ol {margin:0 0 16px 24px;color:var(--text)}
+        .article-content li {margin-bottom:8px}
+        .article-content code {background:var(--light);padding:2px 6px;border-radius:4px;font-size:0.9em;font-family:'Consolas', monospace}
+        .article-content blockquote {border-left:4px solid var(--accent);padding:14px 18px;background:var(--light);margin:16px 0;font-style:italic;color:var(--muted)}
+        .article-content .highlight {background:rgba(224,92,26,0.08);padding:16px 18px;border-radius:8px;border:1px solid rgba(224,92,26,0.2);margin:16px 0}
+        .norm-table {width:100%;border-collapse:collapse;margin:16px 0}
+        .norm-table th, .norm-table td {border:1px solid var(--border);padding:10px 14px;text-align:left}
+        .norm-table th {background:var(--primary);color:var(--white);font-size:0.88rem}
+        .norm-table tr:nth-child(even) {background:var(--light)}
+        .cta-section {background:var(--primary);color:var(--white);text-align:center;padding:60px 5%}
+        .cta-section h2 {font-size:1.8rem;margin-bottom:16px}
+        .cta-section p {color:#b8cde2;margin-bottom:24px;max-width:500px;margin-left:auto;margin-right:auto}
+        .cta-section .btn-primary {background:var(--accent);color:var(--white);padding:14px 32px;border:none;border-radius:8px;font-size:1rem;font-weight:700;text-decoration:none;transition:background 0.2s;display:inline-block}
+        .cta-section .btn-primary:hover {background:#c44e12}
+        footer {background:#0f2238;color:#7fa8c8;text-align:center;padding:28px 5%;font-size:0.88rem}
+        footer span {color:var(--accent);font-weight:700}
+        @media (max-width:640px) {nav ul {gap:14px}.hero h1 {font-size:1.8rem}.section-title {font-size:1.5rem}}
+    </style>
+<body>
+    <nav>
+        <a href="index.html" class="nav-logo">Eng.<span>SCIE</span></a>
+        <ul>
+            <li><a href="index.html#servicos">Serviços</a></li>
+            <li><a href="index.html#sobre">Sobre</a></li>
+            <li><a href="index.html#processo">Como Funciona</a></li>
+            <li><a href="index.html#contacto">Contacto</a></li>
+            <li><a href="projetos.html">Projetos</a></li>
+            <li><a href="blog.html" class="active">Artigos</a></li>
+            <li><a href="ferramentas.html">Ferramentas</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h1>Artigos Técnicos</h1>
+        <p>Conteúdo especializado em Engenharia Mecânica, SCIE, Sprinklers, SADI, Piping Industrial e HVAC — normas, boas práticas e guias para profissionais em Portugal.</p>
+    </section>
+
+    <section>
+        <div class="section-label">Blog</div>
+        <div class="blog-filters">
+            <button class="filter-btn active" onclick="filterArticles('all')">Todos</button>
+            <button class="filter-btn" onclick="filterArticles('scie')">SCIE</button>
+            <button class="filter-btn" onclick="filterArticles('sprinklers')">Sprinklers</button>
+            <button class="filter-btn" onclick="filterArticles('espuma')">Espuma</button>
+            <button class="filter-btn" onclick="filterArticles('sadi')">SADI</button>
+            <button class="filter-btn" onclick="filterArticles('piping')">Piping</button>
+            <button class="filter-btn" onclick="filterArticles('hvac')">HVAC</button>
+            <button class="filter-btn" onclick="filterArticles('normas')">Normas</button>
+        </div>
+
+        <div class="section-title">Artigos em Destaque</div>
+        <div class="section-sub">Explore os nossos artigos técnicos sobre projetos SCIE, sprinklers, SADI, espuma, piping industrial e HVAC.</div>
+
+        <div class="blog-grid">
+            <!-- Article 1 -->
+            <article class="blog-card" data-category="scie normas">
+                <div class="card-img">🔥</div>
+                <div class="card-body">
+                    <div class="card-meta">
+                        <span class="card-category">SCIE · RTSCIE</span>
+                        <span class="card-date">12 Mar 2026</span>
+                    </div>
+                    <h3>RTSCIE 2026: O Que Mudou no Decreto-Lei 224/2015?</h3>
+                    <p>Guia completo sobre as alterações ao Regulamento Técnico de Segurança Contra Incêndios, categorias de risco e novos requisitos para submissão ANEPC.</p>
+                    <a href="#artigo1" class="read-more">Ler artigo</a>
+                </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="blog-card" data-category="sprinklers normas">
+                <div class="card-img">💧</div>
+                <div class="card-body">
+                    <div class="card-meta">
+                        <span class="card-category">Sprinklers · EN 12845</span>
+                        <span class="card-date">5 Mar 2026</span>
+                    </div>
+                    <h3>Dimensionamento de Sprinklers Conforme EN 12845</h3>
+                    <p>Metodologia passo-a-passo para cálculo hidráulico de redes de sprinklers, seleção de cabeças, pressão mínima e densidade de descarga.</p>
+                    <a href="#artigo2" class="read-more">Ler artigo</a>
+                </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="blog-card" data-category="espuma normas">
+                <div class="card-img">🧯</div>
+                <div class="card-body">
+                    <div class="card-meta">
+                        <span class="card-category">Espuma · NFPA 11</span>
+                        <span class="card-date">28 Fev 2026</span>
+                    </div>
+                    <h3>Sistemas de Extinção por Espuma: NFPA 11 e EN 13565</h3>
+                    <p>Comparativo entre NFPA 11 e EN 13565 para projetos de espuma em tanques de armazenamento de líquidos inflamáveis e postos de combustível.</p>
+                    <a href="#artigo3" class="read-more">Ler artigo</a>
+                </div>
+            </article>
+
+            <!-- Article 4 -->
+            <article class="blog-card" data-category="sadi">
+                <div class="card-img">🔔</div>
+                <div class="card-body">
+                    <div class="card-meta">
+                        <span class="card-category">SADI · EN 54</span>
+                        <span class="card-date">20 Fev 2026</span>
+                    </div>
+                    <h3>SADI — Sistemas Automáticos de Deteção de Incêndio</h3>
+                    <p>Requisitos técnicos para projetos de SADI conforme EN 54, zonas de deteção, tipos de detetores e integração com sistemas de evacuação.</p>
+                    <a href="#artigo4" class="read-more">Ler artigo</a>
+                </div>
+            </article>
+
+            <!-- Article 5 -->
+            <article class="blog-card" data-category="piping hvac">
+                <div class="card-img">⚙️</div>
+                <div class="card-body">
+                    <div class="card-meta">
+                        <span class="card-category">Piping · P&ID</span>
+                        <span class="card-date">15 Fev 2026</span>
+                    </div>
+                    <h3>Elaboração de P&IDs e Isométricos com AutoCAD Plant 3D</h3>
+                    <p>Boas práticas para criação de P&IDs, isométricos e documentação técnica de piping industrial com AutoCAD Plant 3D e conscientes de ASME B31.1.</p>
+                    <a href="#artigo5" class="read-more">Ler artigo</a>
+                </div>
+            </article>
+
+            <!-- Article 6 -->
+            <article class="blog-card" data-category="hvac">
+                <div class="card-img">❄️</div>
+                <div class="card-body">
+                    <div class="card-meta">
+                        <span class="card-category">HVAC · Ventilação</span>
+                        <span class="card-date">10 Fev 2026</span>
+                    </div>
+                    <h3>Ventilação e Pressurização de Escadas em Edifícios</h3>
+                    <p>Critérios de dimensionamento de sistemas de ventilação e pressurização de escadas para evacuação segura, conforme RTSCIE e norma europeia.</p>
+                    <a href="#artigo6" class="read-more">Ler artigo</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Article 1: Full Content -->
+    <section id="artigo1" class="article-section">
+        <div class="article-content">
+            <div class="section-label">SCIE · RTSCIE</div>
+            <h2>RTSCIE 2026: O Que Mudou no Decreto-Lei 224/2015?</h2>
+            <p class="section-sub">Guia técnico sobre as alterações ao Regulamento Técnico de Segurança Contra Incêndios e as novas exigências para projetos SCIE em Portugal.</p>
+
+            <p>O Regulamento Técnico de Segurança Contra Incêndios (RTSCIE), aprovado pelo Decreto-Lei 224/2015, tem sido objeto de várias alterações para alinhar a legislação portuguesa com as diretivas europeias e as melhores práticas internacionais.</p>
+
+            <h2>Categorias de Risco — O Que Definem</h2>
+            <p>A classificação de risco de incêndio de um edifício ou complexo é determinada pela combinação do tipo de utilização, a carga de incêndio e a altura do edifício. As categorias são:</p>
+            <ul>
+                <li><strong>1.ª Categoria:</strong> Edifícios de habitação até 10 pisos, comércio de pequena dimensão.</li>
+                <li><strong>2.ª Categoria:</strong> Edifícios de habitação de média altura, comércio, indústria ligeira.</li>
+                <li><strong>3.ª Categoria:</strong> Edifícios de grande altura, grandes superfícies comerciais, indústria de médio risco.</li>
+                <li><strong>4.ª Categoria:</strong> Edifícios de habitação de 9 ou mais pisos, indústria e serviços com elevado risco.</li>
+                <li><strong>5.ª Categoria:</strong> Instalações industriais com risco elevado, armazenamento de produtos inflamáveis.</li>
+            </ul>
+
+            <h2>Novos Requisitos para Submissão à ANEPC</h2>
+            <p>Desde 2025, a submissão de projetos SCIE à ANEPC exige uma documentação adicional:</p>
+            <div class="highlight">
+                <p><strong>Documentação obrigatória:</strong></p>
+                <ul>
+                    <li>Memória descritiva e justificativa</li>
+                    <li>Plantas de piso e cortes com localização das medidas SCIE</li>
+                    <li>Esquemas funcionais de sprinklers, SADI ou sistemas de espuma</li>
+                    <li>Cálculo hidráulico assinado por projetista reconhecido</li>
+                    <li>Certificado de registo na Ordem dos Engenheiros</li>
+                </ul>
+            </div>
+
+            <blockquote>Nota: É fundamental que o projetista tenha reconhecimento formal pela ANEPC, de acordo com a Portaria 1532/2008, para submeter projetos nas categorias 3.ª a 5.ª.</blockquote>
+
+            <table class="norm-table">
+                <thead>
+                    <tr>
+                        <th>Categoria</th>
+                        <th>Autoridade Competente</th>
+                        <th>Prazo ANEPC</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1.ª</td><td>Bombeiros / Município</td><td>Não aplicável</td></tr>
+                    <tr><td>2.ª</td><td>Bombeiros / Município</td><td>Não aplicável</td></tr>
+                    <tr><td>3.ª</td><td>ANEPC</td><td>30 a 60 dias</td></tr>
+                    <tr><td>4.ª</td><td>ANEPC</td><td>60 a 90 dias</td></tr>
+                    <tr><td>5.ª</td><td>ANEPC + Bombeiros</td><td>90 a 120 dias</td></tr>
+                </tbody>
+            </table>
+
+            <h2>Conclusão</h2>
+            <p>Manter-se atualizado com as alterações ao RTSCIE é essencial para projetistas SCIE. Como consultor freelancer especializado, acompanho cada atualização normativa e aplico os requisitos mais recentes em todos os meus projetos.</p>
+        </div>
+    </section>
+
+    <!-- Article 2 -->
+    <section id="artigo2" class="article-section">
+        <div class="article-content">
+            <div class="section-label">Sprinklers · EN 12845</div>
+            <h2>Dimensionamento de Sprinklers Conforme EN 12845</h2>
+            <p class="section-sub">Metodologia para cálculo hidráulico, seleção de cabeças e verificação de pressão em redes de sprinklers.</p>
+
+            <p>A norma europeia EN 12845 — «Fixed firefighting systems — Automatic sprinkler systems» — estabelece os requisitos para projeto, instalação e manutenção de sistemas de sprinklers em edifícios.</p>
+
+            <h2>Classificação do Risco — Hazard Class</h2>
+            <p>O primeiro passo no projeto é determinar a classe de risco hazard do local protegido:</p>
+            <ul>
+                <li><strong>Light Hazard (LH):</strong> Escritórios, habitação, escolas, bibliotecas.</li>
+                <li><strong>Ordinary Hazard Group 1 (OH 1):</strong> Comércio reto, fabrico ligeiro, armazéns com materiais não inflamáveis.</li>
+                <li><strong>Ordinary Hazard Group 2 (OH 2):</strong> Indústrias ligeiras, armazéns com carga de incêndio moderada.</li>
+                <li><strong>High Hazard Group 1 (HH 1):</strong> Produtos inflamáveis de ponto de inflamação elevado, líquidos viscosos.</li>
+                <li><strong>High Hazard Group 2 (HH 2):</strong> Líquidos inflamáveis, armazenamento em paletes, plásticos expandidos.</li>
+            </ul>
+
+            <h2>Densidade de Descarga e Área de Operação</h2>
+            <div class="highlight">
+                <p><strong>Parâmetros chave por classe:</strong></p>
+                <ul>
+                    <li><strong>LH:</strong> 2,25 mm/min sobre 72 m²</li>
+                    <li><strong>OH 1:</strong> 3,0 mm/min sobre 11床单 to 144 m²</li>
+                    <li><strong>OH 2:</strong> 5,0 mm/min sobre 16床单 to 216 m²</li>
+                </ul>
+            </div>
+
+            <h2>Pressão Mínima</h2>
+            <p>A EN 12845 exige uma pressão mínima de <code>0,5 bar</code> no sprinkler mais desfavorável para garantir o padrão de descarga adequado.</p>
+        </div>
+    </section>
+
+    <!-- Article 3 -->
+    <section id="artigo3" class="article-section">
+        <div class="article-content">
+            <div class="section-label">Espuma · NFPA 11 · EN 13565</div>
+            <h2>Sistemas de Extinção por Espuma: NFPA 11 e EN 13565</h2>
+            <p class="section-sub">Comparativo entre as normas americana e europeia para projetos de sistemas de espuma em tanques e instalações industriais.</p>
+
+            <p>Os sistemas de espuma são essenciais para proteção de tanques de armazenamento de líquidos inflamáveis, postos de combustível e instalações industriais com risco de incêndio de hidrocarbonetos.</p>
+
+            <h2>AFFF vs. FFFP — Tipos de Concentrado</h2>
+            <ul>
+                <li><strong>AFFF (Aqueous Film Forming Foam):</strong> Espuma aquosa formadora de filme, para hidrocarbonetos não polares.</li>
+                <li><strong>FFFP (Film Forming Fluoroprotein):</strong> Combina filme resistente ao calor com extensa expansão.</li>
+                <li><strong>AR-AFFF (Alcohol Resistant AFFF):</strong> Para líquidos polares como álcoois, éteres e cetonas.</li>
+            </ul>
+
+            <h2>Cálculo de Taxa de Aplicação</h2>
+            <p>Conforme NFPA 11, a taxa de aplicação mínima para tanques fixos com teto é:</p>
+            <div class="highlight">
+                <ul>
+                    <li><strong>AFFF 3%:</strong> 4,1 L/min/m²</li>
+                    <li><strong>AFFF 6%:</strong> 8,2 L/min/m²</li>
+                </ul>
+            </div>
+            <p>A EN 13565-1 estabelece requisitos semelhantes mas com diferentes critérios para tanques com teto fixo e tanques com teto flutuante.</p>
+        </div>
+    </section>
+
+    <!-- Article 4 -->
+    <section id="artigo4" class="article-section">
+        <div class="article-content">
+            <div class="section-label">SADI · EN 54</div>
+            <h2>SADI — Sistemas Automáticos de Deteção de Incêndio</h2>
+            <p class="section-sub">Requisitos técnicos para projetos de SADI conforme EN 54, zonas de deteção e integração com sistemas de evacuação.</p>
+
+            <p>O Sistema Automático de Deteção de Incêndio (SADI) é obrigatório em edifícios das categorias 3.ª a 5.ª do RTSCIE, e é fundamental para deteção precoce e ativação de sistemas de evacuação.</p>
+
+            <h2>Tipos de Deteção</h2>
+            <ul>
+                <li><strong>Térmica:</strong> Detetores termoviscosimétricos e termodiferenciais — reação ao aumento de temperatura.</li>
+                <li><strong>Ótica (Fumos):</strong> Detetores óticos de fumos — absorção e dispersão de luz por partículas.</li>
+                <li><strong>Analógica/Endereçável:</strong> Cada detetor tem endereço único e reporte contínuo do nível de fumos/temperatura.</li>
+            </ul>
+
+            <h2>Zonas e Tamanho Máximo</h2>
+            <p>Conforme EN 54 e NP 4428, o número máximo de detetores por zona endereçável não deve exceder 200, e a área máxima por zona não deve superar 2.000 m².</p>
+        </div>
+    </section>
+
+    <!-- Article 5 -->
+    <section id="artigo5" class="article-section">
+        <div class="article-content">
+            <div class="section-label">Piping · P&ID · AutoCAD Plant 3D</div>
+            <h2>Elaboração de P&IDs e Isométricos com AutoCAD Plant 3D</h2>
+            <p class="section-sub">Fluxo de trabalho para criação de documentação técnica de piping industrial com AutoCAD Plant 3D.</p>
+
+            <p>O Piping & Instrumentation Diagram (P&ID) e os isométricos são documentos fundamentais para qualquer projeto industrial. A sua elaboração correta assegura a comunicação eficiente entre engenharia, construção e operação.</p>
+
+            <h2>P&ID — O Que Deve Conter</h2>
+            <ul>
+                <li>Equipamentos principais (bombas, válvulas, trocadores, tanques)</li>
+                <li>Linha de tubagem com número, diâmetro, especificação de material</li>
+                <li>Instrumentação e sinais de controlo</li>
+                <li>Sistemas de utilidades (ar压缩空气, água, vapor, inertes)</li>
+            </ul>
+
+            <h2>Isométricos em AutoCAD Plant 3D</h2>
+            <p>O AutoCAD Plant 3D extrai automaticamente os isométricos a partir do modelo 3D. É essencial configurar corretamente as especificações de material (spec sheets) e o catálogo de componentes para garantir que os BOMs (Bill of Materials) sejam gerados automaticamente.</p>
+
+            <h2>ASME B31.1 — Código para Tubagens de Vapor e Água</h2>
+            <div class="highlight">
+                <p>O ASME B31.1 é aplicável a:</p>
+                <ul>
+                    <li>Tubagens de vapor em centrais térmicas</li>
+                    <li>Sistemas de água quente industrial</li>
+                    <li>Tubagens de utilidades em plantas industriais</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article 6 -->
+    <section id="artigo6" class="article-section">
+        <div class="article-content">
+            <div class="section-label">HVAC · Ventilação · RTSCIE</div>
+            <h2>Ventilação e Pressurização de Escadas em Edifícios</h2>
+            <p class="section-sub">Dimensionamento de sistemas de ventilação e pressurização de escadas para evacuação segura em edifícios de média e grande altura.</p>
+
+            <p>Em edifícios das categorias 3.ª a 5.ª do RTSCIE, a pressurização de escadas de evacuação é obrigatória para criar uma zona de pressão positiva que impeça o fumo de penetrar na escada.</p>
+
+            <h2>Princípio de Funcionamento</h2>
+            <p>O sistema mantém a escada a uma pressão de aproximadamente <code>50 Pa</code> relativamente às zonas adjacentes, suficiente para impedir a entrada de fumos mas permitir a abertura das portas de emergência.</p>
+
+            <h2>Componentes do Sistema</h2>
+            <ul>
+                <li>Ventilador centrífugo de caudal ajustável</li>
+                <li>Amortecedor de pressão diferencial (Differential Pressure Damper)</li>
+                <li>Sensor de pressão diferencial com comando automático</li>
+                <li>Caixa de extração no topo da escada (quando necessário)</li>
+            </ul>
+
+            <h2>Distinção entre Ventilação Normal e de Emergência</h2>
+            <p>A ventilação mecânica normal serve para renovação de ar em condições de utilização quotidiana. Já a ventilação de emergência (pressurização) entra em funcionamento automaticamente quando são ativados os sistemas de deteção de incêndio (SADI), com alimentação garantida por gerador de emergência.</p>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Precisa de um Projeto SCIE?</h2>
+        <p>Entre em contacto para uma proposta personalizada — projetos de sprinklers, SADI, espuma, piping industrial ou consultoria técnica.</p>
+        <a href="index.html#contacto" class="btn-primary">Pedir Orçamento</a>
+    </section>
+
+    <footer>
+        <p>© 2026 <span>Engenharia & SCIE Freelancer</span> · Lisboa, Portugal · Todos os direitos reservados</p>
+        <p style="margin-top:8px;font-size:0.82rem">Membro da Ordem dos Engenheiros · Projetista SCIE reconhecido pela ANEPC</p>
+    </footer>
+
+    <script>
+        function filterArticles(category) {
+            const cards = document.querySelectorAll('.blog-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category.includes(category)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            document.querySelectorAll('article.article-section').forEach(article => {
+                article.style.display = 'none';
+            });
+
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.filter-btn').forEach(b => b.style.fontWeight = 'normal');
+                    this.style.fontWeight = 'bold';
+                });
+            });
+        }
+
+        // Hash scroll
+        window.addEventListener('hashchange', function() {
+            const target = document.querySelector(window.location.hash);
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        // On page load check hash
+        window.addEventListener('DOMContentLoaded', function() {
+            if (window.location.hash) {
+                const target = document.querySelector(window.location.hash);
+                if (target) {
+                    setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+                }
+            }
+        });
+
+        // Filter button active state
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
+</head>
