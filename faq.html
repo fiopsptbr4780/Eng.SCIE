@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FAQ — Perguntas Frequentes | Engenharia & SCIE</title>
+  <meta name="description" content="Respostas às questões mais comuns sobre projetos SCIE, sistemas de sprinklers, espuma, deteção de incêndio e engenharia mecânica em Portugal.">
+  <style>
+    :root {
+      --primary: #1a3a5c;
+      --accent: #e05c1a;
+      --light: #f4f7fb;
+      --text: #2d2d2d;
+      --muted: #6b7280;
+      --white: #ffffff;
+      --border: #dde3ec;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    nav {
+      background: var(--primary);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 5%;
+      height: 64px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    }
+    .nav-logo {
+      color: var(--white);
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--accent); }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 28px;
+    }
+    nav ul li a {
+      color: #ccd8e8;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+    nav ul li a:hover, nav ul li a.active { color: var(--accent); }
+
+    /* PAGE HEADER */
+    .page-header {
+      background: linear-gradient(135deg, var(--primary) 60%, #2a5298 100%);
+      color: var(--white);
+      padding: 64px 5% 56px;
+    }
+    .page-header .badge {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--white);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+    .page-header h1 {
+      font-size: 2.2rem;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .page-header h1 span { color: var(--accent); }
+    .page-header p {
+      font-size: 1.05rem;
+      color: #b8cde2;
+      max-width: 580px;
+    }
+
+    /* MAIN CONTENT */
+    .faq-section {
+      padding: 72px 5%;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* CATEGORY TABS */
+    .faq-categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 48px;
+    }
+    .cat-btn {
+      background: var(--light);
+      color: var(--primary);
+      border: 2px solid var(--border);
+      border-radius: 24px;
+      padding: 8px 20px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .cat-btn:hover, .cat-btn.active {
+      background: var(--primary);
+      color: var(--white);
+      border-color: var(--primary);
+    }
+
+    /* CATEGORY GROUP */
+    .faq-group {
+      margin-bottom: 48px;
+    }
+    .faq-group-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .faq-group-title .group-icon {
+      font-size: 1.5rem;
+    }
+    .faq-group-title h2 {
+      font-size: 1.2rem;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    /* ACCORDION */
+    .faq-item {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 10px;
+      overflow: hidden;
+      transition: box-shadow 0.2s;
+    }
+    .faq-item:hover {
+      box-shadow: 0 4px 16px rgba(26,58,92,0.08);
+    }
+    .faq-item.open {
+      border-color: var(--accent);
+      box-shadow: 0 4px 16px rgba(224,92,26,0.10);
+    }
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 22px;
+      cursor: pointer;
+      background: var(--white);
+      gap: 16px;
+    }
+    .faq-question h3 {
+      font-size: 0.97rem;
+      color: var(--primary);
+      font-weight: 600;
+      line-height: 1.4;
+    }
+    .faq-item.open .faq-question h3 {
+      color: var(--accent);
+    }
+    .faq-toggle {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1.1rem;
+      color: var(--primary);
+      font-weight: 700;
+      transition: all 0.25s;
+    }
+    .faq-item.open .faq-toggle {
+      background: var(--accent);
+      color: var(--white);
+      transform: rotate(45deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.2s;
+      background: var(--light);
+    }
+    .faq-answer-inner {
+      padding: 0 22px 20px;
+      font-size: 0.93rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+    .faq-answer-inner a {
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .faq-answer-inner a:hover { text-decoration: underline; }
+    .faq-answer-inner ul {
+      margin: 10px 0 10px 20px;
+    }
+    .faq-answer-inner ul li {
+      margin-bottom: 6px;
+    }
+    .faq-answer-inner .tag {
+      display: inline-block;
+      background: #e8f0fb;
+      color: var(--primary);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 12px;
+      margin: 2px 2px 8px 0;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 600px;
+    }
+
+    /* CTA BANNER */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--primary) 60%, #2a5298 100%);
+      color: var(--white);
+      border-radius: 16px;
+      padding: 40px 36px;
+      margin-top: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .cta-banner h3 {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+    .cta-banner p {
+      font-size: 0.95rem;
+      color: #9ab8d0;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: var(--white);
+      padding: 13px 28px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.1s;
+      white-space: nowrap;
+    }
+    .btn-primary:hover { background: #c44e12; transform: translateY(-1px); }
+
+    /* FOOTER */
+    footer {
+      background: #0f2238;
+      color: #7fa8c8;
+      text-align: center;
+      padding: 28px 5%;
+      font-size: 0.88rem;
+    }
+    footer span { color: var(--accent); font-weight: 700; }
+    footer .footer-links {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    footer .footer-links a {
+      color: #7fa8c8;
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+    footer .footer-links a:hover { color: var(--accent); }
+
+    @media (max-width: 640px) {
+      nav ul { gap: 12px; }
+      nav ul li a { font-size: 0.82rem; }
+      .page-header h1 { font-size: 1.6rem; }
+      .cta-banner { text-align: center; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVEGAÇÃO -->
+<nav>
+  <a href="index.html" class="nav-logo">Eng.<span>SCIE</span></a>
+  <ul>
+    <li><a href="index.html#servicos">Serviços</a></li>
+    <li><a href="index.html#sobre">Sobre</a></li>
+    <li><a href="projetos.html">Projetos</a></li>
+    <li><a href="blog.html">Artigos</a></li>
+    <li><a href="ferramentas.html">Ferramentas</a></li>
+    <li><a href="faq.html" class="active">FAQ</a></li>
+    <li><a href="index.html#contacto">Contacto</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="badge">Perguntas Frequentes</div>
+  <h1>FAQ — <span>SCIE</span> & Engenharia Mecânica</h1>
+  <p>Respostas objetivas às questões mais comuns sobre projetos SCIE, normas aplicáveis, custos e processos de aprovação em Portugal.</p>
+</div>
+
+<!-- FAQ CONTENT -->
+<div class="faq-section">
+
+  <!-- GRUPO 1: REGULAMENTAÇÃO -->
+  <div class="faq-group" data-cat="normas">
+    <div class="faq-group-title">
+      <span class="group-icon">📋</span>
+      <h2>Regulamentação e Normas</h2>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>Quais normas regulam os projetos SCIE em Portugal?</h3>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p>Em Portugal, os projetos de Segurança Contra Incêndio em Edifícios são regulados pelo <strong>Decreto-Lei n.º 224/2015</strong>, que aprova o Regulamento Técnico de Segurança Contra Incêndio em Edifícios (RTSCIE). Este diploma define as condições técnicas mínimas exigíveis para cada categoria e utilização-tipo de edifício.</p>
+          <p style="margin-top:10px;">Para sistemas específicos, aplicam-se também normas europeias e internacionais:</p>
+          <ul>
+            <li><strong>EN 12845</strong> — Instalações fixas de combate a incêndios: sistemas de sprinklers</li>
+            <li><strong>NFPA 13</strong> — Standard for the Installation of Sprinkler Systems</li>
+            <li><strong>NFPA 11</strong> — Sistemas de extinção por espuma de baixa, média e alta expansão</li>
+            <li><strong>EN 54</strong> — Sistemas de deteção e alarme de incêndio (SADI)</li>
+            <li><strong>EN 13565</strong> — Sistemas de extinção por espuma (complementar)</li>
+          </ul>
+          <span class="tag">RTSCIE</span><span class="tag">DL 224/2015</span><span class="tag">EN 12845</span><span class="tag">NFPA</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>O que é a utilização-tipo de um edifício e como influencia o projeto SCIE?</h3>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p>O RTSCIE classifica os edifícios em <strong>12 utilizações-tipo</strong> (UT), de acordo com a sua função: habitação (UT I), estacionamentos (UT II), administrativos (UT III), escolares (UT IV), hospitalares (UT V), espetáculos (UT VI), hoteleiros (UT VII), comerciais (UT VIII), desportivos (UT IX), museus (UT X), bibliotecas (UT XI) e industriais/armazenagem (UT XII).</p>
+          <p style="margin-top:10px;">Cada utilização-tipo tem requisitos distintos em termos de sistemas obrigatórios, resistência ao fogo das estruturas, vias de evacuação e meios de intervenção. A categoria de risco (1ª a 4ª) é determinada por fatores como altura, área e efetivo, e define o nível de exigência do projeto.</p>
+          <span class="tag">Utilização-tipo</span><span class="tag">Categoria de risco</span><span class="tag">RTSCIE</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>Houve alterações recentes à legislação SCIE que devo conhecer?</h3>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p>O DL 224/2015 introduziu a revisão mais significativa ao regime anterior (DL 220/2008 + Portaria 1532/2008). É importante acompanhar as publicações da <strong>ANEPC</strong> (Autoridade Nacional de Emergência e Proteção Civil), que emite circulares técnicas e notas interpretativas com orientações sobre a aplicação do regulamento em casos específicos.</p>
+          <p style="margin-top:10px;">Para projetos em edifícios históricos ou reabilitações, podem existir dispensas e medidas compensatórias previstas no próprio regulamento. Recomendo consultar um projetista reconhecido para garantir o enquadramento correto.</p>
+          <span class="tag">DL 224/2015</span><span class="tag">ANEPC</span><span class="tag">Reabilitação</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GRUPO 2: TIPOS DE PROJETO -->
+  <div class="faq-group" data-cat="projeto">
+    <div class="faq-group-title">
+      <span class="group-icon">🏗️</span>
+      <h2>Tipos de Projeto e Âmbito</h2>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>Que tipo de projeto SCIE preciso para a minha construção?</h3>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p>Depende da categoria de risco e da utilização-tipo do edifício. Em linhas gerais:</p>
+          <ul>
+            <li><strong>1ª categoria (baixo risco):</strong> Medidas de autoproteção simplificadas; sem projeto SCIE obrigatório na maioria das UT.</li>
+            <li><strong>2ª categoria:</strong> Projeto SCIE com memória descritiva, plantas de segurança e medidas de autoproteção.</li>
+            <li><strong>3ª e 4ª categorias:</strong> Projeto completo com dimensionamento de todos os sistemas ativos e passivos: sprinklers, SADI, RIA, compartimentação, evacuação e sinalização.</li>
+          </ul>
+          <p style="margin-top:10px;">Edifícios industriais, comerciais e de serviços requerem geralmente projeto completo. Conheça as <a href="servicos.html">fases do projeto SCIE</a> ou <a href="index.html#contacto">contacte-me</a> para uma análise sem compromisso.</p>
+          <span class="tag">Categoria de risco</span><span class="tag">Projeto completo</span><span class="tag">SADI</span><span class="tag">Sprinklers</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>Fazem projetos para obras já em execução ou edifícios existentes?</h3>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p>Sim. É relativamente frequente a necessidade de elaborar ou regularizar projetos SCIE em obras já iniciadas ou em edifícios existentes que necessitam de legalização. Nestes casos, realizo uma análise prévia da situação em obra, identifico condicionantes construtivas e proponho soluções viáveis dentro do quadro regulamentar.</p>
+          <p style="margin-top:10px;">Em reabilitações, o RTSCIE permite a aplicação de <strong>medidas de compensação</strong> quando não é possível cumprir integralmente os requisitos regulamentares — desde que devidamente fundamentadas e aceites pela ANEPC.</p>
+          <a href="index.html#contacto">→ Solicitar análise preliminar gratuita</a>
+          <br/><br/>
+          <span class="tag">Reabilitação</span><span class="tag">Legalização</span><span class="tag">Medidas compensatórias</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>O projeto SCIE inclui os sistemas de deteção, sprinklers e extinção?</h3>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p>Sim, um projeto SCIE completo contempla todos os sistemas de segurança ativos e passivos exigíveis para a utilização-tipo e categoria de risco do edifício. Isto pode incluir:</p>
+          <ul>
+            <li>Rede de incêndio armada (RIA) e bocas-de-incêndio</li>
+            <li>Sistema automático de sprinklers (dimensionamento hidráulico EN 12845 / NFPA 13)</li>
+            <li>SADI — sistema automático de deteção de incêndio (EN 54)</li>
+            <li>Sistemas de extinção automática por espuma, CO₂ ou agentes limpos</li>
+            <li>Sinalização, iluminação de emergência e vias de evacuação</li>
+            <li>Compartimentação corta-fogo (portas, selos, dampers)</li>
+          </ul>
+          <span class="tag">RIA</span><span class="tag">Sprinklers</span><span class="tag">SADI</span><span class="tag">Espuma</span><span class="tag">CO₂</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GRUPO 3: PROCESSO E APROVAÇÃO -->
+  <div class="faq-group" data-cat="processo">
+    <div class="faq-group-title">
+      <span class="group-icon">🔍</span>
+      <h2>Processo e Aprovação ANEPC</h2>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>O projeto SCIE inclui o processo de aprovação junto da ANEPC?</h3>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p>Sim. O projeto SCIE elaborado inclui toda a documentação técnica necessária para submissão à ANEPC no âmbito do processo de licenciamento: memória descritiva e justificativa, peças desenhadas, mapa de quantidades e fichas de segurança dos equipamentos previstos.</p>
+          <p style="margin-top:10px;">O processo de aprovação é conduzido em coordenação com a entidade licenciadora (câmara municipal ou ANEPC, conforme o caso), podendo incluir pedidos de esclarecimento, vistorias técnicas e eventuais alterações ao projeto. Presto apoio completo durante todo este processo, sem custos adicionais para esclarecimentos pontuais.</p>
+          <span class="tag">ANEPC</span><span class="tag">Licenciamento</span><span class="tag">Vistoria</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>Quanto tempo demora a aprovação de um projeto SCIE pela ANEPC?</h3>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p>Os prazos legais para parecer da ANEPC variam consoante o tipo de processo e a categoria de risco do edifício. Em geral, para projetos enquadrados no regime de comunicação prévia, a ANEPC dispõe de <strong>30 dias</strong> para emitir parecer; em processos de licença, o prazo pode ser de <strong>45 a 60 dias</strong>.</p>
+          <p style="margin-top:10px;">Na prática, estes prazos dependem muito da carga de trabalho dos serviços e da completude da documentação submetida. Um projeto bem elaborado, sem erros ou omissões, tende a ser aprovado mais rapidamente e com menos pedidos de esclarecimento.</p>
+          <span class="tag">ANEPC</span><span class="tag">Prazos</span><span class="tag">Licenciamento</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>É necessário fazer vistorias após a conclusão da obra?</h3>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p>Sim, para edifícios de 2ª, 3ª e 4ª categorias de risco, a lei exige a realização de <strong>vistoria final SCIE</strong> antes da emissão do alvará de utilização. Esta vistoria é realizada pela ANEPC ou por entidade acreditada, e verifica a conformidade da instalação com o projeto aprovado.</p>
+          <p style="margin-top:10px;">Além da vistoria inicial, os edifícios com sistemas SCIE estão sujeitos a <strong>manutenção periódica obrigatória</strong> e a vistorias de renovação, cujos intervalos variam com a utilização-tipo e o grau de periciosidade.</p>
+          <span class="tag">Vistoria</span><span class="tag">Alvará</span><span class="tag">Manutenção</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GRUPO 4: CUSTOS -->
+  <div class="faq-group" data-cat="custos">
+    <div class="faq-group-title">
+      <span class="group-icon">💶</span>
+      <h2>Custos e Orçamentos</h2>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>Quanto custa um projeto SCIE?</h3>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p>O custo de um projeto SCIE depende de vários fatores: área bruta de construção, utilização-tipo, categoria de risco, complexidade dos sistemas exigidos (apenas RIA, ou também sprinklers, SADI, espuma, etc.) e prazo de entrega.</p>
+          <p style="margin-top:10px;">A título indicativo, projetos de menor complexidade (edifícios de habitação 2ª categoria, armazéns simples) têm honorários mais reduzidos; projetos industriais, hoteleiros ou de grande área com sistemas automáticos completos têm um custo naturalmente superior. Para obter um orçamento gratuito e personalizado, <a href="index.html#contacto">entre em contacto</a> com os detalhes da sua obra.</p>
+          <span class="tag">Honorários</span><span class="tag">Orçamento gratuito</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>Os honorários incluem acompanhamento durante o licenciamento?</h3>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p>Sim, a proposta de honorários inclui sempre o apoio na fase de aprovação: resposta a pedidos de esclarecimento da ANEPC, revisões pontuais ao projeto por questões de enquadramento regulamentar e articulação com o responsável de projeto ou dono de obra.</p>
+          <p style="margin-top:10px;">Alterações significativas de programa ou de projeto de arquitetura após entrega dos elementos SCIE podem ser objeto de proposta adicional. Esta situação é sempre comunicada e acordada previamente, sem surpresas no final.</p>
+          <span class="tag">Acompanhamento</span><span class="tag">Revisões</span><span class="tag">Transparência</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GRUPO 5: SISTEMAS ESPECÍFICOS -->
+  <div class="faq-group" data-cat="sistemas">
+    <div class="faq-group-title">
+      <span class="group-icon">🔧</span>
+      <h2>Sistemas Específicos</h2>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>Quando é obrigatório instalar sprinklers num edifício?</h3>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p>A obrigatoriedade de sprinklers é definida pelo RTSCIE em função da utilização-tipo e da categoria de risco. De forma geral, são obrigatórios em:</p>
+          <ul>
+            <li>Edifícios de estacionamento de 3ª e 4ª categoria (UT II)</li>
+            <li>Edifícios administrativos, hoteleiros e comerciais de 3ª e 4ª categoria</li>
+            <li>Estabelecimentos industriais e armazéns com carga de incêndio elevada (UT XII)</li>
+            <li>Edifícios com alturas superiores a 28 m (Alto ou Grande Altura), conforme UT</li>
+          </ul>
+          <p style="margin-top:10px;">O dimensionamento hidráulico é realizado de acordo com a <strong>EN 12845</strong> ou <strong>NFPA 13</strong>, dependendo dos requisitos do dono de obra ou do segurador do edifício.</p>
+          <span class="tag">Sprinklers</span><span class="tag">EN 12845</span><span class="tag">NFPA 13</span><span class="tag">Obrigatoriedade</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>Qual a diferença entre um sistema de espuma de baixa, média e alta expansão?</h3>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p>Os sistemas de espuma diferem na relação de expansão (volume de espuma / volume de solução) e nas aplicações típicas:</p>
+          <ul>
+            <li><strong>Baixa expansão (&lt; 20:1):</strong> Aplicação em derrames de líquidos inflamáveis, postos de abastecimento, hangares, parques de tanques. Norma: NFPA 11.</li>
+            <li><strong>Média expansão (20:1 a 200:1):</strong> Controlo de derrames em ambientes fechados, instalações petroquímicas.</li>
+            <li><strong>Alta expansão (&gt; 200:1):</strong> Inundação total de espaços fechados como porões de navios, armazéns automatizados. Norma: EN 13565-2.</li>
+          </ul>
+          <p style="margin-top:10px;">A seleção do tipo de sistema depende da natureza do risco, do tipo de produto inflamável, da geometria do espaço e dos requisitos de seguradoras ou normas de referência do projeto.</p>
+          <span class="tag">NFPA 11</span><span class="tag">EN 13565</span><span class="tag">Espuma</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h3>O que é o SADI e quando é obrigatório?</h3>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p>O <strong>SADI (Sistema Automático de Deteção de Incêndio)</strong> é o conjunto de equipamentos destinado a detetar automaticamente a presença de incêndio e ativar os meios de alarme e evacuação. É regulado pela norma <strong>EN 54</strong> e abrange detetores (fumo, calor, chama), centrais de incêndio, dispositivos de alarme e unidades de controlo.</p>
+          <p style="margin-top:10px;">O SADI é obrigatório em edifícios de 2ª categoria ou superior para a maioria das utilizações-tipo, sendo sempre exigido em hospitais, lares, escolas, hotéis e edifícios de grande altura. Em edifícios industriais de alto risco, complementa os sistemas de supressão automática.</p>
+          <span class="tag">SADI</span><span class="tag">EN 54</span><span class="tag">Deteção</span><span class="tag">Alarme</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA BANNER -->
+  <div class="cta-banner">
+    <div>
+      <h3>Tem um projeto em mente?</h3>
+      <p>Entre em contacto para uma análise preliminar gratuita. Respondo em até 24 horas.</p>
+    </div>
+    <a href="index.html#contacto" class="btn-primary">📩 Pedir Orçamento</a>
+  </div>
+
+</div><!-- /faq-section -->
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 <span>Engenharia &amp; SCIE</span>. Todos os direitos reservados.</p>
+  <p style="margin-top:6px; font-size:0.8rem;">Engenheiro Mecânico membro da Ordem dos Engenheiros · Projetista reconhecido pela ANEPC</p>
+  <div class="footer-links">
+    <a href="index.html">Início</a>
+    <a href="projetos.html">Projetos</a>
+    <a href="blog.html">Artigos</a>
+    <a href="ferramentas.html">Ferramentas</a>
+    <a href="faq.html">FAQ</a>
+    <a href="index.html#contacto">Contacto</a>
+  </div>
+</footer>
+
+<script>
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    // Open clicked if it was closed
+    if (!isOpen) item.classList.add('open');
+  }
+  // Open first item by default
+  const first = document.querySelector('.faq-item');
+  if (first) first.classList.add('open');
+</script>
+
+</body>
+</html>
