@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ferramentas e calculadoras online para Engenharia Mecanica e SCIE. Calculador de sprinklers, queda de pressao em tubagem, categoria de risco RTSCIE, dimensionamento de espuma e SADI.">
+    <meta name="keywords" content="ferramentas SCIE Portugal, calculadora sprinklers EN 12845, calculadora queda pressao tubagem, calculadora categoria risco RTSCIE, calculadora espuma NFPA 11">
+    <meta name="author" content="Engenharia e SCIE">
+    <title>Ferramentas SCIE e Engenharia | Calculadoras Online - Sprinklers, Piping, RTSCIE</title>    <style>
+        :root {--primary:#1a3a5c;--accent:#e05c1a;--light:#f4f7fb;--text:#2d2d2d;--muted:#6b7280;--white:#ffffff;--border:#dde3ec;--success:#1a7a3c;--warning:#b7791f;--danger:#b71f1f}
+        * {margin:0;padding:0;box-sizing:border-box}
+        body {font-family:'Segoe UI', Arial, sans-serif;color:var(--text);background:var(--white);line-height:1.7}
+        nav {background:var(--primary);position:sticky;top:0;z-index:999;display:flex;justify-content:space-between;align-items:center;padding:0 5%;height:64px;box-shadow:0 2px 8px rgba(0,0,0,0.18)}
+        .nav-logo {color:var(--white);font-size:1.2rem;font-weight:700;letter-spacing:1px;text-decoration:none}
+        .nav-logo span {color:var(--accent)}
+        nav ul {list-style:none;display:flex;gap:24px}
+        nav ul li a {color:#ccd8e8;text-decoration:none;font-size:0.95rem;transition:color 0.2s}
+        nav ul li a:hover, nav ul li a.active {color:var(--accent)}
+        .hero {background:linear-gradient(135deg,var(--primary) 60%,#2a5298 100%);color:var(--white);padding:80px 5%;text-align:center}
+        .hero h1 {font-size:2.4rem;margin-bottom:12px}
+        .hero p {font-size:1.1rem;color:#b8cde2;max-width:600px;margin:0 auto}
+        section {padding:60px 5%}
+        .section-label {font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--accent);margin-bottom:8px}
+        .section-title {font-size:2rem;color:var(--primary);margin-bottom:12px}
+        .section-sub {color:var(--muted);font-size:1rem;max-width:600px;margin-bottom:48px}
+        .tools-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-bottom:60px}
+        .tool-card {background:var(--white);border-radius:12px;border:1px solid var(--border);padding:24px;transition:box-shadow 0.2s,transform 0.2s;cursor:pointer}
+        .tool-card:hover {box-shadow:0 12px 32px rgba(26,58,92,0.14);transform:translateY(-3px)}
+        .tool-card .tool-icon {font-size:2.5rem;margin-bottom:12px}
+        .tool-card h3 {font-size:1.15rem;color:var(--primary);margin-bottom:8px}
+        .tool-card p {font-size:0.92rem;color:var(--muted);margin-bottom:14px}
+        .tool-card .tool-tag {display:inline-block;background:#e8f0fb;color:var(--primary);padding:3px 10px;border-radius:12px;font-size:0.72rem;font-weight:700}
+        .tool-detail {background:var(--light);border-radius:12px;padding:32px;border:1px solid var(--border);margin-bottom:48px}
+        .tool-detail h2 {font-size:1.4rem;color:var(--primary);margin-bottom:8px}
+        .tool-detail .tool-desc {color:var(--muted);margin-bottom:24px}
+        .calculator {background:var(--white);border-radius:8px;padding:24px;border:1px solid var(--border)}
+        .calc-input-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:20px}
+        .calc-input-group label {display:block;font-size:0.85rem;font-weight:600;color:var(--primary);margin-bottom:6px}
+        .calc-input-group input, .calc-input-group select {width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:6px;font-size:0.95rem;outline:none;transition:border-color 0.2s;background:var(--white);color:var(--text)}
+        .calc-input-group input:focus, .calc-input-group select:focus {border-color:var(--accent)}
+        .calc-result {background:var(--light);border-radius:8px;padding:16px;margin-top:16px;border-left:4px solid var(--accent)}
+        .calc-result h4 {font-size:0.92rem;color:var(--primary);margin-bottom:10px}
+        .calc-result ul {list-style:none}
+        .calc-result li {font-size:0.92rem;color:var(--muted);margin-bottom:6px}
+        .calc-result li span {font-weight:700;color:var(--primary)}
+        .btn-calc {background:var(--accent);color:var(--white);padding:12px 24px;border:none;border-radius:8px;font-size:0.95rem;font-weight:700;cursor:pointer;transition:background 0.2s}
+        .btn-calc:hover {background:#c44e12}
+        .btn-calc:disabled {background:var(--muted);cursor:not-allowed}
+        .warning {background:rgba(183,121,31,0.1);border:1px solid rgba(183,121,31,0.3);border-radius:8px;padding:14px 16px;margin-top:16px;font-size:0.85rem;color:var(--warning)}
+        .cta-section {background:var(--primary);color:var(--white);text-align:center;padding:60px 5%}
+        .cta-section h2 {font-size:1.8rem;margin-bottom:16px}
+        .cta-section p {color:#b8cde2;margin-bottom:24px;max-width:500px;margin-left:auto;margin-right:auto}
+        .cta-section .btn-primary {background:var(--accent);color:var(--white);padding:14px 32px;border:none;border-radius:8px;font-size:1rem;font-weight:700;text-decoration:none;transition:background 0.2s;display:inline-block}
+        .cta-section .btn-primary:hover {background:#c44e12}
+        footer {background:#0f2238;color:#7fa8c8;text-align:center;padding:28px 5%;font-size:0.88rem}
+        footer span {color:var(--accent);font-weight:700}
+        @media (max-width:640px) {nav ul {gap:14px}.hero h1 {font-size:1.8rem}.section-title {font-size:1.5rem}}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand"><a href="index.html">Eng.SCIE</a></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="projetos.html">Projetos</a></li>
+            <li><a href="blog.html">Artigos</a></li>
+            <li><a href="ferramentas.html" class="active">Ferramentas</a></li>
+        </ul>
+    </nav>
+    <header class="hero">
+        <h1>Ferramentas SCIE</h1>
+        <p>Calculadoras e ferramentas online para engenharia mecanica, SCIE e sistemas de seguranca contra incendio.</p>
+    </header>
+
+    <section class="section">
+        <h2 class="section-title">Ferramentas de Calculo</h2>
+        <div class="tools-grid">
+            <a href="#calc-sprinkler" class="tool-card">
+                <div class="tool-icon">&#128167;</div>
+                <h3>Dimensionamento Sprinkler</h3>
+                <p>Calcule o numero de sprinklers e fluxo por estacao com base na area de risco.</p>
+                <span class="tool-tag">EN 12845</span>
+                <span class="tool-tag">NFPA 13</span>
+            </a>
+            <a href="#calc-queda" class="tool-card">
+                <div class="tool-icon">&#128200;</div>
+                <h3>Queda de Pressao Tubagem</h3>
+                <p>Calcule a perda de carga em tubagens de agua para sistemas de SCIE e HVAC.</p>
+                <span class="tool-tag">Hidraulica</span>
+                <span class="tool-tag">Piping</span>
+            </a>
+            <a href="#calc-rtsie" class="tool-card">
+                <div class="tool-icon">&#128668;</div>
+                <h3>Categoria de Risco RTSCIE</h3>
+                <p>Determine a categoria de risco segundo o Regime Juridico de SCIE (Decreto-Lei 224/2015).</p>
+                <span class="tool-tag">Legislacao</span>
+                <span class="tool-tag">Risco</span>
+            </a>
+        </div>
+    </section>
+
+    <section class="tool-detail" id="calc-sprinkler">
+        <h2>Calculadora de Sprinklers</h2>
+        <p>Dimensione o numero de sprinklers e o fluxo necessario para a sua estacao.</p>
+        <div class="calculator">
+            <div class="calc-input-grid">
+                <div class="calc-input-group">
+                    <label for="sprk-area">Area max. risco (m&sup2;)</label>
+                    <input type="number" id="sprk-area" value="120" min="1">
+                </div>
+                <div class="calc-input-group">
+                    <label for="sprk-densidade">Densidade (l/min/m&sup2;)</label>
+                    <input type="number" id="sprk-densidade" value="3.5" step="0.5" min="0.1">
+                </div>
+                <div class="calc-input-group">
+                    <label for="sprk-cobertura">Area cob. por sprinkler (m&sup2;)</label>
+                    <input type="number" id="sprk-cobertura" value="9" step="1" min="4">
+                </div>
+                <div class="calc-input-group">
+                    <label for="sprk-fator">Fator seguranca</label>
+                    <select id="sprk-fator">
+                        <option value="1">Nenhum</option>
+                        <option value="1.1" selected>+10%</option>
+                        <option value="1.2">+20%</option>
+                    </select>
+                </div>
+            </div>
+            <button class="btn-calc" onclick="calcSprinkler()">Calcular</button>
+            <div class="calc-result" id="sprk-result" style="display:none;">
+                <h4>Resultados</h4>
+                <ul id="sprk-results-list"></ul>
+            </div>
+            <p class="warning">Nota: Valores indicativos. Consulte sempre a EN 12845 ou NFPA 13 para projetos oficiais.</p>
+        </div>
+    </section>
+
+    <section class="tool-detail" id="calc-queda">
+        <h2>Queda de Pressao em Tubagem</h2>
+        <p>Calcule a perda de carga em tubagens de agua usando a formula de Darcy-Weisbach.</p>
+        <div class="calculator">
+            <div class="calc-input-grid">
+                <div class="calc-input-group">
+                    <label for="queda-vazao">Vazao (l/min)</label>
+                    <input type="number" id="queda-vazao" value="500" min="1">
+                </div>
+                <div class="calc-input-group">
+                    <label for="queda-diametro">Diametro interno (mm)</label>
+                    <input type="number" id="queda-diametro" value="100" min="10">
+                </div>
+                <div class="calc-input-group">
+                    <label for="queda-comprimento">Comprimento (m)</label>
+                    <input type="number" id="queda-comprimento" value="50" min="1">
+                </div>
+                <div class="calc-input-group">
+                    <label for="queda-rugosidade">Rugosidade (mm)</label>
+                    <select id="queda-rugosidade">
+                        <option value="0.015">Aco galvanizado novo (0.015)</option>
+                        <option value="0.045">Aco carbono (0.045)</option>
+                        <option value="0.0015" selected>PVC (0.0015)</option>
+                        <option value="0.25">Ferro fundido (0.25)</option>
+                    </select>
+                </div>
+            </div>
+            <button class="btn-calc" onclick="calcQueda()">Calcular</button>
+            <div class="calc-result" id="queda-result" style="display:none;">
+                <h4>Resultados</h4>
+                <ul id="queda-results-list"></ul>
+            </div>
+            <p class="warning">Nota: Formula aprox. usando Darcy-Weisbach. Consulte tabelas tecnicas para valores exatos.</p>
+        </div>
+    </section>
+
+    <section class="tool-detail" id="calc-rtsie">
+        <h2>Categoria de Risco RTSCIE</h2>
+        <p>Determine a categoria de risco segundo o DL 224/2015 com base no uso e area do edificio.</p>
+        <div class="calculator">
+            <div class="calc-input-grid">
+                <div class="calc-input-group">
+                    <label for="rtsie-uso">Tipo de uso</label>
+                    <select id="rtsie-uso">
+                        <option value="1" selected>Habitacional</option>
+                        <option value="2">Administrativo</option>
+                        <option value="3">Comercial</option>
+                        <option value="4">Industrial</option>
+                        <option value="5">Educacional</option>
+                        <option value="6">Hospitalar</option>
+                    </select>
+                </div>
+                <div class="calc-input-group">
+                    <label for="rtsie-area">Area total (m&sup2;)</label>
+                    <input type="number" id="rtsie-area" value="500" min="1">
+                </div>
+                <div class="calc-input-group">
+                    <label for="rtsie-pisos">Numero de pisos</label>
+                    <input type="number" id="rtsie-pisos" value="1" min="1">
+                </div>
+            </div>
+            <button class="btn-calc" onclick="calcRTSCIE()">Calcular Categoria</button>
+            <div class="calc-result" id="rtsie-result" style="display:none;">
+                <h4>Resultado</h4>
+                <ul id="rtsie-results-list"></ul>
+            </div>
+            <p class="warning">Nota: Esta calculadora fornece uma indicacao. A classificacao oficial deve ser feita por tecnico credenciado segundo o RTSCIE.</p>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Precisa de apoio tecnico especializado?</h2>
+        <p>A nossa equipa de engenheiros SCIE esta disponivel para projetos de dimensionamento, auditoria e consultoria.</p>
+        <a href="index.html#contato" class="btn-primary">Fale Connosco</a>
+    </section>
+
+    <footer>
+        <span>&copy; 2025 Eng.SCIE - Engenharia e Seguranca Contra Incendio</span>
+        <p><a href="blog.html">Artigos Tecnicos</a> | <a href="projetos.html">Projetos</a> | <a href="index.html">Inicio</a></p>
+    </footer>
+
+    <script>
+        function showResult(divId, html) {
+            const div = document.getElementById(divId);
+            const list = div.querySelector("ul");
+            div.style.display = "block";
+            list.innerHTML = html;
+        }
+
+        function calcSprinkler() {
+            const area = parseFloat(document.getElementById("sprk-area").value);
+            const densidade = parseFloat(document.getElementById("sprk-densidade").value);
+            const cobertura = parseFloat(document.getElementById("sprk-cobertura").value);
+            const fator = parseFloat(document.getElementById("sprk-fator").value);
+            const numSprinklers = Math.ceil(area / cobertura);
+            const fluxo = area * densidade * fator;
+            const fluxoPorSprinkler = fluxo / numSprinklers;
+            const html = "<li><strong>Numero de sprinklers:</strong> " + numSprinklers + "</li>" +
+                         "<li><strong>Fluxo total:</strong> " + fluxo.toFixed(1) + " l/min</li>" +
+                         "<li><strong>Fluxo por sprinkler:</strong> " + fluxoPorSprinkler.toFixed(1) + " l/min</li>";
+            showResult("sprk-result", html);
+        }
+
+        function calcQueda() {
+            const vazao = parseFloat(document.getElementById("queda-vazao").value);
+            const diametro = parseFloat(document.getElementById("queda-diametro").value);
+            const comprimento = parseFloat(document.getElementById("queda-comprimento").value);
+            const rugosidade = parseFloat(document.getElementById("queda-rugosidade").value);
+            const areaSecao = Math.PI * Math.pow(diametro/2000, 2);
+            const velocidade = (vazao/60000) / areaSecao;
+            const viscosidade = 0.001;
+            const rho = 1000;
+            const re = (rho * velocidade * diametro/1000) / viscosidade;
+            const f = 0.316 / Math.pow(re, 0.25);
+            const perda = (f * comprimento / (diametro/1000)) * (rho * Math.pow(velocidade, 2) / 2);
+            const bar = perda / 100000;
+            const html = "<li><strong>Velocidade:</strong> " + velocidade.toFixed(2) + " m/s</li>" +
+                         "<li><strong>Numero de Reynolds:</strong> " + Math.round(re) + "</li>" +
+                         "<li><strong>Fator atrito (Blasius):</strong> " + f.toFixed(4) + "</li>" +
+                         "<li><strong>Perda de carga:</strong> " + perda.toFixed(0) + " Pa (" + bar.toFixed(3) + " bar)</li>";
+            showResult("queda-result", html);
+        }
+
+        function calcRTSCIE() {
+            const uso = parseInt(document.getElementById("rtsie-uso").value);
+            const area = parseFloat(document.getElementById("rtsie-area").value);
+            const pisso = parseFloat(document.getElementById("rtsie-pisos").value);
+            let categoria, observacoes;
+            const usos = ["Habitacional", "Administrativo", "Comercial", "Industrial", "Educacional", "Hospitalar"];
+            if (area <= 200) { categoria = "Isento"; observacoes = "Edificio isento de SCIE"; }
+            else if (area <= 1000 && pisso <= 2 && (uso === 2 || uso === 3)) { categoria = "1\u00aa cat."; observacoes = "Requisitos basicos"; }
+            else if (area <= 5000 && pisso <= 4) { categoria = "2\u00aa cat."; observacoes = "Detectores + extintores + sinalizacao"; }
+            else if (uso === 6 || pisso > 4 || area > 5000) { categoria = "3\u00aa cat."; observacoes = "Sistema completo: deteccao, alarme, evacuacao"; }
+            else { categoria = "2\u00aa cat."; observacoes = "Verificar在使用 DL 224/2015"; }
+            const html = "<li><strong>Uso:</strong> " + usos[uso-1] + "</li>" +
+                         "<li><strong>Area:</strong> " + area + " m²</li>" +
+                         "<li><strong>Pisos:</strong> " + pisso + "</li>" +
+                         "<li><strong>Categoria indicativa:</strong> " + categoria + "</li>" +
+                         "<li><strong>Observacoes:</strong> " + observacoes + "</li>";
+            showResult("rtsie-result", html);
+        }
+    </script>
+</body>
+</html>
