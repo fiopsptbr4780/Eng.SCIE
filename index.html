@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt">
+  <html lang="pt">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -362,6 +362,7 @@
             <li><a href="ferramentas.html">Ferramentas</a></li>
   </ul>
 </nav>
+  <main>
 
 <!-- HERO -->
 <section class="hero">
@@ -578,10 +579,10 @@
     </div>
 
     <form onsubmit="handleSubmit(event)">
-      <input type="text" placeholder="Nome completo" required />
-      <input type="email" placeholder="E-mail" required />
-      <input type="tel" placeholder="Telemóvel (opcional)" />
-      <select required>
+      <input type="text" placeholder="Nome completo" required id="nome" aria-label="Nome completo" />
+      <input type="email" placeholder="E-mail" required id="email" aria-label="Endereco de e-mail" />
+      <input type="tel" placeholder="Telemóvel (opcional)" id="telefone" aria-label="Numero de telefone" />
+      <select required> id="servico" aria-label="Tipo de servico"
         <option value="" disabled selected>Tipo de serviço</option>
         <option>Projeto SCIE</option>
         <option>Sistema de Sprinklers</option>
@@ -596,6 +597,7 @@
     </form>
   </div>
 </section>
+    </main>
 
 <!-- FOOTER -->
 <footer>
