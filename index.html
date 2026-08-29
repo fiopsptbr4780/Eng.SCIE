@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-  <html lang="pt">
+<html lang="pt">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Engenharia & SCIE | Consultor Freelancer</title>
-          <meta name="description" content="Engenharia & SCIE em Lisboa. Consultor freelancer especializado em sistemas SCIE, HVAC, sprinklers e instalacoes tecnicas. Projetos com responsabilidade total conforme normas NFPC e Direcao dos Engenheiros.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Engenharia & SCIE | Consultoria Técnica</title>
+  <meta name="description" content="Engenharia Mecânica e SCIE. Projetos de segurança contra incêndios, piping industrial e consultoria técnica em Portugal.">
   <style>
     :root {
       --primary: #1a3a5c;
@@ -16,7 +16,11 @@
       --border: #dde3ec;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
@@ -38,25 +42,46 @@
       height: 64px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.18);
     }
+
     .nav-logo {
       color: var(--white);
       font-size: 1.2rem;
       font-weight: 700;
       letter-spacing: 1px;
     }
-    .nav-logo span { color: var(--accent); }
+
+    .nav-logo span {
+      color: var(--accent);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      color: var(--white);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 4px 8px;
+    }
+
     nav ul {
       list-style: none;
       display: flex;
       gap: 28px;
+      margin: 0;
+      padding: 0;
     }
+
     nav ul li a {
       color: #ccd8e8;
       text-decoration: none;
       font-size: 0.95rem;
       transition: color 0.2s;
     }
-    nav ul li a:hover { color: var(--accent); }
+
+    nav ul li a:hover {
+      color: var(--accent);
+    }
 
     /* HERO */
     .hero {
@@ -68,7 +93,12 @@
       gap: 40px;
       flex-wrap: wrap;
     }
-    .hero-text { flex: 1; min-width: 280px; }
+
+    .hero-text {
+      flex: 1;
+      min-width: 280px;
+    }
+
     .hero-text .badge {
       display: inline-block;
       background: var(--accent);
@@ -81,19 +111,30 @@
       border-radius: 20px;
       margin-bottom: 18px;
     }
+
     .hero-text h1 {
       font-size: 2.6rem;
       line-height: 1.2;
       margin-bottom: 18px;
     }
-    .hero-text h1 span { color: var(--accent); }
+
+    .hero-text h1 span {
+      color: var(--accent);
+    }
+
     .hero-text p {
       font-size: 1.1rem;
       color: #b8cde2;
       max-width: 540px;
       margin-bottom: 32px;
     }
-    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .hero-btns {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
     .btn-primary {
       background: var(--accent);
       color: var(--white);
@@ -105,8 +146,14 @@
       cursor: pointer;
       text-decoration: none;
       transition: background 0.2s, transform 0.1s;
+      display: inline-block;
     }
-    .btn-primary:hover { background: #c44e12; transform: translateY(-1px); }
+
+    .btn-primary:hover {
+      background: #c44e12;
+      transform: translateY(-1px);
+    }
+
     .btn-outline {
       background: transparent;
       color: var(--white);
@@ -118,30 +165,49 @@
       cursor: pointer;
       text-decoration: none;
       transition: border-color 0.2s, color 0.2s;
+      display: inline-block;
     }
-    .btn-outline:hover { border-color: var(--white); color: var(--white); }
+
+    .btn-outline:hover {
+      border-color: var(--white);
+      color: var(--white);
+    }
+
     .hero-card {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius: 16px;
       padding: 32px 28px;
       min-width: 240px;
       flex-shrink: 0;
     }
-    .hero-card .stat { margin-bottom: 22px; }
+
+    .hero-card .stat {
+      margin-bottom: 22px;
+    }
+
     .hero-card .stat-num {
       font-size: 2rem;
       font-weight: 800;
       color: var(--accent);
     }
+
     .hero-card .stat-label {
       font-size: 0.85rem;
       color: #9ab8d0;
     }
-    .hero-card hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 10px 0; }
+
+    .hero-card hr {
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin: 10px 0;
+    }
 
     /* SECTION BASE */
-    section { padding: 72px 5%; }
+    section {
+      padding: 72px 5%;
+    }
+
     .section-label {
       font-size: 0.78rem;
       font-weight: 700;
@@ -150,11 +216,13 @@
       color: var(--accent);
       margin-bottom: 8px;
     }
+
     .section-title {
       font-size: 2rem;
       color: var(--primary);
       margin-bottom: 12px;
     }
+
     .section-sub {
       color: var(--muted);
       font-size: 1rem;
@@ -163,12 +231,16 @@
     }
 
     /* SERVIÇOS */
-    #servicos { background: var(--light); }
+    #servicos {
+      background: var(--light);
+    }
+
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 24px;
     }
+
     .service-card {
       background: var(--white);
       border-radius: 12px;
@@ -176,23 +248,28 @@
       border: 1px solid var(--border);
       transition: box-shadow 0.2s, transform 0.2s;
     }
+
     .service-card:hover {
-      box-shadow: 0 8px 28px rgba(26,58,92,0.12);
+      box-shadow: 0 8px 28px rgba(26, 58, 92, 0.12);
       transform: translateY(-3px);
     }
+
     .service-icon {
       font-size: 2.2rem;
       margin-bottom: 14px;
     }
+
     .service-card h3 {
       font-size: 1.1rem;
       color: var(--primary);
       margin-bottom: 10px;
     }
+
     .service-card p {
       font-size: 0.92rem;
       color: var(--muted);
     }
+
     .service-tag {
       display: inline-block;
       background: #e8f0fb;
@@ -205,21 +282,35 @@
     }
 
     /* SOBRE */
-    #sobre { background: var(--white); }
+    #sobre {
+      background: var(--white);
+    }
+
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 48px;
       align-items: start;
     }
-    @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; } }
-    .about-text p { color: var(--muted); margin-bottom: 16px; }
+
+    @media (max-width: 768px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
     .credentials {
       display: flex;
       flex-direction: column;
       gap: 14px;
       margin-top: 8px;
     }
+
     .credential-item {
       display: flex;
       align-items: center;
@@ -229,11 +320,32 @@
       padding: 14px 18px;
       border-left: 4px solid var(--accent);
     }
-    .credential-item .cred-icon { font-size: 1.5rem; }
-    .credential-item .cred-title { font-weight: 700; font-size: 0.95rem; color: var(--primary); }
-    .credential-item .cred-sub { font-size: 0.82rem; color: var(--muted); }
-    .skills-wrap { margin-top: 24px; }
-    .skills-wrap h4 { color: var(--primary); margin-bottom: 14px; font-size: 1rem; }
+
+    .credential-item .cred-icon {
+      font-size: 1.5rem;
+    }
+
+    .credential-item .cred-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--primary);
+    }
+
+    .credential-item .cred-sub {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .skills-wrap {
+      margin-top: 24px;
+    }
+
+    .skills-wrap h4 {
+      color: var(--primary);
+      margin-bottom: 14px;
+      font-size: 1rem;
+    }
+
     .skill-pill {
       display: inline-block;
       background: var(--primary);
@@ -245,13 +357,17 @@
     }
 
     /* PROCESSO */
-    #processo { background: var(--light); }
+    #processo {
+      background: var(--light);
+    }
+
     .process-steps {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 24px;
       counter-reset: step;
     }
+
     .step-card {
       background: var(--white);
       border-radius: 12px;
@@ -259,6 +375,7 @@
       border: 1px solid var(--border);
       position: relative;
     }
+
     .step-num {
       width: 40px;
       height: 40px;
@@ -272,36 +389,97 @@
       font-size: 1rem;
       margin-bottom: 14px;
     }
-    .step-card h3 { color: var(--primary); font-size: 1rem; margin-bottom: 8px; }
-    .step-card p { font-size: 0.88rem; color: var(--muted); }
+
+    .step-card h3 {
+      color: var(--primary);
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .step-card p {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
 
     /* CONTACTO */
-    #contacto { background: var(--primary); color: var(--white); }
-    #contacto .section-title { color: var(--white); }
-    #contacto .section-sub { color: #9ab8d0; }
+    #contacto {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    #contacto .section-title {
+      color: var(--white);
+    }
+
+    #contacto .section-sub {
+      color: #9ab8d0;
+    }
+
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 48px;
       align-items: start;
     }
-    @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
-    .contact-info { display: flex; flex-direction: column; gap: 18px; }
+
+    @media (max-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
     .contact-item {
       display: flex;
       align-items: center;
       gap: 14px;
-      background: rgba(255,255,255,0.06);
+      background: rgba(255, 255, 255, 0.06);
       border-radius: 8px;
       padding: 16px 18px;
     }
-    .contact-item .ci-icon { font-size: 1.5rem; }
-    .contact-item .ci-label { font-size: 0.78rem; color: #7fa8c8; text-transform: uppercase; letter-spacing: 1px; }
-    .contact-item .ci-val { font-size: 0.98rem; color: var(--white); font-weight: 600; }
-    form { display: flex; flex-direction: column; gap: 16px; }
-    form input, form textarea, form select {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.15);
+
+    .contact-item .ci-icon {
+      font-size: 1.5rem;
+    }
+
+    .contact-item .ci-label {
+      font-size: 0.78rem;
+      color: #7fa8c8;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .contact-item .ci-val {
+      font-size: 0.98rem;
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    .contact-item a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    form input,
+    form textarea,
+    form select {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius: 8px;
       padding: 13px 16px;
       color: var(--white);
@@ -310,12 +488,28 @@
       outline: none;
       transition: border-color 0.2s;
     }
-    form input::placeholder, form textarea::placeholder { color: #7fa8c8; }
-    form input:focus, form textarea:focus, form select:focus {
+
+    form input::placeholder,
+    form textarea::placeholder {
+      color: #7fa8c8;
+    }
+
+    form input:focus,
+    form textarea:focus,
+    form select:focus {
       border-color: var(--accent);
     }
-    form textarea { resize: vertical; min-height: 110px; }
-    form select option { background: var(--primary); color: var(--white); }
+
+    form textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    form select option {
+      background: var(--primary);
+      color: var(--white);
+    }
+
     form button {
       background: var(--accent);
       color: var(--white);
@@ -327,7 +521,19 @@
       cursor: pointer;
       transition: background 0.2s;
     }
-    form button:hover { background: #c44e12; }
+
+    form button:hover {
+      background: #c44e12;
+    }
+
+    .form-note {
+      font-size: 0.82rem;
+      color: #9ab8d0;
+    }
+
+    .form-note a {
+      color: #cfe4f5;
+    }
 
     /* FOOTER */
     footer {
@@ -337,39 +543,78 @@
       padding: 28px 5%;
       font-size: 0.88rem;
     }
-    footer span { color: var(--accent); font-weight: 700; }
+
+    footer span {
+      color: var(--accent);
+      font-weight: 700;
+    }
 
     /* RESPONSIVE NAV */
-    @media (max-width: 640px) {
-      nav ul { gap: 14px; }
-      .hero-text h1 { font-size: 1.8rem; }
-      .section-title { font-size: 1.5rem; }
+    @media (max-width: 900px) {
+      .nav-toggle {
+        display: block;
+      }
+
+      nav ul {
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: var(--primary);
+        flex-direction: column;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.25s ease;
+        padding: 0;
+      }
+
+      nav ul.open {
+        max-height: 400px;
+      }
+
+      nav ul li {
+        padding: 12px 5%;
+        border-top: 1px solid rgba(255,255,255,0.08);
+      }
+
+      .hero-text h1 {
+        font-size: 1.8rem;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
 
 <!-- NAVEGAÇÃO -->
-<nav>
+<nav aria-label="Menu principal">
   <div class="nav-logo">Eng.<span>SCIE</span></div>
-  <ul>
+  <button class="nav-toggle" aria-label="Abrir menu" id="navToggle">☰</button>
+  <ul id="navMenu">
     <li><a href="#servicos">Serviços</a></li>
     <li><a href="#sobre">Sobre</a></li>
     <li><a href="#processo">Como Funciona</a></li>
     <li><a href="#contacto">Contacto</a></li>
-            <li><a href="projetos.html">Projetos</a></li>
-            <li><a href="blog.html">Artigos</a></li>
-            <li><a href="ferramentas.html">Ferramentas</a></li>
+    <li><a href="projetos.html">Projetos</a></li>
+    <li><a href="blog.html">Artigos</a></li>
+    <li><a href="ferramentas.html">Ferramentas</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="privacidade.html">Privacidade</a></li>
   </ul>
 </nav>
-  <main>
+
+<main>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-text">
-    <div class="badge">Consultor Freelancer · Lisboa, Portugal</div>
+    <div class="badge">Consultoria Técnica · Aveiro, Portugal</div>
     <h1>Engenharia Mecânica<br>& <span>SCIE</span> ao seu serviço</h1>
-    <p>Projetos de segurança contra incêndios, piping industrial e consultoria técnica — com rigor, experiência e cumprimento total das normas ANEPC e Ordem dos Engenheiros.</p>
+    <p>Projetos de segurança contra incêndios, piping industrial e consultoria técnica — com rigor, experiência e conformidade com a legislação e normas técnicas aplicáveis.</p>
     <div class="hero-btns">
       <a href="#contacto" class="btn-primary">Pedir Orçamento</a>
       <a href="#servicos" class="btn-outline">Ver Serviços</a>
@@ -377,18 +622,18 @@
   </div>
   <div class="hero-card">
     <div class="stat">
-      <div class="stat-num">+5 anos</div>
-      <div class="stat-label">Experiência em SCIE</div>
+      <div class="stat-num">SCIE</div>
+      <div class="stat-label">Projetos de segurança contra incêndios</div>
     </div>
     <hr>
     <div class="stat">
-      <div class="stat-num">ANEPC</div>
-      <div class="stat-label">Projetista reconhecido</div>
+      <div class="stat-num">Piping</div>
+      <div class="stat-label">Tubagens industriais e P&ID</div>
     </div>
     <hr>
     <div class="stat">
-      <div class="stat-num">OE Nível 2</div>
-      <div class="stat-label">Ordem dos Engenheiros</div>
+      <div class="stat-num">Portugal</div>
+      <div class="stat-label">Atendimento em todo o território e ilhas</div>
     </div>
   </div>
 </section>
@@ -400,12 +645,11 @@
   <p class="section-sub">Soluções técnicas completas desde a conceção do projeto até à submissão e acompanhamento em obra.</p>
 
   <div class="services-grid">
-
     <div class="service-card">
       <div class="service-icon">🔥</div>
       <h3>Projeto SCIE</h3>
-      <p>Elaboração de projetos de segurança contra incêndios em edifícios, conforme RTSCIE e legislação em vigor. Submissão e acompanhamento ANEPC.</p>
-      <span class="service-tag">RTSCIE · ANEPC</span>
+      <p>Elaboração de projetos de segurança contra incêndios em edifícios, conforme RTSCIE e legislação em vigor. Apoio na submissão e acompanhamento junto das autoridades.</p>
+      <span class="service-tag">RTSCIE · SCIE</span>
     </div>
 
     <div class="service-card">
@@ -439,10 +683,9 @@
     <div class="service-card">
       <div class="service-icon">📋</div>
       <h3>Consultoria Técnica</h3>
-      <p>Revisão de projetos, pareceres técnicos, acompanhamento de obras e apoio na resposta a pedidos de esclarecimento da ANEPC.</p>
+      <p>Revisão de projetos, pareceres técnicos, acompanhamento de obras e apoio na resposta a pedidos de esclarecimento.</p>
       <span class="service-tag">Consultoria · Revisão</span>
     </div>
-
   </div>
 </section>
 
@@ -454,29 +697,22 @@
 
   <div class="about-grid">
     <div class="about-text">
-      <p>Sou engenheiro mecânico com experiência sólida em projeto de segurança contra incêndios (SCIE), instalações industriais e sistemas de piping. Tenho trabalhado em projetos de edifícios de habitação, comércio, indústria e infraestruturas energéticas, incluindo centrais termoelétricas nos Açores.</p>
-      <p>Baseado em Lisboa, presto serviços a escritórios de projeto, empresas de construção e promotores imobiliários que necessitam de um consultor técnico especializado, com prazos cumpridos e total conformidade regulamentar.</p>
+      <p>Sou engenheiro mecânico com experiência em projeto de segurança contra incêndios (SCIE), instalações industriais e sistemas de piping. Tenho trabalhado em projetos de edifícios de habitação, comércio, indústria e infraestruturas energéticas.</p>
+      <p>Baseado em Aveiro, presto serviços a escritórios de projeto, empresas de construção e promotores imobiliários que necessitam de um consultor técnico especializado, com prazos cumpridos e conformidade com a regulamentação aplicável.</p>
 
       <div class="credentials">
         <div class="credential-item">
-          <div class="cred-icon">🏛️</div>
-          <div>
-            <div class="cred-title">Ordem dos Engenheiros — Nível 2</div>
-            <div class="cred-sub">Membro desde 2020 · Especialidade Mecânica</div>
-          </div>
-        </div>
-        <div class="credential-item">
-          <div class="cred-icon">🔥</div>
-          <div>
-            <div class="cred-title">Projetista SCIE Reconhecido</div>
-            <div class="cred-sub">ANEPC — Autoridade Nacional de Emergência e Proteção Civil</div>
-          </div>
-        </div>
-        <div class="credential-item">
           <div class="cred-icon">📍</div>
           <div>
-            <div class="cred-title">Lisboa, Portugal</div>
-            <div class="cred-sub">Projetos presenciais e remotos em todo o território nacional</div>
+            <div class="cred-title">Aveiro, Portugal</div>
+            <div class="cred-sub">Projetos presenciais e remotos em todo o território nacional e ilhas</div>
+          </div>
+        </div>
+        <div class="credential-item">
+          <div class="cred-icon">🏗️</div>
+          <div>
+            <div class="cred-title">Engenharia Mecânica</div>
+            <div class="cred-sub">Foco em SCIE, piping industrial e documentação técnica</div>
           </div>
         </div>
       </div>
@@ -486,7 +722,6 @@
       <div class="skills-wrap">
         <h4>Competências Técnicas</h4>
         <span class="skill-pill">SCIE / RTSCIE</span>
-        <span class="skill-pill">ANEPC</span>
         <span class="skill-pill">Sprinklers EN 12845</span>
         <span class="skill-pill">Sistemas de Espuma</span>
         <span class="skill-pill">SADI / EN 54</span>
@@ -496,8 +731,6 @@
         <span class="skill-pill">Isométricos</span>
         <span class="skill-pill">Equipamentos sob Pressão</span>
         <span class="skill-pill">Piping Industrial</span>
-        <span class="skill-pill">Centrais Termoelétricas</span>
-        <span class="skill-pill">Microsoft Excel</span>
         <span class="skill-pill">Cálculo Hidráulico</span>
         <span class="skill-pill">Normas EN / NP / ISO</span>
       </div>
@@ -535,7 +768,7 @@
     <div class="step-card">
       <div class="step-num">5</div>
       <h3>Suporte Pós-Entrega</h3>
-      <p>Apoio na resposta a questões da ANEPC, câmaras municipais ou fiscalização durante o processo de aprovação.</p>
+      <p>Apoio na resposta a questões de autoridades, câmaras municipais ou fiscalização durante o processo de aprovação.</p>
     </div>
   </div>
 </section>
@@ -552,37 +785,60 @@
         <div class="ci-icon">📧</div>
         <div>
           <div class="ci-label">E-mail</div>
-          <div class="ci-val">seuemail@exemplo.com</div>
+          <!-- Substitua pelo seu e-mail real -->
+          <div class="ci-val">
+            <a href="mailto:tlsengmecanico@gmail.com">tlsengmecanico@gmail.com</a>
+          </div>
         </div>
       </div>
       <div class="contact-item">
         <div class="ci-icon">📱</div>
         <div>
           <div class="ci-label">Telemóvel / WhatsApp</div>
-          <div class="ci-val">+351 9XX XXX XXX</div>
+          <!-- Opcional: substitua pelo seu número -->
+          <div class="ci-val">
+            <a href="tel:+351911883687">+351 911 883 687</a>
+          </div>
         </div>
       </div>
       <div class="contact-item">
         <div class="ci-icon">🔗</div>
         <div>
           <div class="ci-label">LinkedIn</div>
-          <div class="ci-val">linkedin.com/in/seuperfil</div>
+          <!-- Opcional: substitua pelo seu perfil -->
+          <! div class="ci-val">
+            <! a href="https://www.linkedin.com/in/o-seu-perfil/" target="_blank" rel="noopener noreferrer">
+             ! Ver perfil no LinkedIn
+            <! /a>
+          <! /div>
         </div>
       </div>
       <div class="contact-item">
         <div class="ci-icon">📍</div>
         <div>
           <div class="ci-label">Localização</div>
-          <div class="ci-val">Lisboa, Portugal · Projetos em todo o país</div>
+          <div class="ci-val">Aveiro, Portugal · Projetos em todo o país e ilhas</div>
         </div>
       </div>
     </div>
 
-    <form onsubmit="handleSubmit(event)">
-      <input type="text" placeholder="Nome completo" required id="nome" aria-label="Nome completo" />
-      <input type="email" placeholder="E-mail" required id="email" aria-label="Endereco de e-mail" />
-      <input type="tel" placeholder="Telemóvel (opcional)" id="telefone" aria-label="Numero de telefone" />
-      <select required> id="servico" aria-label="Tipo de servico"
+    <!-- Formulário com FormSubmit (gratuito) -->
+    <!-- Substitua SEU_EMAIL_AQUI@exemplo.pt pelo seu e-mail real -->
+    <form
+      action="https://formsubmit.co/tlsengmecanico@gmail.com"
+      method="POST"
+    >
+      <!-- Redirecionamento após envio (opcional) -->
+      <input type="hidden" name="_next" value="https://fiopsptbr4780.github.io/Eng.SCIE/" />
+      <!-- Assunto do e-mail -->
+      <input type="hidden" name="_subject" value="Novo pedido de orçamento – Site Eng.SCIE" />
+      <!-- Desativar captcha (opcional, remova se quiser captcha) -->
+      <input type="hidden" name="_captcha" value="false" />
+
+      <input type="text" name="nome" placeholder="Nome completo" required aria-label="Nome completo" />
+      <input type="email" name="email" placeholder="E-mail" required aria-label="Endereço de e-mail" />
+      <input type="tel" name="telefone" placeholder="Telemóvel (opcional)" aria-label="Número de telefone" />
+      <select name="servico" required aria-label="Tipo de serviço">
         <option value="" disabled selected>Tipo de serviço</option>
         <option>Projeto SCIE</option>
         <option>Sistema de Sprinklers</option>
@@ -592,17 +848,30 @@
         <option>Consultoria Técnica</option>
         <option>Outro</option>
       </select>
-      <textarea placeholder="Descreva o seu projeto (tipo de edifício, área, localização, prazo...)"></textarea>
+      <textarea name="mensagem" placeholder="Descreva o seu projeto (tipo de edifício, área, localização, prazo...)"></textarea>
+
+      <label style="font-size:0.82rem; color:#9ab8d0;">
+        <input type="checkbox" name="privacidade" required />
+        Li e aceito a
+        <a href="privacidade.html" style="color:#cfe4f5;">Política de Privacidade</a>.
+      </label>
+
       <button type="submit">📩 Enviar Pedido</button>
+      <p class="form-note">
+        Os dados são enviados de forma segura e utilizados apenas para responder ao seu pedido. Consulte a
+        <a href="privacidade.html">Política de Privacidade</a> para mais informações.
+      </p>
     </form>
   </div>
 </section>
-    </main>
+</main>
 
 <!-- FOOTER -->
 <footer>
-  <p>&copy; 2026 <span>Engenharia &amp; SCIE Freelancer</span> · Lisboa, Portugal · Todos os direitos reservados</p>
-  <p style="margin-top:6px; font-size:0.8rem;">Membro da Ordem dos Engenheiros · Projetista SCIE reconhecido pela ANEPC</p>
+  <p>&copy; 2026 <span>Engenharia &amp; SCIE</span> · Aveiro, Portugal · Todos os direitos reservados</p>
+  <p style="margin-top:6px; font-size:0.8rem;">
+    Projetos desenvolvidos com base na legislação, regulamentação e normas técnicas aplicáveis.
+  </p>
 </footer>
 
 <script>
@@ -615,14 +884,25 @@
     });
   });
 
-  // Form submission feedback
-  function handleSubmit(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('button');
-    btn.textContent = '✅ Pedido enviado! Responderei em breve.';
-    btn.style.background = '#1a7a3c';
-    btn.disabled = true;
-  }
+  // Menu móvel
+  const navToggle = document.getElementById('navToggle');
+  const navMenu = document.getElementById('navMenu');
+
+  navToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('open');
+    const isOpen = navMenu.classList.contains('open');
+    navToggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+    navToggle.textContent = isOpen ? '✕' : '☰';
+  });
+
+  // Fechar menu ao clicar num link
+  navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('open');
+      navToggle.setAttribute('aria-label', 'Abrir menu');
+      navToggle.textContent = '☰';
+    });
+  });
 </script>
 
 </body>
