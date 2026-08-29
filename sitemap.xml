@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Página Principal -->
+  <url>
+    <loc>https://fiopsptbr4780.github.io/Eng.SCIE/</loc>
+    <lastmod>2024-08-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Portfólio -->
+  <url>
+    <loc>https://fiopsptbr4780.github.io/Eng.SCIE/portfolio_engenharia_scie.html</loc>
+    <lastmod>2024-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Projetos Realizados -->
+  <url>
+    <loc>https://fiopsptbr4780.github.io/Eng.SCIE/projetos.html</loc>
+    <lastmod>2024-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Ferramentas -->
+  <url>
+    <loc>https://fiopsptbr4780.github.io/Eng.SCIE/ferramentas.html</loc>
+    <lastmod>2024-08-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- FAQ -->
+  <url>
+    <loc>https://fiopsptbr4780.github.io/Eng.SCIE/faq.html</loc>
+    <lastmod>2024-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Blog -->
+  <url>
+    <loc>https://fiopsptbr4780.github.io/Eng.SCIE/blog.html</loc>
+    <lastmod>2024-08-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Política de Privacidade -->
+  <url>
+    <loc>https://fiopsptbr4780.github.io/Eng.SCIE/privacidade.html</loc>
+    <lastmod>2024-08-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+</urlset>
