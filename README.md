@@ -112,10 +112,10 @@ As normas e diplomas mencionados neste projeto são referências técnicas de us
 
 | Canal | Dados |
 |-------|-------|
-| E-mail | fiopsptbr@gmail.com |
-| Telemóvel / WhatsApp | +351 911 883 387 |
-| LinkedIn | [linkedin.com/in/seuperfil](https://linkedin.com/in/seuperfil) |
-| Localização | Lisboa, Portugal (projetos em todo o país) |
+| E-mail | - |
+| Telemóvel / WhatsApp | - |
+| LinkedIn | - |
+| Localização | Portugal (projetos em todo o país) |
 
 ---
 
@@ -125,4 +125,4 @@ Este projeto é distribuído sob a licença [MIT](https://opensource.org/license
 
 ---
 
-© 2026 — Engenharia e SCIE · [fiopsptbr4780](https://github.com/fiopsptbr4780) · Lisboa, Portugal
+© 2026 — Engenharia e SCIE · [fiopsptbr4780](https://github.com/fiopsptbr4780) · Portugal
