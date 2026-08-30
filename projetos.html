@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Estudos de caso e experiência aplicada em projetos de Segurança Contra Incêndio (SCIE): instalações industriais, edifícios residenciais e integração com instalações técnicas.">
-    <meta name="keywords" content="projetos SCIE Portugal, RTSCIE, ANEPC, segurança contra incêndio, análise de risco de incêndio, avaliação SCIE edifícios existentes, instalações industriais, compartimentação corta-fogo">
-    <meta name="author" content="Engenharia e SCIE">
-    <title>Projetos e Experiência em SCIE | Engenharia e Segurança Contra Incêndio em Portugal</title>
+    <meta name="description" content="Estudos de caso e experiência aplicada em projetos de Segurança Contra Incêndio em Edifícios (SCIE): instalações industriais, edifícios residenciais e integração com instalações técnicas.">
+    <meta name="keywords" content="projetos SCIE Portugal, RT-SCIE, ANEPC, segurança contra incêndio, análise de risco, avaliação SCIE edifícios existentes, instalações industriais, compartimentação corta-fogo">
+    <meta name="author" content="Engenharia & SCIE">
+    <title>Projetos e Experiência em SCIE | Engenharia de Segurança Contra Incêndio</title>
     
-    <!-- JSON-LD Schema para Experiência em Projetos -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -23,18 +22,9 @@
       "mainEntity": {
         "@type": "ItemList",
         "itemListElement": [
-          {
-            "@type": "ListItem",
-            "name": "Instalações Industriais de Energia"
-          },
-          {
-            "@type": "ListItem",
-            "name": "Avaliação SCIE em Edifício Residencial"
-          },
-          {
-            "@type": "ListItem",
-            "name": "Integração SCIE e Instalações Técnicas"
-          }
+          { "@type": "ListItem", "name": "Instalações Industriais de Energia" },
+          { "@type": "ListItem", "name": "Avaliação SCIE em Edifício Residencial" },
+          { "@type": "ListItem", "name": "Integração SCIE e Instalações Técnicas" }
         ]
       }
     }
@@ -44,9 +34,10 @@
         :root{--primary:#1a3a5c;--accent:#e05c1a;--light:#f4f7fb;--text:#2d2d2d;--muted:#6b7280;--white:#ffffff;--border:#dde3ec}
         *{margin:0;padding:0;box-sizing:border-box}
         body{font-family:'Segoe UI',Arial,sans-serif;color:var(--text);background:var(--white);line-height:1.7}
-        nav{background:var(--primary);position:sticky;top:0;z-index:999;display:flex;justify-content:space-between;align-items:center;padding:0 5%;height:64px}
+        nav{background:var(--primary);position:sticky;top:0;z-index:999;display:flex;justify-content:space-between;align-items:center;padding:0 5%;height:64px;box-shadow:0 2px 8px rgba(0,0,0,0.18)}
         .nav-logo{color:var(--white);font-size:1.2rem;font-weight:700;letter-spacing:1px;text-decoration:none}
         .nav-logo span{color:var(--accent)}
+        .nav-toggle{display:none;background:transparent;border:none;color:var(--white);font-size:1.5rem;cursor:pointer;padding:4px 8px}
         nav ul{list-style:none;display:flex;gap:24px}
         nav ul li a{color:#ccd8e8;text-decoration:none;font-size:0.95rem;transition:color 0.2s}
         nav ul li a:hover,nav ul li a.active{color:var(--accent)}
@@ -85,38 +76,48 @@
         .cta-section p{color:#b8cde2;max-width:500px;margin:0 auto 28px}
         .cta-section a{display:inline-block;background:var(--accent);color:var(--white);padding:14px 32px;border-radius:8px;font-weight:700;text-decoration:none;transition:transform 0.2s,background 0.2s}
         .cta-section a:hover{transform:translateY(-2px);background:#c44c0e}
-        footer{background:#0d1f33;color:#9aa6b7;text-align:center;padding:42px 5%;font-size:0.88rem}
-        footer a{color:#ccd8e8;text-decoration:none;margin:0 8px}
+        footer{background:#0f2238;color:#7fa8c8;text-align:center;padding:28px 5%;font-size:0.88rem}
+        footer span{color:var(--accent);font-weight:700}
+        footer a{color:#7fa8c8;text-decoration:none;margin:0 8px}
         footer a:hover{color:var(--accent)}
-        @media(max-width:600px){nav ul{display:none}.hero h1{font-size:1.8rem}.projects-grid{grid-template-columns:1fr}.section-title{font-size:1.5rem}}
+        @media(max-width:900px){
+            .nav-toggle{display:block}
+            nav ul{position:absolute;top:64px;left:0;right:0;background:var(--primary);flex-direction:column;gap:0;max-height:0;overflow:hidden;transition:max-height 0.25s ease;padding:0}
+            nav ul.open{max-height:400px}
+            nav ul li{padding:12px 5%;border-top:1px solid rgba(255,255,255,0.08)}
+        }
+        @media(max-width:600px){.hero h1{font-size:1.8rem}.projects-grid{grid-template-columns:1fr}.section-title{font-size:1.5rem}}
     </style>
 </head>
 <body>
     <nav>
         <a href="index.html" class="nav-logo">Eng<span>.SCIE</span></a>
-        <ul>
+        <button class="nav-toggle" aria-label="Abrir menu" id="navToggle">☰</button>
+        <ul id="navMenu">
             <li><a href="index.html">Início</a></li>
             <li><a href="projetos.html" class="active">Projetos</a></li>
             <li><a href="blog.html">Artigos</a></li>
+            <li><a href="ferramentas.html">Ferramentas</a></li>
+            <li><a href="faq.html">FAQ</a></li>
             <li><a href="index.html#contacto">Contacto</a></li>
         </ul>
     </nav>
 
     <header class="hero">
         <h1>Projetos e Experiência em SCIE</h1>
-        <p>Estudos de caso baseados em projetos reais de Segurança Contra Incêndio, com foco no contexto, no desafio técnico e nas soluções desenvolvidas.</p>
+        <p>Estudos de caso baseados em projetos reais de Segurança Contra Incêndio em Edifícios, com foco no contexto, no desafio técnico e nas soluções desenvolvidas.</p>
     </header>
 
     <section>
-        <div class="section-label">Segurança Contra Incêndio</div>
+        <div class="section-label">Segurança Contra Incêndio em Edifícios</div>
         <h2 class="section-title">Experiência Aplicada</h2>
-        <p class="section-sub" style="max-width:820px">A experiência em Segurança Contra Incêndio resulta da participação em projetos industriais, edifícios de utilização comum e empreendimentos residenciais, abrangendo a análise das condições existentes, a definição de soluções técnicas e o desenvolvimento da documentação de apoio ao licenciamento e à exploração dos edifícios. Os projetos foram desenvolvidos com especial atenção à integração entre arquitetura, instalações técnicas, equipamentos, redes de tubagem e requisitos de SCIE.</p>
+        <p class="section-sub" style="max-width:820px">A experiência em Segurança Contra Incêndio resulta da participação em projetos industriais, edifícios de utilização comum e empreendimentos residenciais, abrangendo a análise das condições existentes, a definição de soluções técnicas e o desenvolvimento da documentação de apoio ao licenciamento e à exploração dos edifícios, conforme RT-SCIE e Regime Jurídico vigente.</p>
 
         <div class="projects-grid">
             <div class="project-card">
                 <div class="project-header">
                     <span class="ph-title">Instalações Industriais de Energia</span>
-                    <span class="ph-type">Industrial</span>
+                    <span class="ph-type">UT XII · Industrial</span>
                 </div>
                 <div class="project-body">
                     <p>Participação em projetos de instalações industriais de produção e distribuição de energia, em ambientes com requisitos elevados de continuidade de serviço, fiabilidade operacional e controlo de riscos.</p>
@@ -131,7 +132,7 @@
                     </div>
                     <details>
                         <summary>Ver mais sobre este projeto</summary>
-                        <div class="faq-answer">O trabalho envolveu a análise das características dos edifícios e equipamentos, a identificação dos principais cenários de incêndio e o enquadramento das soluções de proteção aplicáveis às diferentes áreas técnicas, incluindo zonas de produção, salas técnicas, áreas de equipamentos elétricos, espaços de apoio e zonas exteriores associadas à operação industrial. Entre as principais áreas de intervenção estiveram a análise das condições de segurança contra incêndio das instalações, a identificação de riscos associados a equipamentos e processos, a avaliação da compartimentação e da separação entre áreas de diferentes níveis de risco, a definição e verificação de soluções de proteção ativa e passiva, a análise dos meios de intervenção e acessibilidade para operações de emergência, e a compatibilização das soluções SCIE com equipamentos, tubagens e restantes instalações técnicas. Esta experiência permitiu desenvolver uma visão integrada da SCIE em instalações industriais, considerando não apenas os edifícios, mas também os equipamentos, os processos e as condições reais de exploração.</div>
+                        <div class="faq-answer">O trabalho envolveu a análise das características dos edifícios e equipamentos, a identificação dos principais cenários de incêndio e o enquadramento das soluções de proteção aplicáveis às diferentes áreas técnicas, incluindo zonas de produção, salas técnicas, áreas de equipamentos elétricos, espaços de apoio e zonas exteriores associadas à operação industrial. Entre as principais áreas de intervenção estiveram a análise das condições de segurança contra incêndio das instalações, a identificação de riscos associados a equipamentos e processos, a avaliação da compartimentação e da separação entre áreas de diferentes níveis de risco, a definição e verificação de soluções de proteção ativa e passiva, a análise dos meios de intervenção e acessibilidade para operações de emergência, e a compatibilização das soluções SCIE com equipamentos, tubagens e restantes instalações técnicas.</div>
                     </details>
                 </div>
             </div>
@@ -139,7 +140,7 @@
             <div class="project-card">
                 <div class="project-header">
                     <span class="ph-title">Avaliação SCIE em Edifício Residencial</span>
-                    <span class="ph-type">Residencial</span>
+                    <span class="ph-type">UT I · Habitacional</span>
                 </div>
                 <div class="project-body">
                     <p>Avaliação das condições de segurança contra incêndio num edifício habitacional existente, abrangendo evacuação, compartimentação, acessos, sinalização, iluminação de emergência e meios de primeira intervenção.</p>
@@ -147,14 +148,14 @@
                     <div class="project-details">
                         <div class="detail-item"><div class="d-label">Âmbito</div><div class="d-val">Edifício habitacional existente</div></div>
                         <div class="detail-item"><div class="d-label">Intervenção</div><div class="d-val">Avaliação técnica e identificação de não conformidades</div></div>
-                        <div class="detail-item"><div class="d-label">Colaboração</div><div class="d-val">Concluída</div></div>
+                        <div class="detail-item"><div class="d-label">Enquadramento</div><div class="d-val">RT-SCIE · Medidas compensatórias</div></div>
                     </div>
                     <div class="project-tags">
-                        <span class="tag accent">Evacuação</span><span class="tag">Compartimentação</span><span class="tag">Sinalização e Iluminação</span><span class="tag">1ª Intervenção</span>
+                        <span class="tag accent">Evacuação</span><span class="tag">Compartimentação</span><span class="tag">Sinalização e Iluminação</span><span class="tag">1.ª Intervenção</span>
                     </div>
                     <details>
                         <summary>Ver mais sobre este projeto</summary>
-                        <div class="faq-answer">O projeto envolveu a observação das características do edifício, das zonas comuns, dos acessos, das circulações verticais e das áreas técnicas, tendo em conta a utilização efetiva do condomínio e as necessidades de manutenção e operação. Os âmbitos analisados incluíram os acessos e a circulação para evacuação, escadas, corredores e zonas comuns, a compartimentação entre frações, áreas técnicas e espaços comuns, as portas e elementos de separação com função de resistência ao fogo, a sinalização de segurança e a iluminação de emergência, os meios de primeira intervenção, a acessibilidade para meios de socorro, e as condições de segurança em garagens, arrecadações e áreas técnicas. O trabalho foi orientado para uma abordagem prática, procurando soluções adequadas à realidade construtiva e à gestão de um edifício em utilização, e demonstra experiência na avaliação de edifícios existentes, onde a solução técnica precisa de ser compatível com as limitações construtivas, o orçamento disponível e a continuidade de utilização do espaço.</div>
+                        <div class="faq-answer">O projeto envolveu a observação das características do edifício, das zonas comuns, dos acessos, das circulações verticais e das áreas técnicas, tendo em conta a utilização efetiva do condomínio e as necessidades de manutenção e operação. Os âmbitos analisados incluíram os acessos e a circulação para evacuação, escadas, corredores e zonas comuns, a compartimentação entre frações, áreas técnicas e espaços comuns, as portas e elementos de separação com função de resistência ao fogo, a sinalização de segurança e a iluminação de emergência, os meios de primeira intervenção, a acessibilidade para meios de socorro, e as condições de segurança em garagens, arrecadações e áreas técnicas. O trabalho foi orientado para uma abordagem prática, procurando soluções adequadas à realidade construtiva e à gestão de um edifício em utilização.</div>
                     </details>
                 </div>
             </div>
@@ -162,7 +163,7 @@
             <div class="project-card">
                 <div class="project-header">
                     <span class="ph-title">Integração SCIE e Instalações Técnicas</span>
-                    <span class="ph-type">Instalações Técnicas</span>
+                    <span class="ph-type">Multidisciplinar</span>
                 </div>
                 <div class="project-body">
                     <p>Análise da interação entre os requisitos de Segurança Contra Incêndio, os equipamentos industriais, as redes de tubagem, as salas técnicas e as condições reais de exploração dos edifícios.</p>
@@ -183,16 +184,16 @@
     <section>
         <div class="section-label">Método de Trabalho</div>
         <h2 class="section-title">Competências e Abordagem</h2>
-        <p class="section-sub" style="max-width:820px">Cada projeto é analisado tendo em conta o tipo de utilização, as características construtivas, os riscos existentes e as condições reais de exploração. A abordagem inclui, normalmente, o levantamento e análise da informação disponível, a identificação dos riscos e cenários de incêndio relevantes, a verificação das condições existentes de segurança, a definição das medidas de proteção necessárias, a compatibilização com as restantes especialidades e a preparação de desenhos, memórias e elementos técnicos de apoio ao licenciamento, execução e manutenção.</p>
+        <p class="section-sub" style="max-width:820px">Cada projeto é analisado tendo em conta a utilização-tipo, as características construtivas, os riscos existentes e as condições reais de exploração, conforme RT-SCIE (Portaria n.º 1532/2008).</p>
         <div class="project-tags">
             <span class="tag accent">Análise de Risco de Incêndio</span>
             <span class="tag">Compartimentação e Resistência ao Fogo</span>
             <span class="tag">Vias de Evacuação</span>
             <span class="tag">Deteção, Alarme e Alerta</span>
-            <span class="tag">Meios de 1ª Intervenção</span>
+            <span class="tag">Meios de 1.ª Intervenção</span>
             <span class="tag">Sinalização e Iluminação de Emergência</span>
             <span class="tag">Compatibilização com Arquitetura e Instalações Mecânicas</span>
-            <span class="tag">Apoio ao Licenciamento</span>
+            <span class="tag">Apoio ao Licenciamento ANEPC</span>
         </div>
     </section>
 
@@ -203,28 +204,30 @@
 
         <div style="max-width:900px;margin:0 auto">
             <details>
+                <!-- CORRIGIDO: Referência legislativa correta -->
                 <summary>Quais normas regulam os projetos SCIE em Portugal?</summary>
-                <div class="faq-answer">Em Portugal, os projetos são regidos pelo Regime Jurídico (RJSCIE) - Decreto-Lei n.º 220/2008 na sua redação atual - e pelo Regulamento Técnico (RTSCIE) - Portaria n.º 1532/2008, que define as condições de segurança em edifícios. Para sistemas de sprinklers aplica-se ainda a norma EN 12845 e, em alguns casos, as normas NFPA (NFPA 13 para sprinklers, NFPA 11 para espuma).</div>
+                <div class="faq-answer">Em Portugal, a segurança contra incêndio em edifícios é regida pelo <strong>Decreto-Lei n.º 220/2008</strong> (Regime Jurídico da SCIE, na redação atual) e pelo <strong>RT-SCIE</strong>, aprovado pela <strong>Portaria n.º 1532/2008</strong> (com as alterações subsequentes). Para sistemas específicos aplicam-se ainda a EN 12845 (sprinklers), EN 54 (deteção), NFPA 11 (espuma) e outras normas harmonizadas.</div>
             </details>
 
             <details>
                 <summary>Que tipo de projeto preciso para a minha construção?</summary>
-                <div class="faq-answer">Depende da categoria e tipologia do edifício. Edifícios da 1ª categoria de risco requerem uma Ficha de Segurança. A partir da 2ª categoria (incluindo 3ª e 4ª), é exigido um Projeto de SCIE completo, submetido e aprovado pelas entidades competentes (Câmaras Municipais e ANEPC). Edifícios industriais, comerciais ou de serviços requerem projeto completo incluindo dimensionamento de sprinklers, deteção, compartimentação, vias de evacuação e sinalização. Conheça as <a href="servicos.html" style="color:var(--primary)">fases do projeto SCIE</a>.</div>
+                <div class="faq-answer">Depende da categoria de risco e da utilização-tipo do edifício. Edifícios de habitação da 1.ª categoria podem estar dispensados de projeto completo. Edifícios industriais, comerciais ou de serviços de 2.ª a 4.ª categorias requerem projeto de especialidade SCIE completo. <a href="index.html#servicos" style="color:var(--primary)">Conheça os serviços disponíveis</a>.</div>
             </details>
 
             <details>
                 <summary>Quanto custa um projeto SCIE?</summary>
-                <div class="faq-answer">O custo varia consoante a área, categoria de risco, tipologia do edifício e complexidade da instalação. Para obter um orçamento gratuito e personalizado, <a href="index.html#contacto" style="color:var(--primary)">entre em contacto</a> com os detalhes da sua obra.</div>
+                <div class="faq-answer">O custo varia consoante a área, categoria de risco, utilização-tipo e complexidade da instalação. Para obter um orçamento gratuito e personalizado, <a href="index.html#contacto" style="color:var(--primary)">entre em contacto</a> com os detalhes da sua obra.</div>
             </details>
 
             <details>
-                <summary>Incluem licenças e aprovações junto da ANEPC?</summary>
-                <div class="faq-answer">O projeto SCIE elaborado inclui toda a documentação técnica necessária para submissão à ANEPC (Autoridade Nacional de Emergência e Proteção Civil). O processo de aprovação é conduzido em coordenação com a entidade licenciadora, podendo incluir vistorias e alterações técnicas.</div>
+                <!-- CORRIGIDO: Terminologia correta -->
+                <summary>O projeto inclui a submissão à ANEPC?</summary>
+                <div class="faq-answer">Sim. O projeto de especialidade SCIE elaborado inclui toda a documentação técnica necessária para submissão à ANEPC (Autoridade Nacional de Emergência e Proteção Civil) ou à entidade delegada competente. O processo de aprovação é acompanhado até à emissão do parecer favorável.</div>
             </details>
 
             <details>
                 <summary>Fazem projetos para obras já em execução?</summary>
-                <div class="faq-answer">Sim, atuamos em edifícios em fase de projeto, em construção ou já existentes que careçam de regularização SCIE. Em edifícios existentes, realizamos uma avaliação técnica prévia para identificar as não conformidades e definir as medidas corretivas necessárias.</div>
+                <div class="faq-answer">Sim, atuamos em edifícios em fase de projeto, em construção ou já existentes que careçam de regularização SCIE. Em edifícios existentes, realizamos uma avaliação técnica prévia para identificar as não conformidades e definir as medidas corretivas ou compensatórias necessárias.</div>
             </details>
         </div>
     </section>
@@ -236,18 +239,29 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 Engenharia e SCIE. Todos os direitos reservados.</p>
-        <p style="margin-top:8px">Engenheiro Mecânico membro da Ordem dos Engenheiros &middot; Projetista reconhecido pela ANEPC</p>
+        <p>&copy; 2025 <span>Engenharia &amp; SCIE</span> · Aveiro, Portugal · Todos os direitos reservados</p>
+        <p style="margin-top:8px;font-size:0.82rem">Engenheiro Mecânico · Membro da Ordem dos Engenheiros · Técnico Especialista em SCIE reconhecido pela ANEPC</p>
         <p style="margin-top:12px;font-size:0.82rem">
-            <a href="index.html">Início</a> &middot;
-            <a href="projetos.html">Projetos</a> &middot;
-            <a href="blog.html">Artigos</a> &middot;
-            <a href="ferramentas.html">Ferramentas</a> &middot;
-            <a href="index.html#contacto">Contacto</a>
+            <a href="index.html">Início</a> · <a href="projetos.html">Projetos</a> · <a href="blog.html">Artigos</a> · <a href="ferramentas.html">Ferramentas</a> · <a href="faq.html">FAQ</a> · <a href="index.html#contacto">Contacto</a>
         </p>
     </footer>
 
     <script>
+        // Menu móvel
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('open');
+            navToggle.textContent = navMenu.classList.contains('open') ? '✕' : '☰';
+        });
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('open');
+                navToggle.textContent = '☰';
+            });
+        });
+
+        // Accordion exclusivo
         document.querySelectorAll('details').forEach(d => {
             d.addEventListener('toggle', () => {
                 if(d.open) {
