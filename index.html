@@ -3,37 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Engenharia & SCIE | Consultoria Técnica</title>
-  <meta name="description" content="Engenharia Mecânica e SCIE. Projetos de segurança contra incêndios, piping industrial e consultoria técnica em Portugal.">
+  <!-- CORRIGIDO: Title mais assertivo e com termo completo -->
+  <title>Engenharia de Segurança Contra Incêndio | Consultoria SCIE</title>
+  <!-- CORRIGIDO: Description otimizada com termos legais corretos -->
+  <meta name="description" content="Engenharia Mecânica e SCIE em Portugal. Projetos de segurança contra incêndio conforme RT-SCIE, piping industrial e consultoria técnica. Projetista reconhecido pela ANEPC.">
   
   <!-- JSON-LD Schema.org para SEO -->
+  <!-- CORRIGIDO: Qualificações corrigidas, localização unificada para Aveiro -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Engenharia & SCIE",
-    "description": "Consultoria em Engenharia Mecânica e Sistemas de Segurança Contra Incêndio (SCIE)",
+    "description": "Consultoria em Engenharia Mecânica e Segurança Contra Incêndio em Edifícios (SCIE)",
     "url": "https://fiopsptbr4780.github.io/Eng.SCIE/",
-    "telephone": "+351-XXX-XXX-XXX",
+    "telephone": "+351911883687",
     "areaServed": "PT",
     "priceRange": "Consultar",
-    "serviceArea": {
-      "@type": "Place",
-      "name": "Portugal"
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Aveiro",
+      "addressCountry": "PT"
     },
     "knowsAbout": [
       "Projeto SCIE",
-      "Sistemas de Sprinklers",
-      "Sistemas de Espuma",
-      "SADI",
+      "RT-SCIE",
+      "Sistemas de Sprinklers EN 12845",
+      "Sistemas de Espuma NFPA 11",
+      "SADI EN 54",
       "Piping Industrial",
-      "Consultoria Técnica"
+      "Consultoria Técnica SCIE"
     ],
-    "qualifications": [
-      "Engenheiro Mecânico",
-      "Técnico Especialista em SCIE",
-      "Membro da Ordem dos Engenheiros Nível 2",
-      "Projetista ANEPC"
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "Engenheiro Mecânico",
+        "recognizedBy": { "@type": "Organization", "name": "Ordem dos Engenheiros" }
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "Técnico Especialista em SCIE",
+        "recognizedBy": { "@type": "Organization", "name": "ANEPC" }
+      }
     ]
   }
   </script>
@@ -46,7 +57,7 @@
     "name": "Engenharia & SCIE",
     "url": "https://fiopsptbr4780.github.io/Eng.SCIE/",
     "logo": "https://fiopsptbr4780.github.io/Eng.SCIE/logo.png",
-    "description": "Portfólio profissional de consultoria em Engenharia Mecânica e SCIE",
+    "description": "Consultoria em Engenharia Mecânica e Segurança Contra Incêndio em Edifícios",
     "foundingDate": "2024",
     "areaServed": "PT",
     "knowsLanguage": "pt-PT",
@@ -56,27 +67,9 @@
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "Customer Support",
-      "availableLanguage": "Portuguese",
-      "url": "https://fiopsptbr4780.github.io/Eng.SCIE/#contacto"
+      "telephone": "+351911883687",
+      "availableLanguage": "Portuguese"
     }
-  }
-  </script>
-  
-  <!-- LocalBusiness Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Engenharia & SCIE",
-    "description": "Consultoria em Engenharia Mecânica e SCIE em Portugal",
-    "url": "https://fiopsptbr4780.github.io/Eng.SCIE/",
-    "areaServed": "PT",
-    "serviceType": [
-      "Consultoria Técnica",
-      "Projeto SCIE",
-      "Sistemas de Sprinklers",
-      "Piping Industrial"
-    ]
   }
   </script>
   
@@ -91,11 +84,7 @@
       --border: #dde3ec;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
@@ -104,7 +93,6 @@
       line-height: 1.7;
     }
 
-    /* NAV */
     nav {
       background: var(--primary);
       position: sticky;
@@ -123,11 +111,10 @@
       font-size: 1.2rem;
       font-weight: 700;
       letter-spacing: 1px;
+      text-decoration: none;
     }
 
-    .nav-logo span {
-      color: var(--accent);
-    }
+    .nav-logo span { color: var(--accent); }
 
     .nav-toggle {
       display: none;
@@ -154,11 +141,8 @@
       transition: color 0.2s;
     }
 
-    nav ul li a:hover {
-      color: var(--accent);
-    }
+    nav ul li a:hover { color: var(--accent); }
 
-    /* HERO */
     .hero {
       background: linear-gradient(135deg, var(--primary) 60%, #2a5298 100%);
       color: var(--white);
@@ -169,10 +153,7 @@
       flex-wrap: wrap;
     }
 
-    .hero-text {
-      flex: 1;
-      min-width: 280px;
-    }
+    .hero-text { flex: 1; min-width: 280px; }
 
     .hero-text .badge {
       display: inline-block;
@@ -193,9 +174,7 @@
       margin-bottom: 18px;
     }
 
-    .hero-text h1 span {
-      color: var(--accent);
-    }
+    .hero-text h1 span { color: var(--accent); }
 
     .hero-text p {
       font-size: 1.1rem;
@@ -204,11 +183,7 @@
       margin-bottom: 32px;
     }
 
-    .hero-btns {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
 
     .btn-primary {
       background: var(--accent);
@@ -224,10 +199,7 @@
       display: inline-block;
     }
 
-    .btn-primary:hover {
-      background: #c44e12;
-      transform: translateY(-1px);
-    }
+    .btn-primary:hover { background: #c44e12; transform: translateY(-1px); }
 
     .btn-outline {
       background: transparent;
@@ -243,10 +215,7 @@
       display: inline-block;
     }
 
-    .btn-outline:hover {
-      border-color: var(--white);
-      color: var(--white);
-    }
+    .btn-outline:hover { border-color: var(--white); color: var(--white); }
 
     .hero-card {
       background: rgba(255, 255, 255, 0.08);
@@ -257,9 +226,7 @@
       flex-shrink: 0;
     }
 
-    .hero-card .stat {
-      margin-bottom: 22px;
-    }
+    .hero-card .stat { margin-bottom: 22px; }
 
     .hero-card .stat-num {
       font-size: 2rem;
@@ -278,10 +245,7 @@
       margin: 10px 0;
     }
 
-    /* SECTION BASE */
-    section {
-      padding: 72px 5%;
-    }
+    section { padding: 72px 5%; }
 
     .section-label {
       font-size: 0.78rem;
@@ -305,10 +269,7 @@
       margin-bottom: 48px;
     }
 
-    /* SERVIÇOS */
-    #servicos {
-      background: var(--light);
-    }
+    #servicos { background: var(--light); }
 
     .services-grid {
       display: grid;
@@ -329,10 +290,7 @@
       transform: translateY(-3px);
     }
 
-    .service-icon {
-      font-size: 2.2rem;
-      margin-bottom: 14px;
-    }
+    .service-icon { font-size: 2.2rem; margin-bottom: 14px; }
 
     .service-card h3 {
       font-size: 1.1rem;
@@ -356,10 +314,7 @@
       margin-top: 12px;
     }
 
-    /* SOBRE */
-    #sobre {
-      background: var(--white);
-    }
+    #sobre { background: var(--white); }
 
     .about-grid {
       display: grid;
@@ -369,15 +324,10 @@
     }
 
     @media (max-width: 768px) {
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
+      .about-grid { grid-template-columns: 1fr; }
     }
 
-    .about-text p {
-      color: var(--muted);
-      margin-bottom: 16px;
-    }
+    .about-text p { color: var(--muted); margin-bottom: 16px; }
 
     .credentials {
       display: flex;
@@ -396,9 +346,7 @@
       border-left: 4px solid var(--accent);
     }
 
-    .credential-item .cred-icon {
-      font-size: 1.5rem;
-    }
+    .credential-item .cred-icon { font-size: 1.5rem; }
 
     .credential-item .cred-title {
       font-weight: 700;
@@ -411,9 +359,7 @@
       color: var(--muted);
     }
 
-    .skills-wrap {
-      margin-top: 24px;
-    }
+    .skills-wrap { margin-top: 24px; }
 
     .skills-wrap h4 {
       color: var(--primary);
@@ -431,10 +377,7 @@
       margin: 4px 4px 4px 0;
     }
 
-    /* PROCESSO */
-    #processo {
-      background: var(--light);
-    }
+    #processo { background: var(--light); }
 
     .process-steps {
       display: grid;
@@ -476,19 +419,13 @@
       color: var(--muted);
     }
 
-    /* CONTACTO */
     #contacto {
       background: var(--primary);
       color: var(--white);
     }
 
-    #contacto .section-title {
-      color: var(--white);
-    }
-
-    #contacto .section-sub {
-      color: #9ab8d0;
-    }
+    #contacto .section-title { color: var(--white); }
+    #contacto .section-sub { color: #9ab8d0; }
 
     .contact-grid {
       display: grid;
@@ -498,9 +435,7 @@
     }
 
     @media (max-width: 768px) {
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
+      .contact-grid { grid-template-columns: 1fr; }
     }
 
     .contact-info {
@@ -518,9 +453,7 @@
       padding: 16px 18px;
     }
 
-    .contact-item .ci-icon {
-      font-size: 1.5rem;
-    }
+    .contact-item .ci-icon { font-size: 1.5rem; }
 
     .contact-item .ci-label {
       font-size: 0.78rem;
@@ -535,24 +468,12 @@
       font-weight: 600;
     }
 
-    .contact-item a {
-      color: inherit;
-      text-decoration: none;
-    }
+    .contact-item a { color: inherit; text-decoration: none; }
+    .contact-item a:hover { text-decoration: underline; }
 
-    .contact-item a:hover {
-      text-decoration: underline;
-    }
+    form { display: flex; flex-direction: column; gap: 16px; }
 
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    form input,
-    form textarea,
-    form select {
+    form input, form textarea, form select {
       background: rgba(255, 255, 255, 0.07);
       border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius: 8px;
@@ -564,26 +485,15 @@
       transition: border-color 0.2s;
     }
 
-    form input::placeholder,
-    form textarea::placeholder {
-      color: #7fa8c8;
-    }
+    form input::placeholder, form textarea::placeholder { color: #7fa8c8; }
 
-    form input:focus,
-    form textarea:focus,
-    form select:focus {
+    form input:focus, form textarea:focus, form select:focus {
       border-color: var(--accent);
     }
 
-    form textarea {
-      resize: vertical;
-      min-height: 110px;
-    }
+    form textarea { resize: vertical; min-height: 110px; }
 
-    form select option {
-      background: var(--primary);
-      color: var(--white);
-    }
+    form select option { background: var(--primary); color: var(--white); }
 
     form button {
       background: var(--accent);
@@ -597,20 +507,11 @@
       transition: background 0.2s;
     }
 
-    form button:hover {
-      background: #c44e12;
-    }
+    form button:hover { background: #c44e12; }
 
-    .form-note {
-      font-size: 0.82rem;
-      color: #9ab8d0;
-    }
+    .form-note { font-size: 0.82rem; color: #9ab8d0; }
+    .form-note a { color: #cfe4f5; }
 
-    .form-note a {
-      color: #cfe4f5;
-    }
-
-    /* FOOTER */
     footer {
       background: #0f2238;
       color: #7fa8c8;
@@ -619,16 +520,10 @@
       font-size: 0.88rem;
     }
 
-    footer span {
-      color: var(--accent);
-      font-weight: 700;
-    }
+    footer span { color: var(--accent); font-weight: 700; }
 
-    /* RESPONSIVE NAV */
     @media (max-width: 900px) {
-      .nav-toggle {
-        display: block;
-      }
+      .nav-toggle { display: block; }
 
       nav ul {
         position: absolute;
@@ -644,30 +539,22 @@
         padding: 0;
       }
 
-      nav ul.open {
-        max-height: 400px;
-      }
+      nav ul.open { max-height: 400px; }
 
       nav ul li {
         padding: 12px 5%;
         border-top: 1px solid rgba(255,255,255,0.08);
       }
 
-      .hero-text h1 {
-        font-size: 1.8rem;
-      }
-
-      .section-title {
-        font-size: 1.5rem;
-      }
+      .hero-text h1 { font-size: 1.8rem; }
+      .section-title { font-size: 1.5rem; }
     }
   </style>
 </head>
 <body>
 
-<!-- NAVEGAÇÃO -->
 <nav aria-label="Menu principal">
-  <div class="nav-logo">Eng.<span>SCIE</span></div>
+  <a href="index.html" class="nav-logo">Eng.<span>SCIE</span></a>
   <button class="nav-toggle" aria-label="Abrir menu" id="navToggle">☰</button>
   <ul id="navMenu">
     <li><a href="#servicos">Serviços</a></li>
@@ -688,8 +575,9 @@
 <section class="hero">
   <div class="hero-text">
     <div class="badge">Consultoria Técnica · Aveiro, Portugal</div>
-    <h1>Engenharia Mecânica<br>& <span>SCIE</span> ao seu serviço</h1>
-    <p>Projetos de segurança contra incêndios, piping industrial e consultoria técnica — com rigor, experiência e conformidade com a legislação e normas técnicas aplicáveis.</p>
+    <!-- CORRIGIDO: Termo completo na primeira menção -->
+    <h1>Engenharia Mecânica<br>& <span>Segurança Contra Incêndio</span></h1>
+    <p>Projetos de segurança contra incêndio em edifícios conforme RT-SCIE, piping industrial e consultoria técnica — com rigor, experiência e total conformidade com a legislação e normas técnicas aplicáveis.</p>
     <div class="hero-btns">
       <a href="#contacto" class="btn-primary">Pedir Orçamento</a>
       <a href="#servicos" class="btn-outline">Ver Serviços</a>
@@ -698,7 +586,7 @@
   <div class="hero-card">
     <div class="stat">
       <div class="stat-num">SCIE</div>
-      <div class="stat-label">Projetos de segurança contra incêndios</div>
+      <div class="stat-label">Projetos de segurança contra incêndio</div>
     </div>
     <hr>
     <div class="stat">
@@ -720,11 +608,12 @@
   <p class="section-sub">Soluções técnicas completas desde a conceção do projeto até à submissão e acompanhamento em obra.</p>
 
   <div class="services-grid">
+    <!-- CORRIGIDO: RTSCIE → RT-SCIE, terminologia precisa -->
     <div class="service-card">
       <div class="service-icon">🔥</div>
-      <h3>Projeto SCIE</h3>
-      <p>Elaboração de projetos de segurança contra incêndios em edifícios, conforme RTSCIE e legislação em vigor. Apoio na submissão e acompanhamento junto das autoridades.</p>
-      <span class="service-tag">RTSCIE · SCIE</span>
+      <h3>Projeto de Especialidade SCIE</h3>
+      <p>Elaboração de projetos de segurança contra incêndio em edifícios, conforme RT-SCIE (Portaria n.º 1532/2008) e Regime Jurídico vigente. Apoio na submissão e acompanhamento junto da ANEPC.</p>
+      <span class="service-tag">RT-SCIE · ANEPC</span>
     </div>
 
     <div class="service-card">
@@ -745,7 +634,7 @@
       <div class="service-icon">🔔</div>
       <h3>SADI — Deteção de Incêndio</h3>
       <p>Dimensionamento e projeto de sistemas automáticos de deteção de incêndio, centrais de alarme e sinalizações de evacuação.</p>
-      <span class="service-tag">EN 54 · SADI</span>
+      <span class="service-tag">EN 54 · NP 4428</span>
     </div>
 
     <div class="service-card">
@@ -758,7 +647,7 @@
     <div class="service-card">
       <div class="service-icon">📋</div>
       <h3>Consultoria Técnica</h3>
-      <p>Revisão de projetos, pareceres técnicos, acompanhamento de obras e apoio na resposta a pedidos de esclarecimento.</p>
+      <p>Revisão de projetos, pareceres técnicos, acompanhamento de obras e apoio na resposta a pedidos de esclarecimento da ANEPC.</p>
       <span class="service-tag">Consultoria · Revisão</span>
     </div>
   </div>
@@ -768,12 +657,13 @@
 <section id="sobre">
   <div class="section-label">Quem sou</div>
   <h2 class="section-title">Sobre o Consultor</h2>
-  <p class="section-sub">Engenheiro mecânico com foco em projetos de segurança contra incêndios e instalações industriais.</p>
+  <p class="section-sub">Engenheiro mecânico com foco em projetos de segurança contra incêndio e instalações industriais.</p>
 
   <div class="about-grid">
     <div class="about-text">
-      <p>Sou engenheiro mecânico com experiência em projeto de segurança contra incêndios (SCIE), instalações industriais e sistemas de piping. Tenho trabalhado na compatibilização entre requisitos regulamentares e a realidade construtiva das instalações técnicas.
-      <p>Baseado em Aveiro, presto serviços a escritórios de projeto, empresas de construção e promotores imobiliários que necessitam de um consultor técnico especializado.
+      <!-- CORRIGIDO: Texto completo, sem truncamento -->
+      <p>Sou engenheiro mecânico com experiência em projeto de segurança contra incêndio em edifícios (SCIE), instalações industriais e sistemas de piping. Tenho trabalhado em projetos de edifícios de habitação, comércio, indústria e infraestruturas energéticas, incluindo centrais termoelétricas.</p>
+      <p>Baseado em Aveiro, presto serviços a escritórios de projeto, empresas de construção e promotores imobiliários que necessitam de um consultor técnico especializado, com prazos cumpridos e total conformidade regulamentar.</p>
 
       <div class="credentials">
         <div class="credential-item">
@@ -787,7 +677,14 @@
           <div class="cred-icon">🏗️</div>
           <div>
             <div class="cred-title">Engenharia Mecânica</div>
-            <div class="cred-sub">Foco em SCIE, piping industrial e documentação técnica</div>
+            <div class="cred-sub">Membro da Ordem dos Engenheiros · Especialidade Mecânica</div>
+          </div>
+        </div>
+        <div class="credential-item">
+          <div class="cred-icon">🔥</div>
+          <div>
+            <div class="cred-title">Técnico Especialista em SCIE</div>
+            <div class="cred-sub">Reconhecido pela ANEPC</div>
           </div>
         </div>
       </div>
@@ -796,7 +693,7 @@
     <div>
       <div class="skills-wrap">
         <h4>Competências Técnicas</h4>
-        <span class="skill-pill">SCIE / RTSCIE</span>
+        <span class="skill-pill">SCIE / RT-SCIE</span>
         <span class="skill-pill">Sprinklers EN 12845</span>
         <span class="skill-pill">Sistemas de Espuma</span>
         <span class="skill-pill">SADI / EN 54</span>
@@ -843,10 +740,11 @@
     <div class="step-card">
       <div class="step-num">5</div>
       <h3>Suporte Pós-Entrega</h3>
-      <p>Apoio na resposta a questões de autoridades, câmaras municipais ou fiscalização durante o processo de aprovação.</p>
+      <p>Apoio na resposta a questões da ANEPC, câmaras municipais ou fiscalização durante o processo de aprovação.</p>
     </div>
   </div>
 </section>
+
 
 <!-- CONTACTO -->
 <section id="contacto">
