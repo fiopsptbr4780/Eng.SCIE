@@ -1,128 +1,59 @@
-# Engenharia e SCIE — Portfólio e Ferramentas
+# Engenharia & SCIE — Portfólio e Ferramentas
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-181717?style=flat&logo=github)](https://fiopsptbr4780.github.io/Eng.SCIE/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-181717?style=flat&logo=github)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
----
+## 🌐 Site Publicado
+👉 [https://fiopsptbr4780.github.io/Eng.SCIE/](https://fiopsptbr4780.github.io/Eng.SCIE/)
 
 ## Sobre Este Projeto
+Site profissional de consultoria em Engenharia Mecânica e Segurança Contra Incêndio em Edifícios (SCIE), desenvolvido com HTML5, CSS3 e JavaScript puro, alojado via GitHub Pages.
 
-Este repositório reúne o meu **portfólio profissional** em Engenharia Mecânica e **Sistemas de Segurança Contra Incêndio (SCIE)**, com exemplos de projetos, ferramentas de apoio e informação para clientes e parceiros.
-
-Destina-se a:
-- **Projetistas e instaladores SCIE** que procuram ferramentas e referências técnicas.
-- **Escritórios de projeto e empresas de construção** que necessitam de consultoria especializada.
-- **Clientes e promotores imobiliários** que procuram entender o processo de projeto e consultoria SCIE.
-
----
-
-## 🌐 Site Publicado (GitHub Pages)
-
-> **Aceda ao site completo aqui:**  
-> 👉 [https://fiopsptbr4780.github.io/Eng.SCIE/](https://fiopsptbr4780.github.io/Eng.SCIE/)
-
----
-
-## Funcionalidades Principais
-
-- **Portfólio profissional** — Apresentação de serviços, experiência e competências.
-- **Serviços SCIE** — Projeto, sprinklers, foam, SADI, piping industrial e consultoria.
-- **Processo de trabalho** — Explicação transparente das 5 etapas do projeto.
-- **Formulário de contacto** — Pedido de orçamento integrado.
-- **Design responsivo** — Site adaptado a desktop, tablet e telemóvel.
-- **Tecnologias puras** — HTML, CSS e JavaScript sem dependências externas.
-
----
+Destina-se a projetistas, escritórios de projeto, empresas de construção e promotores imobiliários que necessitam de consultoria especializada conforme RT-SCIE e Regime Jurídico vigente.
 
 ## Estrutura do Repositório
 
 | Ficheiro | Descrição |
 |----------|-----------|
-| `index.html` | Página inicial do site — homepage com hero, serviços, sobre, processo e contacto. |
-| `portfolio_engenharia_scie.html` | Página alternativa de portfólio SCIE com foco em informação de contacto atualizada. |
-| `README.md` | Documentação do repositório (este ficheiro). |
-
----
-
-## Como Aceder à Página
-
-1. O site está publicado via **GitHub Pages**.
-2. Aceda através do link: [https://fiopsptbr4780.github.io/Eng.SCIE/](https://fiopsptbr4780.github.io/Eng.SCIE/)
-3. Navegue entre as secções: **Serviços**, **Sobre**, **Como Funciona** e **Contacto**.
-
----
-
-## Sobre o Autor
-
-Engenheiro Mecânico e Técnico Especialista em Sistemas de Segurança Contra Incêndio (SCIE), com experiência em Portugal e no Brasil. Membro da Ordem dos Engenheiros (Nível 2) e projetista reconhecido pela ANEPC.
-
-Actualmente exerço como consultor freelancer, prestando serviços a escritórios de projeto, empresas de construção e promotores imobiliários em todo o território nacional.
-
----
-
-## Tecnologias Usadas
-
-- **HTML5** — Estrutura semântica
-- **CSS3** — Estilização com variáveis CSS (Custom Properties), Flexbox e CSS Grid
-- **JavaScript** — Scroll suave e interação com formulário
-- **GitHub Pages** — Alojamento gratuito e deploy automático
-- **Markdown** — Documentação do repositório
-
----
+| `index.html` | Página principal — serviços, sobre, processo e contacto |
+| `projetos.html` | Estudos de caso e experiência aplicada em SCIE |
+| `blog.html` | Artigos técnicos sobre SCIE, sprinklers, SADI, piping |
+| `ferramentas.html` | Calculadoras online (sprinklers, queda pressão, RT-SCIE, extintores) |
+| `faq.html` | Perguntas frequentes sobre regulamentação e processos |
+| `privacidade.html` | Política de privacidade conforme RGPD |
+| `portfolio_engenharia_scie.html` | Página legacy (noindex) |
+| `sitemap.xml` | Mapa do site para motores de busca |
+| `robots.txt` | Diretivas para crawlers |
 
 ## Serviços Abordados
+- Projeto de Especialidade SCIE (RT-SCIE / Portaria 1532/2008)
+- Sistemas de Sprinklers (EN 12845 / NFPA 13)
+- Sistemas de Espuma (NFPA 11 / EN 13565)
+- SADI — Deteção e Alarme (EN 54 / NP 4428)
+- Piping Industrial (AutoCAD Plant 3D / P&ID / ASME B31.1)
+- Consultoria Técnica e Pareceres
 
-- Projeto SCIE (RTSCIE) · ANEPC
-- Sistemas de Sprinklers · EN 12845 / NFPA 13
-- Sistemas de Espuma · NFPA 11 / EN 13565
-- SADI — Deteção e Alarme · EN 54
-- Piping Industrial · AutoCAD / Plant 3D / P&ID
-- Consultoria Técnica · Revisão e pareceres
-
----
-
-## Créditos e Normas Referenciadas
-
-As normas e diplomas mencionados neste projeto são referências técnicas de uso público:
-
+## Normas Referenciadas
 | Norma / Diploma | Âmbito |
 |-----------------|--------|
-| RTSCIE | Regulamento Técnico de Segurança Contra Incêndio em Edifícios |
-| EN 12845 | Sistemas fixos de luta contra incêndio — Sprinkler |
-| EN 13565 | Sistemas de espuma fixos |
-| EN 54 | Sistemas de deteção e alarme de incêndio |
-| NFPA 13 | Standard for the Installation of Sprinkler Systems |
-| NFPA 11 | Standard for Low-, Medium-, and High-Expansion Foam |
-| ANEPC | Autoridade Nacional de Emergência e Proteção Civil |
+| DL 220/2008 | Regime Jurídico da SCIE (na redação atual) |
+| Portaria 1532/2008 | Regulamento Técnico de SCIE (RT-SCIE) |
+| EN 12845 | Sistemas fixos de sprinklers |
+| EN 54 / NP 4428 | Sistemas de deteção e alarme |
+| NFPA 13 | Standard for Sprinkler Systems |
+| NFPA 11 | Standard for Low-, Medium-, High-Expansion Foam |
+| EN 13565 | Sistemas de extinção por espuma |
 
----
+## Tecnologias
+- HTML5 semântico
+- CSS3 (Custom Properties, Flexbox, Grid)
+- JavaScript vanilla
+- GitHub Pages
+- FormSubmit (formulário de contacto)
+- Schema.org JSON-LD
 
-## Próximos Passos (Plano)
-
-- [ ] Adicionar portfólio de projetos com imagens e descrições.
-- [ ] Criar calculadora de extintores por área.
-- [ ] Desenvolver checklist SCIE em formato HTML.
-- [ ] Organizar ficheiros em pastas `/css/`, `/js/` e `/img/`.
-- [ ] Adicionar.footer com links para LinkedIn e contactos.
-- [ ] Implementar formulário funcional com serviço de e-mail (ex: Formspree).
-
----
-
-## Contacto
-
-| Canal | Dados |
-|-------|-------|
-| E-mail | - |
-| Telemóvel / WhatsApp | - |
-| LinkedIn | - |
-| Localização | Portugal (projetos em todo o país) |
-
----
+## Autor
+Engenheiro Mecânico e Técnico Especialista em SCIE reconhecido pela ANEPC. Membro da Ordem dos Engenheiros. Baseado em Aveiro, Portugal.
 
 ## Licença
-
-Este projeto é distribuído sob a licença [MIT](https://opensource.org/licenses/MIT).
-
----
-
-© 2026 — Engenharia e SCIE · [fiopsptbr4780](https://github.com/fiopsptbr4780) · Portugal
+MIT License — © 2025 Engenharia & SCIE
