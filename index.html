@@ -790,36 +790,45 @@
       </div>
     </div>
 
-    <form action="https://formsubmit.co/db9320482ec69a19fda50553b95c6257" method="POST">
-      <input type="hidden" name="_next" value="https://fiopsptbr4780.github.io/Eng.SCIE/" />
-      <input type="hidden" name="_subject" value="Novo pedido de orçamento – Site Eng.SCIE" />
-      <input type="hidden" name="_captcha" value="false" />
+<!-- FORMULÁRIO CORRIGIDO COM REDIRECIONAMENTO AUTOMÁTICO -->
+<form id="contactForm" action="https://formsubmit.co/db9320482ec69a19fda50553b95c6257" method="POST">
+  <!-- REMOVIDO: input _next que causava redirecionamento imediato -->
+  <input type="hidden" name="_subject" value="Novo pedido de orçamento – Site Eng.SCIE" />
+  <input type="hidden" name="_captcha" value="false" />
+  <!-- Adicionado para resposta AJAX/JSON -->
+  <input type="hidden" name="_format" value="json" />
 
-      <input type="text" name="nome" placeholder="Nome completo" required aria-label="Nome completo" />
-      <input type="email" name="email" placeholder="E-mail" required aria-label="Endereço de e-mail" />
-      <input type="tel" name="telefone" placeholder="Telemóvel (opcional)" aria-label="Número de telefone" />
-      <select name="servico" required aria-label="Tipo de serviço">
-        <option value="" disabled selected>Tipo de serviço</option>
-        <option>Projeto de Especialidade SCIE</option>
-        <option>Sistema de Sprinklers</option>
-        <option>Sistema de Espuma</option>
-        <option>SADI — Deteção de Incêndio</option>
-        <option>Piping Industrial / P&ID</option>
-        <option>Consultoria Técnica</option>
-        <option>Outro</option>
-      </select>
-      <textarea name="mensagem" placeholder="Descreva o seu projeto (utilização-tipo, área, localização, prazo...)"></textarea>
+  <input type="text" name="nome" placeholder="Nome completo" required aria-label="Nome completo" />
+  <input type="email" name="email" placeholder="E-mail" required aria-label="Endereço de e-mail" />
+  <input type="tel" name="telefone" placeholder="Telemóvel (opcional)" aria-label="Número de telefone" />
+  <select name="servico" required aria-label="Tipo de serviço">
+    <option value="" disabled selected>Tipo de serviço</option>
+    <option>Projeto de Especialidade SCIE</option>
+    <option>Sistema de Sprinklers</option>
+    <option>Sistema de Espuma</option>
+    <option>SADI — Deteção de Incêndio</option>
+    <option>Piping Industrial / P&ID</option>
+    <option>Consultoria Técnica</option>
+    <option>Outro</option>
+  </select>
+  <textarea name="mensagem" placeholder="Descreva o seu projeto (utilização-tipo, área, localização, prazo...)"></textarea>
 
-      <label style="font-size:0.82rem; color:#9ab8d0;">
-        <input type="checkbox" name="privacidade" required />
-        Li e aceito a <a href="privacidade.html" style="color:#cfe4f5;">Política de Privacidade</a>.
-      </label>
+  <label style="font-size:0.82rem; color:#9ab8d0;">
+    <input type="checkbox" name="privacidade" required />
+    Li e aceito a <a href="privacidade.html" style="color:#cfe4f5;">Política de Privacidade</a>.
+  </label>
 
-      <button type="submit">📩 Enviar Pedido</button>
-      <p class="form-note">
-        Os dados são enviados de forma segura e utilizados apenas para responder ao seu pedido. Consulte a <a href="privacidade.html">Política de Privacidade</a>.
-      </p>
-    </form>
+  <button type="submit" id="submitBtn">📩 Enviar Pedido</button>
+
+  <div id="formSuccess" style="display:none; background:#1a7a3c; color:#fff; padding:16px; border-radius:8px; margin-top:16px; text-align:center; font-weight:600;">
+  ✅ Pedido enviado com sucesso! Será redirecionado em instantes...
+  </div>
+
+  <p class="form-note">
+    Os dados são enviados de forma segura e utilizados apenas para responder ao seu pedido. Consulte a <a href="privacidade.html">Política de Privacidade</a>.
+  </p>
+</form>
+    
   </div>
 </section>
 </main>
@@ -831,7 +840,9 @@
   </p>
 </footer>
 
+<!-- ✅ JAVASCRIPT ÚNICO E COMPLETO (substitui todo o script anterior) -->
 <script>
+  // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', function(e) {
       e.preventDefault();
@@ -840,6 +851,7 @@
     });
   });
 
+  // Menu móvel
   const navToggle = document.getElementById('navToggle');
   const navMenu = document.getElementById('navMenu');
 
@@ -856,6 +868,49 @@
       navToggle.setAttribute('aria-label', 'Abrir menu');
       navToggle.textContent = '☰';
     });
+  });
+
+  // ✅ FORMULÁRIO: envio via fetch + mensagem de sucesso + redirecionamento após 3s
+  const contactForm = document.getElementById('contactForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const formSuccess = document.getElementById('formSuccess');
+
+  contactForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = '⏳ A enviar...';
+    submitBtn.disabled = true;
+    submitBtn.style.opacity = '0.7';
+
+    try {
+      const formData = new FormData(contactForm);
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        // Mostra mensagem de sucesso
+        formSuccess.style.display = 'block';
+        submitBtn.textContent = '✅ Enviado!';
+        submitBtn.style.background = '#1a7a3c';
+
+        // Redireciona após 3 segundos
+        setTimeout(function() {
+          window.location.href = 'https://fiopsptbr4780.github.io/Eng.SCIE/';
+        }, 3000);
+      } else {
+        throw new Error('Erro no envio');
+      }
+    } catch (error) {
+      // Reverte botão e mostra alerta em caso de erro
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+      submitBtn.style.opacity = '1';
+      alert('Ocorreu um erro ao enviar. Por favor, envie diretamente para tlsengmecanico@gmail.com');
+    }
   });
 </script>
 
