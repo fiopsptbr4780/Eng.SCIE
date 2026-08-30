@@ -82,13 +82,16 @@ Ferramentas · HTML
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-brand"><a href="index.html" class="nav-logo">Eng.SCIE</a></div>
-        <ul class="nav-links">
-            <li><a href="index.html">Inicio</a></li>
+    <nav>
+        <a href="index.html" class="nav-logo">Eng.<span>SCIE</span></a>
+        <button class="nav-toggle" aria-label="Abrir menu" id="navToggle" style="display:none;background:transparent;border:none;color:var(--white);font-size:1.5rem;cursor:pointer;padding:4px 8px">☰</button>
+        <ul id="navMenu">
+            <li><a href="index.html">Início</a></li>
             <li><a href="projetos.html">Projetos</a></li>
             <li><a href="blog.html">Artigos</a></li>
             <li><a href="ferramentas.html" class="active">Ferramentas</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="index.html#contacto">Contacto</a></li>
         </ul>
     </nav>
     <header class="hero">
@@ -341,8 +344,9 @@ Ferramentas · HTML
     </section>
  
     <footer>
-        <span>&copy; 2025 Eng.SCIE - Engenharia e Seguranca Contra Incendio</span>
-        <p><a href="blog.html">Artigos Tecnicos</a> | <a href="projetos.html">Projetos</a> | <a href="index.html">Inicio</a></p>
+        <p>&copy; 2025 <span>Engenharia &amp; SCIE</span> · Aveiro, Portugal · Todos os direitos reservados</p>
+        <p style="margin-top:6px;font-size:0.8rem;">Engenheiro Mecânico · Membro da Ordem dos Engenheiros · Técnico Especialista em SCIE reconhecido pela ANEPC</p>
+        <p style="margin-top:8px;"><a href="blog.html" style="color:#7fa8c8">Artigos Técnicos</a> | <a href="projetos.html" style="color:#7fa8c8">Projetos</a> | <a href="index.html" style="color:#7fa8c8">Início</a></p>
     </footer>
  
     <script>
@@ -510,7 +514,18 @@ Ferramentas · HTML
             showResult("efet-result", html);
         }
     </script>
-</body>
+    <script>
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+        function checkMobile(){
+            if(window.innerWidth <= 900){navToggle.style.display='block'}else{navToggle.style.display='none';navMenu.style.maxHeight='none';navMenu.style.position='static';navMenu.style.flexDirection='row'}
+        }
+        checkMobile(); window.addEventListener('resize',checkMobile);
+        navToggle.addEventListener('click',()=>{
+            const open=navMenu.classList.toggle('open');
+            navToggle.textContent=open?'✕':'☰';
+        });
+    </script>
 </html>
  
 
