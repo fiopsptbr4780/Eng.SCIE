@@ -745,7 +745,6 @@
   </div>
 </section>
 
-
 <!-- CONTACTO -->
 <section id="contacto">
   <div class="section-label">Fale comigo</div>
@@ -758,7 +757,6 @@
         <div class="ci-icon">📧</div>
         <div>
           <div class="ci-label">E-mail</div>
-          <!-- Substitua pelo seu e-mail real -->
           <div class="ci-val">
             <a href="mailto:tlsengmecanico@gmail.com">tlsengmecanico@gmail.com</a>
           </div>
@@ -768,22 +766,19 @@
         <div class="ci-icon">📱</div>
         <div>
           <div class="ci-label">Telemóvel / WhatsApp</div>
-          <!-- Opcional: substitua pelo seu número -->
           <div class="ci-val">
             <a href="tel:+351911883687">+351 911 883 687</a>
           </div>
         </div>
       </div>
+      <!-- CORRIGIDO: LinkedIn com markup válido (estava comentado com <! ) -->
       <div class="contact-item">
         <div class="ci-icon">🔗</div>
         <div>
           <div class="ci-label">LinkedIn</div>
-          <!-- Opcional: substitua pelo seu perfil -->
-          <! div class="ci-val">
-            <! a href="https://www.linkedin.com/in/o-seu-perfil/" target="_blank" rel="noopener noreferrer">
-             ! Ver perfil no LinkedIn
-            <! /a>
-          <! /div>
+          <div class="ci-val">
+            <a href="https://www.linkedin.com/in/o-seu-perfil/" target="_blank" rel="noopener noreferrer">Ver perfil no LinkedIn</a>
+          </div>
         </div>
       </div>
       <div class="contact-item">
@@ -795,17 +790,9 @@
       </div>
     </div>
 
-    <!-- Formulário com FormSubmit (gratuito) -->
-    <!-- Substitua SEU_EMAIL_AQUI@exemplo.pt pelo seu e-mail real -->
-    <form
-      action="https://formsubmit.co/db9320482ec69a19fda50553b95c6257"
-      method="POST"
-    >
-      <!-- Redirecionamento após envio (opcional) -->
+    <form action="https://formsubmit.co/db9320482ec69a19fda50553b95c6257" method="POST">
       <input type="hidden" name="_next" value="https://fiopsptbr4780.github.io/Eng.SCIE/" />
-      <!-- Assunto do e-mail -->
       <input type="hidden" name="_subject" value="Novo pedido de orçamento – Site Eng.SCIE" />
-      <!-- Desativar captcha (opcional, remova se quiser captcha) -->
       <input type="hidden" name="_captcha" value="false" />
 
       <input type="text" name="nome" placeholder="Nome completo" required aria-label="Nome completo" />
@@ -813,7 +800,7 @@
       <input type="tel" name="telefone" placeholder="Telemóvel (opcional)" aria-label="Número de telefone" />
       <select name="servico" required aria-label="Tipo de serviço">
         <option value="" disabled selected>Tipo de serviço</option>
-        <option>Projeto SCIE</option>
+        <option>Projeto de Especialidade SCIE</option>
         <option>Sistema de Sprinklers</option>
         <option>Sistema de Espuma</option>
         <option>SADI — Deteção de Incêndio</option>
@@ -821,34 +808,30 @@
         <option>Consultoria Técnica</option>
         <option>Outro</option>
       </select>
-      <textarea name="mensagem" placeholder="Descreva o seu projeto (tipo de edifício, área, localização, prazo...)"></textarea>
+      <textarea name="mensagem" placeholder="Descreva o seu projeto (utilização-tipo, área, localização, prazo...)"></textarea>
 
       <label style="font-size:0.82rem; color:#9ab8d0;">
         <input type="checkbox" name="privacidade" required />
-        Li e aceito a
-        <a href="privacidade.html" style="color:#cfe4f5;">Política de Privacidade</a>.
+        Li e aceito a <a href="privacidade.html" style="color:#cfe4f5;">Política de Privacidade</a>.
       </label>
 
       <button type="submit">📩 Enviar Pedido</button>
       <p class="form-note">
-        Os dados são enviados de forma segura e utilizados apenas para responder ao seu pedido. Consulte a
-        <a href="privacidade.html">Política de Privacidade</a> para mais informações.
+        Os dados são enviados de forma segura e utilizados apenas para responder ao seu pedido. Consulte a <a href="privacidade.html">Política de Privacidade</a>.
       </p>
     </form>
   </div>
 </section>
 </main>
 
-<!-- FOOTER -->
 <footer>
-  <p>&copy; 2026 <span>Engenharia &amp; SCIE</span> · Aveiro, Portugal · Todos os direitos reservados</p>
+  <p>&copy; 2025 <span>Engenharia &amp; SCIE</span> · Aveiro, Portugal · Todos os direitos reservados</p>
   <p style="margin-top:6px; font-size:0.8rem;">
-    Projetos desenvolvidos com base na legislação, regulamentação e normas técnicas aplicáveis.
+    Projetos desenvolvidos conforme RT-SCIE (Portaria n.º 1532/2008) e Regime Jurídico da SCIE (DL n.º 220/2008, na redação atual).
   </p>
 </footer>
 
 <script>
-  // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', function(e) {
       e.preventDefault();
@@ -857,7 +840,6 @@
     });
   });
 
-  // Menu móvel
   const navToggle = document.getElementById('navToggle');
   const navMenu = document.getElementById('navMenu');
 
@@ -868,7 +850,6 @@
     navToggle.textContent = isOpen ? '✕' : '☰';
   });
 
-  // Fechar menu ao clicar num link
   navMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       navMenu.classList.remove('open');
