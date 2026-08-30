@@ -1,13 +1,16 @@
+
+
+Ferramentas · HTML
 <!DOCTYPE html>
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ferramentas e calculadoras online para Engenharia Mecanica e SCIE. Calculador de sprinklers, queda de pressao em tubagem, categoria de risco RTSCIE, dimensionamento de espuma e SADI.">
-    <meta name="keywords" content="ferramentas SCIE Portugal, calculadora sprinklers EN 12845, calculadora queda pressao tubagem, calculadora categoria risco RTSCIE, calculadora espuma NFPA 11">
+    <meta name="description" content="Ferramentas e calculadoras online para Engenharia Mecanica e SCIE. Calculador de sprinklers, queda de pressao em tubagem, categoria de risco RTSCIE, extintores e efetivo.">
+    <meta name="keywords" content="ferramentas SCIE Portugal, calculadora sprinklers EN 12845, calculadora queda pressao tubagem, calculadora categoria risco RTSCIE, calculadora extintores, calculo efetivo">
     <meta name="author" content="Engenharia e SCIE">
-    <title>Ferramentas SCIE e Engenharia | Calculadoras Online - Sprinklers, Piping, RTSCIE</title>
-    
+    <title>Ferramentas SCIE e Engenharia | Calculadoras Online - Sprinklers, Piping, RTSCIE, Extintores</title>
+ 
     <!-- JSON-LD Schema para Ferramentas/Calculadoras -->
     <script type="application/ld+json">
     {
@@ -15,7 +18,7 @@
       "@type": "WebApplication",
       "name": "Ferramentas SCIE e Engenharia",
       "url": "https://fiopsptbr4780.github.io/Eng.SCIE/ferramentas.html",
-      "description": "Calculadoras online para Sprinklers EN 12845, queda de pressão em tubagem, categoria de risco RTSCIE, espuma NFPA 11 e SADI",
+      "description": "Calculadoras online para Sprinklers EN 12845, queda de pressão em tubagem, categoria de risco RTSCIE, extintores e efetivo",
       "applicationCategory": "Engineering Tool",
       "author": {
         "@type": "Organization",
@@ -25,7 +28,7 @@
       "inLanguage": "pt"
     }
     </script>
-    
+ 
     <style>
         :root {--primary:#1a3a5c;--accent:#e05c1a;--light:#f4f7fb;--text:#2d2d2d;--muted:#6b7280;--white:#ffffff;--border:#dde3ec;--success:#1a7a3c;--warning:#b7791f;--danger:#b71f1f}
         * {margin:0;padding:0;box-sizing:border-box}
@@ -44,12 +47,12 @@
         .section-title {font-size:2rem;color:var(--primary);margin-bottom:12px}
         .section-sub {color:var(--muted);font-size:1rem;max-width:600px;margin-bottom:48px}
         .tools-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-bottom:60px}
-        .tool-card {background:var(--white);border-radius:12px;border:1px solid var(--border);padding:24px;transition:box-shadow 0.2s,transform 0.2s;cursor:pointer}
+        .tool-card {background:var(--white);border-radius:12px;border:1px solid var(--border);padding:24px;transition:box-shadow 0.2s,transform 0.2s;cursor:pointer;display:block}
         .tool-card:hover {box-shadow:0 12px 32px rgba(26,58,92,0.14);transform:translateY(-3px)}
         .tool-card .tool-icon {font-size:2.5rem;margin-bottom:12px}
         .tool-card h3 {font-size:1.15rem;color:var(--primary);margin-bottom:8px}
         .tool-card p {font-size:0.92rem;color:var(--muted);margin-bottom:14px}
-        .tool-card .tool-tag {display:inline-block;background:#e8f0fb;color:var(--primary);padding:3px 10px;border-radius:12px;font-size:0.72rem;font-weight:700}
+        .tool-card .tool-tag {display:inline-block;background:#e8f0fb;color:var(--primary);padding:3px 10px;border-radius:12px;font-size:0.72rem;font-weight:700;margin-right:6px}
         .tool-detail {background:var(--light);border-radius:12px;padding:32px;border:1px solid var(--border);margin-bottom:48px}
         .tool-detail h2 {font-size:1.4rem;color:var(--primary);margin-bottom:8px}
         .tool-detail .tool-desc {color:var(--muted);margin-bottom:24px}
@@ -67,6 +70,7 @@
         .btn-calc:hover {background:#c44e12}
         .btn-calc:disabled {background:var(--muted);cursor:not-allowed}
         .warning {background:rgba(183,121,31,0.1);border:1px solid rgba(183,121,31,0.3);border-radius:8px;padding:14px 16px;margin-top:16px;font-size:0.85rem;color:var(--warning)}
+        .error-msg {background:rgba(183,31,31,0.1);border:1px solid rgba(183,31,31,0.3);border-radius:8px;padding:14px 16px;margin-top:16px;font-size:0.85rem;color:var(--danger)}
         .cta-section {background:var(--primary);color:var(--white);text-align:center;padding:60px 5%}
         .cta-section h2 {font-size:1.8rem;margin-bottom:16px}
         .cta-section p {color:#b8cde2;margin-bottom:24px;max-width:500px;margin-left:auto;margin-right:auto}
@@ -79,7 +83,7 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="nav-brand"><a href="index.html">Eng.SCIE</a></div>
+        <div class="nav-brand"><a href="index.html" class="nav-logo">Eng.SCIE</a></div>
         <ul class="nav-links">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="projetos.html">Projetos</a></li>
@@ -91,7 +95,7 @@
         <h1>Ferramentas SCIE</h1>
         <p>Calculadoras e ferramentas online para engenharia mecanica, SCIE e sistemas de seguranca contra incendio.</p>
     </header>
-
+ 
     <section class="section">
         <h2 class="section-title">Ferramentas de Calculo</h2>
         <div class="tools-grid">
@@ -110,18 +114,32 @@
                 <span class="tool-tag">Piping</span>
             </a>
             <a href="#calc-rtsie" class="tool-card">
-                <div class="tool-icon">&#128668;</div>
+                <div class="tool-icon">&#127970;</div>
                 <h3>Categoria de Risco RTSCIE</h3>
-                <p>Determine a categoria de risco segundo o Regime Juridico de SCIE (Decreto-Lei 224/2015).</p>
+                <p>Estimativa da categoria de risco por altura da UT segundo o RT-SCIE.</p>
                 <span class="tool-tag">Legislacao</span>
                 <span class="tool-tag">Risco</span>
             </a>
+            <a href="#calc-extintores" class="tool-card">
+                <div class="tool-icon">&#129519;</div>
+                <h3>Extintores Portateis</h3>
+                <p>Calcule a quantidade, agente extintor e capacidade indicados por area e classe de fogo.</p>
+                <span class="tool-tag">RT-SCIE</span>
+                <span class="tool-tag">1ª Intervencao</span>
+            </a>
+            <a href="#calc-efetivo" class="tool-card">
+                <div class="tool-icon">&#128101;</div>
+                <h3>Calculo de Efetivo</h3>
+                <p>Estime o efetivo (numero de ocupantes) a partir da area util e do indice de ocupacao.</p>
+                <span class="tool-tag">Ocupacao</span>
+                <span class="tool-tag">Evacuacao</span>
+            </a>
         </div>
     </section>
-
+ 
     <section class="tool-detail" id="calc-sprinkler">
         <h2>Calculadora de Sprinklers</h2>
-        <p>Dimensione o numero de sprinklers e o fluxo necessario para a sua estacao.</p>
+        <p class="tool-desc">Dimensione o numero de sprinklers e o fluxo necessario para a sua estacao.</p>
         <div class="calculator">
             <div class="calc-input-grid">
                 <div class="calc-input-group">
@@ -150,13 +168,13 @@
                 <h4>Resultados</h4>
                 <ul id="sprk-results-list"></ul>
             </div>
-            <p class="warning">Nota: Valores indicativos. Consulte sempre a EN 12845 ou NFPA 13 para projetos oficiais.</p>
+            <p class="warning">Nota: Valores indicativos, baseados numa area de operacao unica e densidade constante. Consulte sempre a EN 12845 ou NFPA 13 (ponto mais desfavoravel, curva da bomba, K-factor dos bocais) para projetos oficiais.</p>
         </div>
     </section>
-
+ 
     <section class="tool-detail" id="calc-queda">
         <h2>Queda de Pressao em Tubagem</h2>
-        <p>Calcule a perda de carga em tubagens de agua usando a formula de Darcy-Weisbach.</p>
+        <p class="tool-desc">Calcule a perda de carga em tubagens de agua usando a equacao de Darcy-Weisbach, com o fator de atrito determinado por Swamee-Jain (regime turbulento) ou pela lei de Poiseuille (regime laminar), considerando a rugosidade escolhida.</p>
         <div class="calculator">
             <div class="calc-input-grid">
                 <div class="calc-input-group">
@@ -168,15 +186,15 @@
                     <input type="number" id="queda-diametro" value="100" min="10">
                 </div>
                 <div class="calc-input-group">
-                    <label for="queda-comprimento">Comprimento (m)</label>
+                    <label for="queda-comprimento">Comprimento equivalente (m)</label>
                     <input type="number" id="queda-comprimento" value="50" min="1">
                 </div>
                 <div class="calc-input-group">
-                    <label for="queda-rugosidade">Rugosidade (mm)</label>
+                    <label for="queda-rugosidade">Material / rugosidade (mm)</label>
                     <select id="queda-rugosidade">
-                        <option value="0.015">Aco galvanizado novo (0.015)</option>
+                        <option value="0.15">Aco galvanizado novo (0.15)</option>
                         <option value="0.045">Aco carbono (0.045)</option>
-                        <option value="0.0015" selected>PVC (0.0015)</option>
+                        <option value="0.0015" selected>PVC / PEAD (0.0015)</option>
                         <option value="0.25">Ferro fundido (0.25)</option>
                     </select>
                 </div>
@@ -186,33 +204,47 @@
                 <h4>Resultados</h4>
                 <ul id="queda-results-list"></ul>
             </div>
-            <p class="warning">Nota: Formula aprox. usando Darcy-Weisbach. Consulte tabelas tecnicas para valores exatos.</p>
+            <p class="warning">Nota: Formula aproximada (agua a ~20&deg;C). O comprimento deve incluir o comprimento equivalente de acessorios (curvas, valvulas, etc.). Consulte tabelas tecnicas do fabricante para valores exatos.</p>
         </div>
     </section>
-
+ 
     <section class="tool-detail" id="calc-rtsie">
         <h2>Categoria de Risco RTSCIE</h2>
-        <p>Determine a categoria de risco segundo o DL 224/2015 com base no uso e area do edificio.</p>
+        <p class="tool-desc">Estimativa da categoria de risco (1&ordf; a 4&ordf;) com base no criterio geral de altura da UT do RT-SCIE (Portaria 1532/2008, com as alteracoes em vigor).</p>
         <div class="calculator">
             <div class="calc-input-grid">
                 <div class="calc-input-group">
-                    <label for="rtsie-uso">Tipo de uso</label>
-                    <select id="rtsie-uso">
-                        <option value="1" selected>Habitacional</option>
-                        <option value="2">Administrativo</option>
-                        <option value="3">Comercial</option>
-                        <option value="4">Industrial</option>
-                        <option value="5">Educacional</option>
-                        <option value="6">Hospitalar</option>
+                    <label for="rtsie-ut">Utilizacao-Tipo (UT)</label>
+                    <select id="rtsie-ut">
+                        <option value="I">UT I - Habitacionais</option>
+                        <option value="II">UT II - Estacionamentos</option>
+                        <option value="III" selected>UT III - Administrativos</option>
+                        <option value="IV">UT IV - Escolares</option>
+                        <option value="V">UT V - Hospitalares e lares de idosos</option>
+                        <option value="VI">UT VI - Espetaculos e reunioes publicas</option>
+                        <option value="VII">UT VII - Hoteleiros e restauracao</option>
+                        <option value="VIII">UT VIII - Comerciais e gares de transporte</option>
+                        <option value="IX">UT IX - Desportivos e de lazer</option>
+                        <option value="X">UT X - Museus e galerias de arte</option>
+                        <option value="XI">UT XI - Bibliotecas e arquivos</option>
+                        <option value="XII">UT XII - Industriais, oficinas e armazens</option>
                     </select>
                 </div>
                 <div class="calc-input-group">
-                    <label for="rtsie-area">Area total (m&sup2;)</label>
+                    <label for="rtsie-altura">Altura da UT (m)</label>
+                    <input type="number" id="rtsie-altura" value="9" min="0" step="0.5">
+                </div>
+                <div class="calc-input-group">
+                    <label for="rtsie-area">Area bruta total (m&sup2;)</label>
                     <input type="number" id="rtsie-area" value="500" min="1">
                 </div>
                 <div class="calc-input-group">
-                    <label for="rtsie-pisos">Numero de pisos</label>
-                    <input type="number" id="rtsie-pisos" value="1" min="1">
+                    <label for="rtsie-efetivo">Efetivo total (pessoas, opcional)</label>
+                    <input type="number" id="rtsie-efetivo" value="" min="0">
+                </div>
+                <div class="calc-input-group">
+                    <label for="rtsie-pisos-ab">Pisos abaixo do plano de referencia</label>
+                    <input type="number" id="rtsie-pisos-ab" value="0" min="0">
                 </div>
             </div>
             <button class="btn-calc" onclick="calcRTSCIE()">Calcular Categoria</button>
@@ -220,21 +252,96 @@
                 <h4>Resultado</h4>
                 <ul id="rtsie-results-list"></ul>
             </div>
-            <p class="warning">Nota: Esta calculadora fornece uma indicacao. A classificacao oficial deve ser feita por tecnico credenciado segundo o RTSCIE.</p>
+            <p class="warning">Nota: O criterio de altura da UT (&le;9m = 1&ordf;, &le;28m = 2&ordf;, &le;28-50m = 3&ordf;, &gt;50m = 4&ordf;) e o mais transversal, mas cada UT tem um quadro proprio no RT-SCIE que pode agravar a categoria em funcao do efetivo, da area, dos pisos abaixo do plano de referencia ou (nas UT II e XII) de criterios especificos de area/potencia calorifica/pisos enterrados. Esta calculadora e apenas indicativa - confirme sempre a categoria final no quadro da UT aplicavel.</p>
         </div>
     </section>
-
+ 
+    <section class="tool-detail" id="calc-extintores">
+        <h2>Calculadora de Extintores Portateis</h2>
+        <p class="tool-desc">Estime a quantidade minima de extintores, o agente extintor e a capacidade indicados, com base na area a proteger, na distancia maxima de percurso e na classe de fogo predominante.</p>
+        <div class="calculator">
+            <div class="calc-input-grid">
+                <div class="calc-input-group">
+                    <label for="ext-area">Area a proteger (m&sup2;)</label>
+                    <input type="number" id="ext-area" value="500" min="1">
+                </div>
+                <div class="calc-input-group">
+                    <label for="ext-classe">Classe de fogo predominante</label>
+                    <select id="ext-classe">
+                        <option value="A" selected>Classe A - solidos (madeira, papel, tecidos)</option>
+                        <option value="B">Classe B - liquidos inflamaveis</option>
+                        <option value="C">Classe C - gases inflamaveis</option>
+                        <option value="eletrico">Equipamentos eletricos sob tensao</option>
+                        <option value="F">Classe F - oleos e gorduras de cozinha</option>
+                    </select>
+                </div>
+                <div class="calc-input-group">
+                    <label for="ext-cobertura">Area coberta por extintor (m&sup2;)</label>
+                    <input type="number" id="ext-cobertura" value="200" min="10">
+                </div>
+                <div class="calc-input-group">
+                    <label for="ext-distancia">Distancia maxima de percurso (m)</label>
+                    <input type="number" id="ext-distancia" value="15" min="1">
+                </div>
+                <div class="calc-input-group">
+                    <label for="ext-minimo">Minimo de extintores por piso/compartimento</label>
+                    <input type="number" id="ext-minimo" value="2" min="1">
+                </div>
+            </div>
+            <button class="btn-calc" onclick="calcExtintores()">Calcular</button>
+            <div class="calc-result" id="ext-result" style="display:none;">
+                <h4>Resultados</h4>
+                <ul id="ext-results-list"></ul>
+            </div>
+            <p class="warning">Nota: A area de cobertura por extintor (valor por defeito 200 m&sup2;) e uma regra pratica corrente para risco corrente, nao um valor fixo da legislacao - ajuste conforme o layout e a categoria de risco da UT. A quantidade, o tipo e a capacidade extintora minima finais devem respeitar o RT-SCIE (Portaria 1532/2008) e o projeto de SCIE aplicavel. Para acetatos/oleos de cozinha (Classe F) e obrigatorio equipamento especifico.</p>
+        </div>
+    </section>
+ 
+    <section class="tool-detail" id="calc-efetivo">
+        <h2>Calculo de Efetivo</h2>
+        <p class="tool-desc">Estime o efetivo (numero previsivel de ocupantes) de um espaco a partir da area util e de um indice de ocupacao (m&sup2; por pessoa).</p>
+        <div class="calculator">
+            <div class="calc-input-grid">
+                <div class="calc-input-group">
+                    <label for="efet-area">Area util do espaco (m&sup2;)</label>
+                    <input type="number" id="efet-area" value="200" min="1">
+                </div>
+                <div class="calc-input-group">
+                    <label for="efet-tipo">Tipo de espaco (indice de referencia)</label>
+                    <select id="efet-tipo" onchange="preencherIndice()">
+                        <option value="10">Escritorios (~10 m&sup2;/pessoa)</option>
+                        <option value="5">Comercio (~5 m&sup2;/pessoa)</option>
+                        <option value="2">Sala de refeicoes/restauracao (~2 m&sup2;/pessoa)</option>
+                        <option value="1.5">Salas de reuniao/formacao (~1.5 m&sup2;/pessoa)</option>
+                        <option value="20">Armazem/industrial (~20 m&sup2;/pessoa)</option>
+                        <option value="0">Outro (indicar indice manualmente)</option>
+                    </select>
+                </div>
+                <div class="calc-input-group">
+                    <label for="efet-indice">Indice de ocupacao (m&sup2;/pessoa)</label>
+                    <input type="number" id="efet-indice" value="10" min="0.1" step="0.1">
+                </div>
+            </div>
+            <button class="btn-calc" onclick="calcEfetivo()">Calcular Efetivo</button>
+            <div class="calc-result" id="efet-result" style="display:none;">
+                <h4>Resultado</h4>
+                <ul id="efet-results-list"></ul>
+            </div>
+            <p class="warning">Nota: Os indices de ocupacao apresentados sao valores de referencia habituais, editaveis. Confirme sempre o indice de ocupacao correto para o espaco em causa no Quadro de indices de ocupacao do RT-SCIE (Portaria 1532/2008) ou no numero real de lugares/postos de trabalho, quando aplicavel.</p>
+        </div>
+    </section>
+ 
     <section class="cta-section">
         <h2>Precisa de apoio tecnico especializado?</h2>
         <p>A nossa equipa de engenheiros SCIE esta disponivel para projetos de dimensionamento, auditoria e consultoria.</p>
         <a href="index.html#contato" class="btn-primary">Fale Connosco</a>
     </section>
-
+ 
     <footer>
         <span>&copy; 2025 Eng.SCIE - Engenharia e Seguranca Contra Incendio</span>
         <p><a href="blog.html">Artigos Tecnicos</a> | <a href="projetos.html">Projetos</a> | <a href="index.html">Inicio</a></p>
     </footer>
-
+ 
     <script>
         function showResult(divId, html) {
             const div = document.getElementById(divId);
@@ -242,59 +349,165 @@
             div.style.display = "block";
             list.innerHTML = html;
         }
-
+ 
+        function showError(divId, msg) {
+            const div = document.getElementById(divId);
+            const list = div.querySelector("ul");
+            div.style.display = "block";
+            list.innerHTML = "<li style='color:#b71f1f'>" + msg + "</li>";
+        }
+ 
         function calcSprinkler() {
             const area = parseFloat(document.getElementById("sprk-area").value);
             const densidade = parseFloat(document.getElementById("sprk-densidade").value);
             const cobertura = parseFloat(document.getElementById("sprk-cobertura").value);
             const fator = parseFloat(document.getElementById("sprk-fator").value);
+            if (!area || !densidade || !cobertura || area <= 0 || densidade <= 0 || cobertura <= 0) {
+                showError("sprk-result", "Preencha valores validos (maiores que zero) em todos os campos.");
+                return;
+            }
             const numSprinklers = Math.ceil(area / cobertura);
             const fluxo = area * densidade * fator;
             const fluxoPorSprinkler = fluxo / numSprinklers;
-            const html = "<li><strong>Numero de sprinklers:</strong> " + numSprinklers + "</li>" +
-                         "<li><strong>Fluxo total:</strong> " + fluxo.toFixed(1) + " l/min</li>" +
-                         "<li><strong>Fluxo por sprinkler:</strong> " + fluxoPorSprinkler.toFixed(1) + " l/min</li>";
+            const html = "<li><strong>Numero de sprinklers:</strong> <span>" + numSprinklers + "</span></li>" +
+                         "<li><strong>Fluxo total da estacao:</strong> <span>" + fluxo.toFixed(1) + " l/min</span></li>" +
+                         "<li><strong>Fluxo medio por sprinkler:</strong> <span>" + fluxoPorSprinkler.toFixed(1) + " l/min</span></li>";
             showResult("sprk-result", html);
         }
-
+ 
         function calcQueda() {
             const vazao = parseFloat(document.getElementById("queda-vazao").value);
             const diametro = parseFloat(document.getElementById("queda-diametro").value);
             const comprimento = parseFloat(document.getElementById("queda-comprimento").value);
             const rugosidade = parseFloat(document.getElementById("queda-rugosidade").value);
-            const areaSecao = Math.PI * Math.pow(diametro/2000, 2);
-            const velocidade = (vazao/60000) / areaSecao;
-            const viscosidade = 0.001;
-            const rho = 1000;
-            const re = (rho * velocidade * diametro/1000) / viscosidade;
-            const f = 0.316 / Math.pow(re, 0.25);
-            const perda = (f * comprimento / (diametro/1000)) * (rho * Math.pow(velocidade, 2) / 2);
+            if (!vazao || !diametro || !comprimento || vazao <= 0 || diametro <= 0 || comprimento <= 0) {
+                showError("queda-result", "Preencha valores validos (maiores que zero) em todos os campos.");
+                return;
+            }
+            const diametroM = diametro / 1000;
+            const areaSecao = Math.PI * Math.pow(diametroM / 2, 2);
+            const velocidade = (vazao / 60000) / areaSecao;
+            const viscosidade = 0.001002;
+            const rho = 998;
+            const re = (rho * velocidade * diametroM) / viscosidade;
+ 
+            let f, regime;
+            if (re < 2300) {
+                f = 64 / re;
+                regime = "Laminar";
+            } else {
+                const relRugosidade = rugosidade / diametro;
+                f = 0.25 / Math.pow(Math.log10((relRugosidade / 3.7) + (5.74 / Math.pow(re, 0.9))), 2);
+                regime = (re < 4000) ? "Transicao (aprox. via formula turbulenta)" : "Turbulento";
+            }
+ 
+            const perda = f * (comprimento / diametroM) * (rho * Math.pow(velocidade, 2) / 2);
             const bar = perda / 100000;
-            const html = "<li><strong>Velocidade:</strong> " + velocidade.toFixed(2) + " m/s</li>" +
-                         "<li><strong>Numero de Reynolds:</strong> " + Math.round(re) + "</li>" +
-                         "<li><strong>Fator atrito (Blasius):</strong> " + f.toFixed(4) + "</li>" +
-                         "<li><strong>Perda de carga:</strong> " + perda.toFixed(0) + " Pa (" + bar.toFixed(3) + " bar)</li>";
+            const mca = perda / (rho * 9.81);
+ 
+            const html = "<li><strong>Velocidade:</strong> <span>" + velocidade.toFixed(2) + " m/s</span></li>" +
+                         "<li><strong>Numero de Reynolds:</strong> <span>" + Math.round(re) + "</span></li>" +
+                         "<li><strong>Regime de escoamento:</strong> <span>" + regime + "</span></li>" +
+                         "<li><strong>Fator de atrito:</strong> <span>" + f.toFixed(4) + "</span></li>" +
+                         "<li><strong>Perda de carga:</strong> <span>" + perda.toFixed(0) + " Pa (" + bar.toFixed(3) + " bar / " + mca.toFixed(2) + " m.c.a.)</span></li>";
             showResult("queda-result", html);
+ 
+            if (velocidade > 3) {
+                const div = document.getElementById("queda-result");
+                div.querySelector("ul").innerHTML += "<li style='color:#b7791f'><strong>Aviso:</strong> velocidade acima de 3 m/s - considere aumentar o diametro para reduzir ruido/erosao.</li>";
+            }
         }
-
+ 
         function calcRTSCIE() {
-            const uso = parseInt(document.getElementById("rtsie-uso").value);
+            const ut = document.getElementById("rtsie-ut").value;
+            const utNomes = {I:"Habitacionais", II:"Estacionamentos", III:"Administrativos", IV:"Escolares", V:"Hospitalares e lares de idosos", VI:"Espetaculos e reunioes publicas", VII:"Hoteleiros e restauracao", VIII:"Comerciais e gares de transporte", IX:"Desportivos e de lazer", X:"Museus e galerias de arte", XI:"Bibliotecas e arquivos", XII:"Industriais, oficinas e armazens"};
+            const altura = parseFloat(document.getElementById("rtsie-altura").value);
             const area = parseFloat(document.getElementById("rtsie-area").value);
-            const pisso = parseFloat(document.getElementById("rtsie-pisos").value);
-            let categoria, observacoes;
-            const usos = ["Habitacional", "Administrativo", "Comercial", "Industrial", "Educacional", "Hospitalar"];
-            if (area <= 200) { categoria = "Isento"; observacoes = "Edificio isento de SCIE"; }
-            else if (area <= 1000 && pisso <= 2 && (uso === 2 || uso === 3)) { categoria = "1\u00aa cat."; observacoes = "Requisitos basicos"; }
-            else if (area <= 5000 && pisso <= 4) { categoria = "2\u00aa cat."; observacoes = "Detectores + extintores + sinalizacao"; }
-            else if (uso === 6 || pisso > 4 || area > 5000) { categoria = "3\u00aa cat."; observacoes = "Sistema completo: deteccao, alarme, evacuacao"; }
-            else { categoria = "2\u00aa cat."; observacoes = "Verificar在使用 DL 224/2015"; }
-            const html = "<li><strong>Uso:</strong> " + usos[uso-1] + "</li>" +
-                         "<li><strong>Area:</strong> " + area + " m²</li>" +
-                         "<li><strong>Pisos:</strong> " + pisso + "</li>" +
-                         "<li><strong>Categoria indicativa:</strong> " + categoria + "</li>" +
-                         "<li><strong>Observacoes:</strong> " + observacoes + "</li>";
+            const efetivoStr = document.getElementById("rtsie-efetivo").value;
+            const pisosAbaixo = parseFloat(document.getElementById("rtsie-pisos-ab").value) || 0;
+ 
+            if (isNaN(altura) || altura < 0 || !area || area <= 0) {
+                showError("rtsie-result", "Indique a altura da UT (m) e a area bruta (m&sup2;), com valores validos.");
+                return;
+            }
+ 
+            let categoria;
+            if (altura <= 9) categoria = 1;
+            else if (altura <= 28) categoria = 2;
+            else if (altura <= 50) categoria = 3;
+            else categoria = 4;
+ 
+            let html = "<li><strong>UT:</strong> <span>UT " + ut + " - " + utNomes[ut] + "</span></li>" +
+                       "<li><strong>Altura da UT:</strong> <span>" + altura + " m</span></li>" +
+                       "<li><strong>Area bruta:</strong> <span>" + area + " m&sup2;</span></li>" +
+                       "<li><strong>Categoria de risco (por altura):</strong> <span>" + categoria + "&ordf; categoria</span></li>";
+ 
+            if (efetivoStr !== "") {
+                html += "<li><strong>Efetivo indicado:</strong> <span>" + efetivoStr + " pessoas</span></li>";
+            }
+            if (pisosAbaixo > 0) {
+                html += "<li><strong>Pisos abaixo do plano de referencia:</strong> <span>" + pisosAbaixo + "</span></li>";
+            }
+            if (ut === "II" || ut === "XII") {
+                html += "<li style='color:#b7791f'><strong>Atencao:</strong> para a UT " + ut + " o RT-SCIE usa criterios especificos (area, pisos enterrados, potencia calorifica/armazenamento) que podem sobrepor-se ao criterio de altura - confirme no quadro proprio desta UT.</li>";
+            }
             showResult("rtsie-result", html);
+        }
+ 
+        function calcExtintores() {
+            const area = parseFloat(document.getElementById("ext-area").value);
+            const classe = document.getElementById("ext-classe").value;
+            const cobertura = parseFloat(document.getElementById("ext-cobertura").value);
+            const distancia = parseFloat(document.getElementById("ext-distancia").value);
+            const minimo = parseInt(document.getElementById("ext-minimo").value);
+ 
+            if (!area || !cobertura || !distancia || !minimo || area <= 0 || cobertura <= 0 || distancia <= 0 || minimo <= 0) {
+                showError("ext-result", "Preencha valores validos (maiores que zero) em todos os campos.");
+                return;
+            }
+ 
+            const numPorArea = Math.ceil(area / cobertura);
+            const numExtintores = Math.max(numPorArea, minimo);
+ 
+            const agentes = {
+                A: {nome:"Agua pulverizada, po ABC ou espuma", capacidade:"6 L agua pulv. ou 6 kg po ABC (min. 21A)"},
+                B: {nome:"Po BC/ABC, CO2 ou espuma (evitar agua em jacto)", capacidade:"6 kg po ABC (min. 55B) ou 5 kg CO2"},
+                C: {nome:"Po BC/ABC - fechar a fuga de gas antes de extinguir", capacidade:"6 kg po ABC"},
+                eletrico: {nome:"CO2 (agente nao condutor) ou po ABC, a distancia de seguranca", capacidade:"5 kg CO2"},
+                F: {nome:"Agente especifico Classe F (a base de acetatos) - nunca agua", capacidade:"Extintor Classe F dedicado (ex.: 6 L)"}
+            };
+            const escolha = agentes[classe];
+ 
+            const html = "<li><strong>Numero minimo de extintores:</strong> <span>" + numExtintores + "</span></li>" +
+                         "<li><strong>Baseado em area/cobertura:</strong> <span>" + numPorArea + " (area &divide; " + cobertura + " m&sup2;)</span></li>" +
+                         "<li><strong>Distancia maxima de percurso a respeitar:</strong> <span>" + distancia + " m</span></li>" +
+                         "<li><strong>Agente extintor recomendado:</strong> <span>" + escolha.nome + "</span></li>" +
+                         "<li><strong>Capacidade sugerida:</strong> <span>" + escolha.capacidade + "</span></li>";
+            showResult("ext-result", html);
+        }
+ 
+        function preencherIndice() {
+            const tipo = document.getElementById("efet-tipo").value;
+            if (tipo !== "0") {
+                document.getElementById("efet-indice").value = tipo;
+            }
+        }
+ 
+        function calcEfetivo() {
+            const area = parseFloat(document.getElementById("efet-area").value);
+            const indice = parseFloat(document.getElementById("efet-indice").value);
+            if (!area || !indice || area <= 0 || indice <= 0) {
+                showError("efet-result", "Preencha valores validos (maiores que zero) em todos os campos.");
+                return;
+            }
+            const efetivo = Math.ceil(area / indice);
+            const html = "<li><strong>Area util:</strong> <span>" + area + " m&sup2;</span></li>" +
+                         "<li><strong>Indice de ocupacao usado:</strong> <span>" + indice + " m&sup2;/pessoa</span></li>" +
+                         "<li><strong>Efetivo estimado:</strong> <span>" + efetivo + " pessoas</span></li>";
+            showResult("efet-result", html);
         }
     </script>
 </body>
 </html>
+ 
+
