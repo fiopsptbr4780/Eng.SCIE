@@ -3,23 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Artigos e guias sobre Engenharia Mecânica, SCIE, Sprinklers EN 12845, SADI, Piping Industrial, HVAC e normas RTSCIE. Conteúdo técnico para profissionais em Portugal.">
-    <meta name="keywords" content="blog SCIE Portugal, artigos engenharia mecânica, sprinklers EN 12845, SADI, piping industrial, HVAC, RTSCIE, ANEPC, deteção incêndio, espuma NFPA 11, projetos incêndio">
-    <meta name="author" content="Engenharia e SCIE">
-    <title>Artigos de Engenharia e SCIE | Blog Técnico — Sprinklers, SADI, Piping, HVAC</title>
+    <meta name="description" content="Artigos técnicos sobre Engenharia Mecânica, SCIE, Sprinklers EN 12845, SADI, Piping Industrial e normas RT-SCIE. Conteúdo para profissionais em Portugal.">
+    <meta name="keywords" content="blog SCIE Portugal, artigos engenharia mecânica, sprinklers EN 12845, SADI, piping industrial, HVAC, RT-SCIE, ANEPC, deteção incêndio, espuma NFPA 11">
+    <meta name="author" content="Engenharia & SCIE">
+    <title>Artigos Técnicos | Blog Engenharia & SCIE</title>
     
-    <!-- JSON-LD Schema para Blog -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Blog",
-      "name": "Blog Engenharia e SCIE",
+      "name": "Blog Engenharia & SCIE",
       "url": "https://fiopsptbr4780.github.io/Eng.SCIE/blog.html",
       "description": "Artigos técnicos sobre SCIE, Sprinklers, SADI, Piping Industrial e Engenharia Mecânica",
-      "author": {
-        "@type": "Person",
-        "name": "Engenheiro Mecânico - SCIE"
-      },
+      "author": { "@type": "Person", "name": "Engenheiro Mecânico - SCIE" },
       "inLanguage": "pt-PT"
     }
     </script>
@@ -31,6 +27,7 @@
         nav {background:var(--primary);position:sticky;top:0;z-index:999;display:flex;justify-content:space-between;align-items:center;padding:0 5%;height:64px;box-shadow:0 2px 8px rgba(0,0,0,0.18)}
         .nav-logo {color:var(--white);font-size:1.2rem;font-weight:700;letter-spacing:1px;text-decoration:none}
         .nav-logo span {color:var(--accent)}
+        .nav-toggle{display:none;background:transparent;border:none;color:var(--white);font-size:1.5rem;cursor:pointer;padding:4px 8px}
         nav ul {list-style:none;display:flex;gap:24px}
         nav ul li a {color:#ccd8e8;text-decoration:none;font-size:0.95rem;transition:color 0.2s}
         nav ul li a:hover, nav ul li a.active {color:var(--accent)}
@@ -78,19 +75,27 @@
         .cta-section .btn-primary:hover {background:#c44e12}
         footer {background:#0f2238;color:#7fa8c8;text-align:center;padding:28px 5%;font-size:0.88rem}
         footer span {color:var(--accent);font-weight:700}
-        @media (max-width:640px) {nav ul {gap:14px}.hero h1 {font-size:1.8rem}.section-title {font-size:1.5rem}}
+        @media(max-width:900px){
+            .nav-toggle{display:block}
+            nav ul{position:absolute;top:64px;left:0;right:0;background:var(--primary);flex-direction:column;gap:0;max-height:0;overflow:hidden;transition:max-height 0.25s ease;padding:0}
+            nav ul.open{max-height:400px}
+            nav ul li{padding:12px 5%;border-top:1px solid rgba(255,255,255,0.08)}
+        }
+        @media (max-width:640px) {.hero h1 {font-size:1.8rem}.section-title {font-size:1.5rem}}
     </style>
+</head>
 <body>
     <nav>
         <a href="index.html" class="nav-logo">Eng.<span>SCIE</span></a>
-        <ul>
+        <button class="nav-toggle" aria-label="Abrir menu" id="navToggle">☰</button>
+        <ul id="navMenu">
             <li><a href="index.html#servicos">Serviços</a></li>
             <li><a href="index.html#sobre">Sobre</a></li>
-            <li><a href="index.html#processo">Como Funciona</a></li>
-            <li><a href="index.html#contacto">Contacto</a></li>
             <li><a href="projetos.html">Projetos</a></li>
             <li><a href="blog.html" class="active">Artigos</a></li>
             <li><a href="ferramentas.html">Ferramentas</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="index.html#contacto">Contacto</a></li>
         </ul>
     </nav>
 
@@ -116,27 +121,26 @@
         <div class="section-sub">Explore os nossos artigos técnicos sobre projetos SCIE, sprinklers, SADI, espuma, piping industrial e HVAC.</div>
 
         <div class="blog-grid">
-            <!-- Article 1 -->
+            <!-- CORRIGIDO: Título e descrição com legislação correta -->
             <article class="blog-card" data-category="scie normas">
                 <div class="card-img">🔥</div>
                 <div class="card-body">
                     <div class="card-meta">
-                        <span class="card-category">SCIE · RTSCIE</span>
-                        <span class="card-date">12 Mar 2026</span>
+                        <span class="card-category">SCIE · RT-SCIE</span>
+                        <span class="card-date">Jun 2025</span>
                     </div>
-                    <h3>RTSCIE 2026: O Que Mudou no Decreto-Lei 224/2015?</h3>
-                    <p>Guia completo sobre as alterações ao Regulamento Técnico de Segurança Contra Incêndios, categorias de risco e novos requisitos para submissão ANEPC.</p>
+                    <h3>Enquadramento Legal da SCIE: DL 220/2008 e RT-SCIE</h3>
+                    <p>Guia completo sobre a estrutura legislativa da segurança contra incêndio em Portugal: Regime Jurídico, Regulamento Técnico e competências da ANEPC.</p>
                     <a href="#artigo1" class="read-more">Ler artigo</a>
                 </div>
             </article>
 
-            <!-- Article 2 -->
             <article class="blog-card" data-category="sprinklers normas">
                 <div class="card-img">💧</div>
                 <div class="card-body">
                     <div class="card-meta">
                         <span class="card-category">Sprinklers · EN 12845</span>
-                        <span class="card-date">5 Mar 2026</span>
+                        <span class="card-date">Mai 2025</span>
                     </div>
                     <h3>Dimensionamento de Sprinklers Conforme EN 12845</h3>
                     <p>Metodologia passo-a-passo para cálculo hidráulico de redes de sprinklers, seleção de cabeças, pressão mínima e densidade de descarga.</p>
@@ -144,13 +148,12 @@
                 </div>
             </article>
 
-            <!-- Article 3 -->
             <article class="blog-card" data-category="espuma normas">
                 <div class="card-img">🧯</div>
                 <div class="card-body">
                     <div class="card-meta">
                         <span class="card-category">Espuma · NFPA 11</span>
-                        <span class="card-date">28 Fev 2026</span>
+                        <span class="card-date">Abr 2025</span>
                     </div>
                     <h3>Sistemas de Extinção por Espuma: NFPA 11 e EN 13565</h3>
                     <p>Comparativo entre NFPA 11 e EN 13565 para projetos de espuma em tanques de armazenamento de líquidos inflamáveis e postos de combustível.</p>
@@ -158,13 +161,12 @@
                 </div>
             </article>
 
-            <!-- Article 4 -->
             <article class="blog-card" data-category="sadi">
                 <div class="card-img">🔔</div>
                 <div class="card-body">
                     <div class="card-meta">
                         <span class="card-category">SADI · EN 54</span>
-                        <span class="card-date">20 Fev 2026</span>
+                        <span class="card-date">Mar 2025</span>
                     </div>
                     <h3>SADI — Sistemas Automáticos de Deteção de Incêndio</h3>
                     <p>Requisitos técnicos para projetos de SADI conforme EN 54, zonas de deteção, tipos de detetores e integração com sistemas de evacuação.</p>
@@ -172,93 +174,84 @@
                 </div>
             </article>
 
-            <!-- Article 5 -->
             <article class="blog-card" data-category="piping hvac">
                 <div class="card-img">⚙️</div>
                 <div class="card-body">
                     <div class="card-meta">
                         <span class="card-category">Piping · P&ID</span>
-                        <span class="card-date">15 Fev 2026</span>
+                        <span class="card-date">Fev 2025</span>
                     </div>
                     <h3>Elaboração de P&IDs e Isométricos com AutoCAD Plant 3D</h3>
-                    <p>Boas práticas para criação de P&IDs, isométricos e documentação técnica de piping industrial com AutoCAD Plant 3D e conscientes de ASME B31.1.</p>
+                    <p>Boas práticas para criação de P&IDs, isométricos e documentação técnica de piping industrial com AutoCAD Plant 3D e ASME B31.1.</p>
                     <a href="#artigo5" class="read-more">Ler artigo</a>
                 </div>
             </article>
 
-            <!-- Article 6 -->
             <article class="blog-card" data-category="hvac">
                 <div class="card-img">❄️</div>
                 <div class="card-body">
                     <div class="card-meta">
                         <span class="card-category">HVAC · Ventilação</span>
-                        <span class="card-date">10 Fev 2026</span>
+                        <span class="card-date">Jan 2025</span>
                     </div>
                     <h3>Ventilação e Pressurização de Escadas em Edifícios</h3>
-                    <p>Critérios de dimensionamento de sistemas de ventilação e pressurização de escadas para evacuação segura, conforme RTSCIE e norma europeia.</p>
+                    <p>Critérios de dimensionamento de sistemas de ventilação e pressurização de escadas para evacuação segura, conforme RT-SCIE e norma europeia.</p>
                     <a href="#artigo6" class="read-more">Ler artigo</a>
                 </div>
             </article>
         </div>
     </section>
 
-    <!-- Article 1: Full Content -->
+    <!-- ARTIGO 1: CORRIGIDO INTEGRALMENTE -->
     <section id="artigo1" class="article-section">
         <div class="article-content">
-            <div class="section-label">SCIE · RTSCIE</div>
-            <h2>RTSCIE 2026: O Que Mudou no Decreto-Lei 224/2015?</h2>
-            <p class="section-sub">Guia técnico sobre as alterações ao Regulamento Técnico de Segurança Contra Incêndios e as novas exigências para projetos SCIE em Portugal.</p>
+            <div class="section-label">SCIE · Enquadramento Legal</div>
+            <h2>Enquadramento Legal da SCIE: DL 220/2008 e RT-SCIE</h2>
+            <p class="section-sub">Guia técnico sobre a estrutura legislativa da segurança contra incêndio em edifícios em Portugal.</p>
 
-            <p>O Regulamento Técnico de Segurança Contra Incêndios (RTSCIE), aprovado pelo Decreto-Lei 224/2015, tem sido objeto de várias alterações para alinhar a legislação portuguesa com as diretivas europeias e as melhores práticas internacionais.</p>
+            <p>A segurança contra incêndio em edifícios em Portugal assenta em dois diplomas fundamentais que é essencial distinguir:</p>
 
-            <h2>Categorias de Risco — O Que Definem</h2>
-            <p>A classificação de risco de incêndio de um edifício ou complexo é determinada pela combinação do tipo de utilização, a carga de incêndio e a altura do edifício. As categorias são:</p>
-            <ul>
-                <li><strong>1.ª Categoria:</strong> Edifícios de habitação até 10 pisos, comércio de pequena dimensão.</li>
-                <li><strong>2.ª Categoria:</strong> Edifícios de habitação de média altura, comércio, indústria ligeira.</li>
-                <li><strong>3.ª Categoria:</strong> Edifícios de grande altura, grandes superfícies comerciais, indústria de médio risco.</li>
-                <li><strong>4.ª Categoria:</strong> Edifícios de habitação de 9 ou mais pisos, indústria e serviços com elevado risco.</li>
-                <li><strong>5.ª Categoria:</strong> Instalações industriais com risco elevado, armazenamento de produtos inflamáveis.</li>
-            </ul>
-
-            <h2>Novos Requisitos para Submissão à ANEPC</h2>
-            <p>Desde 2025, a submissão de projetos SCIE à ANEPC exige uma documentação adicional:</p>
             <div class="highlight">
-                <p><strong>Documentação obrigatória:</strong></p>
-                <ul>
-                    <li>Memória descritiva e justificativa</li>
-                    <li>Plantas de piso e cortes com localização das medidas SCIE</li>
-                    <li>Esquemas funcionais de sprinklers, SADI ou sistemas de espuma</li>
-                    <li>Cálculo hidráulico assinado por projetista reconhecido</li>
-                    <li>Certificado de registo na Ordem dos Engenheiros</li>
-                </ul>
+                <p><strong>Decreto-Lei n.º 220/2008</strong> (na redação atual dada pelo DL n.º 224/2015 e DL n.º 10/2024) — Aprova o <strong>Regime Jurídico da Segurança Contra Incêndio em Edifícios (RJ-SCIE)</strong>. Define o âmbito, as entidades competentes, os procedimentos de licenciamento, fiscalização e inspeção.</p>
+                <p style="margin-top:8px"><strong>Portaria n.º 1532/2008</strong> (com alterações subsequentes) — Aprova o <strong>Regulamento Técnico de Segurança Contra Incêndio em Edifícios (RT-SCIE)</strong>. Define as condições técnicas exigíveis: classificações de risco, vias de evacuação, compartimentação, sistemas de proteção ativa e passiva.</p>
             </div>
 
-            <blockquote>Nota: É fundamental que o projetista tenha reconhecimento formal pela ANEPC, de acordo com a Portaria 1532/2008, para submeter projetos nas categorias 3.ª a 5.ª.</blockquote>
+            <h2>Categorias de Risco no RT-SCIE</h2>
+            <p>O RT-SCIE classifica os edifícios em <strong>quatro categorias de risco</strong> (1.ª a 4.ª), determinadas pela combinação da utilização-tipo, altura, área bruta, efetivo e número de pisos abaixo do plano de referência:</p>
+            <ul>
+                <li><strong>1.ª Categoria:</strong> Risco reduzido — edifícios de pequena dimensão e baixa ocupação.</li>
+                <li><strong>2.ª Categoria:</strong> Risco moderado — edifícios de média dimensão.</li>
+                <li><strong>3.ª Categoria:</strong> Risco elevado — edifícios de grande altura ou grande área.</li>
+                <li><strong>4.ª Categoria:</strong> Risco muito elevado — edifícios de muito grande altura, grande efetivo ou condições especiais de risco.</li>
+            </ul>
+
+            <h2>Entidade Competente</h2>
+            <p>A entidade competente para a apreciação de projetos, emissão de pareceres e realização de inspeções é a <strong>ANEPC — Autoridade Nacional de Emergência e Proteção Civil</strong>, podendo esta delegar competências em corpos de bombeiros ou outras entidades acreditadas.</p>
 
             <table class="norm-table">
                 <thead>
                     <tr>
                         <th>Categoria</th>
-                        <th>Autoridade Competente</th>
-                        <th>Prazo ANEPC</th>
+                        <th>Entidade Competente</th>
+                        <th>Prazo Legal Parecer</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td>1.ª</td><td>Bombeiros / Município</td><td>Não aplicável</td></tr>
-                    <tr><td>2.ª</td><td>Bombeiros / Município</td><td>Não aplicável</td></tr>
-                    <tr><td>3.ª</td><td>ANEPC</td><td>30 a 60 dias</td></tr>
-                    <tr><td>4.ª</td><td>ANEPC</td><td>60 a 90 dias</td></tr>
-                    <tr><td>5.ª</td><td>ANEPC + Bombeiros</td><td>90 a 120 dias</td></tr>
+                    <tr><td>1.ª</td><td>ANEPC / Entidade Delegada</td><td>Dispensado (comunicação prévia)</td></tr>
+                    <tr><td>2.ª</td><td>ANEPC / Entidade Delegada</td><td>30 dias úteis</td></tr>
+                    <tr><td>3.ª</td><td>ANEPC</td><td>45 dias úteis</td></tr>
+                    <tr><td>4.ª</td><td>ANEPC</td><td>60 dias úteis</td></tr>
                 </tbody>
             </table>
 
+            <blockquote>Nota: É fundamental que o projetista esteja devidamente reconhecido pela ANEPC como Técnico Especialista em SCIE para subscrever projetos de especialidade, conforme Portaria n.º 1532/2008 e regulamentação complementar.</blockquote>
+
             <h2>Conclusão</h2>
-            <p>Manter-se atualizado com as alterações ao RTSCIE é essencial para projetistas SCIE. Como consultor freelancer especializado, acompanho cada atualização normativa e aplico os requisitos mais recentes em todos os meus projetos.</p>
+            <p>Distinguir corretamente o Regime Jurídico (DL 220/2008) do Regulamento Técnico (Portaria 1532/2008) é essencial para qualquer profissional de SCIE. Como consultor especializado, acompanho cada atualização normativa e aplico os requisitos vigentes em todos os meus projetos.</p>
         </div>
     </section>
 
-    <!-- Article 2 -->
+    <!-- Artigo 2 -->
     <section id="artigo2" class="article-section">
         <div class="article-content">
             <div class="section-label">Sprinklers · EN 12845</div>
@@ -268,22 +261,22 @@
             <p>A norma europeia EN 12845 — «Fixed firefighting systems — Automatic sprinkler systems» — estabelece os requisitos para projeto, instalação e manutenção de sistemas de sprinklers em edifícios.</p>
 
             <h2>Classificação do Risco — Hazard Class</h2>
-            <p>O primeiro passo no projeto é determinar a classe de risco hazard do local protegido:</p>
+            <p>O primeiro passo no projeto é determinar a classe de risco do local protegido:</p>
             <ul>
                 <li><strong>Light Hazard (LH):</strong> Escritórios, habitação, escolas, bibliotecas.</li>
-                <li><strong>Ordinary Hazard Group 1 (OH 1):</strong> Comércio reto, fabrico ligeiro, armazéns com materiais não inflamáveis.</li>
+                <li><strong>Ordinary Hazard Group 1 (OH 1):</strong> Comércio retalho, fabrico ligeiro.</li>
                 <li><strong>Ordinary Hazard Group 2 (OH 2):</strong> Indústrias ligeiras, armazéns com carga de incêndio moderada.</li>
-                <li><strong>High Hazard Group 1 (HH 1):</strong> Produtos inflamáveis de ponto de inflamação elevado, líquidos viscosos.</li>
+                <li><strong>High Hazard Group 1 (HH 1):</strong> Produtos inflamáveis de ponto de inflamação elevado.</li>
                 <li><strong>High Hazard Group 2 (HH 2):</strong> Líquidos inflamáveis, armazenamento em paletes, plásticos expandidos.</li>
             </ul>
 
             <h2>Densidade de Descarga e Área de Operação</h2>
             <div class="highlight">
-                <p><strong>Parâmetros chave por classe:</strong></p>
+                <p><strong>Parâmetros chave por classe (valores indicativos):</strong></p>
                 <ul>
                     <li><strong>LH:</strong> 2,25 mm/min sobre 72 m²</li>
-                    <li><strong>OH 1:</strong> 3,0 mm/min sobre 11床单 to 144 m²</li>
-                    <li><strong>OH 2:</strong> 5,0 mm/min sobre 16床单 to 216 m²</li>
+                    <li><strong>OH 1:</strong> 3,0 mm/min sobre 144 m²</li>
+                    <li><strong>OH 2:</strong> 5,0 mm/min sobre 216 m²</li>
                 </ul>
             </div>
 
@@ -292,24 +285,23 @@
         </div>
     </section>
 
-    <!-- Article 3 -->
+    <!-- Artigo 3 -->
     <section id="artigo3" class="article-section">
         <div class="article-content">
             <div class="section-label">Espuma · NFPA 11 · EN 13565</div>
             <h2>Sistemas de Extinção por Espuma: NFPA 11 e EN 13565</h2>
-            <p class="section-sub">Comparativo entre as normas americana e europeia para projetos de sistemas de espuma em tanques e instalações industriais.</p>
+            <p class="section-sub">Comparativo entre as normas americana e europeia para projetos de sistemas de espuma.</p>
 
             <p>Os sistemas de espuma são essenciais para proteção de tanques de armazenamento de líquidos inflamáveis, postos de combustível e instalações industriais com risco de incêndio de hidrocarbonetos.</p>
 
-            <h2>AFFF vs. FFFP — Tipos de Concentrado</h2>
+            <h2>Tipos de Concentrado</h2>
             <ul>
-                <li><strong>AFFF (Aqueous Film Forming Foam):</strong> Espuma aquosa formadora de filme, para hidrocarbonetos não polares.</li>
-                <li><strong>FFFP (Film Forming Fluoroprotein):</strong> Combina filme resistente ao calor com extensa expansão.</li>
-                <li><strong>AR-AFFF (Alcohol Resistant AFFF):</strong> Para líquidos polares como álcoois, éteres e cetonas.</li>
+                <li><strong>AFFF:</strong> Espuma aquosa formadora de filme, para hidrocarbonetos não polares.</li>
+                <li><strong>FFFP:</strong> Combina filme resistente ao calor com extensa expansão.</li>
+                <li><strong>AR-AFFF:</strong> Para líquidos polares como álcoois, éteres e cetonas.</li>
             </ul>
 
-            <h2>Cálculo de Taxa de Aplicação</h2>
-            <p>Conforme NFPA 11, a taxa de aplicação mínima para tanques fixos com teto é:</p>
+            <h2>Taxa de Aplicação (NFPA 11)</h2>
             <div class="highlight">
                 <ul>
                     <li><strong>AFFF 3%:</strong> 4,1 L/min/m²</li>
@@ -320,20 +312,20 @@
         </div>
     </section>
 
-    <!-- Article 4 -->
+    <!-- Artigo 4 -->
     <section id="artigo4" class="article-section">
         <div class="article-content">
             <div class="section-label">SADI · EN 54</div>
             <h2>SADI — Sistemas Automáticos de Deteção de Incêndio</h2>
-            <p class="section-sub">Requisitos técnicos para projetos de SADI conforme EN 54, zonas de deteção e integração com sistemas de evacuação.</p>
+            <p class="section-sub">Requisitos técnicos para projetos de SADI conforme EN 54 e NP 4428.</p>
 
-            <p>O Sistema Automático de Deteção de Incêndio (SADI) é obrigatório em edifícios das categorias 3.ª a 5.ª do RTSCIE, e é fundamental para deteção precoce e ativação de sistemas de evacuação.</p>
+            <p>O Sistema Automático de Deteção de Incêndio (SADI) é obrigatório em edifícios de 2.ª categoria ou superior para a maioria das utilizações-tipo, conforme RT-SCIE.</p>
 
             <h2>Tipos de Deteção</h2>
             <ul>
-                <li><strong>Térmica:</strong> Detetores termoviscosimétricos e termodiferenciais — reação ao aumento de temperatura.</li>
-                <li><strong>Ótica (Fumos):</strong> Detetores óticos de fumos — absorção e dispersão de luz por partículas.</li>
-                <li><strong>Analógica/Endereçável:</strong> Cada detetor tem endereço único e reporte contínuo do nível de fumos/temperatura.</li>
+                <li><strong>Térmica:</strong> Detetores termoviscosimétricos e termodiferenciais.</li>
+                <li><strong>Ótica (Fumos):</strong> Detetores óticos de fumos por absorção/dispersão de luz.</li>
+                <li><strong>Analógica/Endereçável:</strong> Cada detetor tem endereço único e reporte contínuo.</li>
             </ul>
 
             <h2>Zonas e Tamanho Máximo</h2>
@@ -341,25 +333,22 @@
         </div>
     </section>
 
-    <!-- Article 5 -->
+    <!-- Artigo 5 -->
     <section id="artigo5" class="article-section">
         <div class="article-content">
             <div class="section-label">Piping · P&ID · AutoCAD Plant 3D</div>
             <h2>Elaboração de P&IDs e Isométricos com AutoCAD Plant 3D</h2>
-            <p class="section-sub">Fluxo de trabalho para criação de documentação técnica de piping industrial com AutoCAD Plant 3D.</p>
+            <p class="section-sub">Fluxo de trabalho para criação de documentação técnica de piping industrial.</p>
 
-            <p>O Piping & Instrumentation Diagram (P&ID) e os isométricos são documentos fundamentais para qualquer projeto industrial. A sua elaboração correta assegura a comunicação eficiente entre engenharia, construção e operação.</p>
+            <p>O Piping & Instrumentation Diagram (P&ID) e os isométricos são documentos fundamentais para qualquer projeto industrial.</p>
 
             <h2>P&ID — O Que Deve Conter</h2>
             <ul>
                 <li>Equipamentos principais (bombas, válvulas, trocadores, tanques)</li>
                 <li>Linha de tubagem com número, diâmetro, especificação de material</li>
                 <li>Instrumentação e sinais de controlo</li>
-                <li>Sistemas de utilidades (ar压缩空气, água, vapor, inertes)</li>
+                <li>Sistemas de utilidades (ar comprimido, água, vapor, inertes)</li>
             </ul>
-
-            <h2>Isométricos em AutoCAD Plant 3D</h2>
-            <p>O AutoCAD Plant 3D extrai automaticamente os isométricos a partir do modelo 3D. É essencial configurar corretamente as especificações de material (spec sheets) e o catálogo de componentes para garantir que os BOMs (Bill of Materials) sejam gerados automaticamente.</p>
 
             <h2>ASME B31.1 — Código para Tubagens de Vapor e Água</h2>
             <div class="highlight">
@@ -373,14 +362,14 @@
         </div>
     </section>
 
-    <!-- Article 6 -->
+    <!-- Artigo 6 -->
     <section id="artigo6" class="article-section">
         <div class="article-content">
-            <div class="section-label">HVAC · Ventilação · RTSCIE</div>
+            <div class="section-label">HVAC · Ventilação · RT-SCIE</div>
             <h2>Ventilação e Pressurização de Escadas em Edifícios</h2>
-            <p class="section-sub">Dimensionamento de sistemas de ventilação e pressurização de escadas para evacuação segura em edifícios de média e grande altura.</p>
+            <p class="section-sub">Dimensionamento de sistemas de pressurização de escadas para evacuação segura.</p>
 
-            <p>Em edifícios das categorias 3.ª a 5.ª do RTSCIE, a pressurização de escadas de evacuação é obrigatória para criar uma zona de pressão positiva que impeça o fumo de penetrar na escada.</p>
+            <p>Em edifícios de 3.ª e 4.ª categorias do RT-SCIE, a pressurização de escadas de evacuação pode ser obrigatória para criar uma zona de pressão positiva que impeça a entrada de fumo.</p>
 
             <h2>Princípio de Funcionamento</h2>
             <p>O sistema mantém a escada a uma pressão de aproximadamente <code>50 Pa</code> relativamente às zonas adjacentes, suficiente para impedir a entrada de fumos mas permitir a abertura das portas de emergência.</p>
@@ -388,13 +377,10 @@
             <h2>Componentes do Sistema</h2>
             <ul>
                 <li>Ventilador centrífugo de caudal ajustável</li>
-                <li>Amortecedor de pressão diferencial (Differential Pressure Damper)</li>
+                <li>Amortecedor de pressão diferencial</li>
                 <li>Sensor de pressão diferencial com comando automático</li>
                 <li>Caixa de extração no topo da escada (quando necessário)</li>
             </ul>
-
-            <h2>Distinção entre Ventilação Normal e de Emergência</h2>
-            <p>A ventilação mecânica normal serve para renovação de ar em condições de utilização quotidiana. Já a ventilação de emergência (pressurização) entra em funcionamento automaticamente quando são ativados os sistemas de deteção de incêndio (SADI), com alimentação garantida por gerador de emergência.</p>
         </div>
     </section>
 
@@ -404,63 +390,48 @@
         <a href="index.html#contacto" class="btn-primary">Pedir Orçamento</a>
     </section>
 
+    <!-- CORRIGIDO: Footer consistente com Aveiro -->
     <footer>
-        <p>© 2026 <span>Engenharia & SCIE Freelancer</span> · Lisboa, Portugal · Todos os direitos reservados</p>
-        <p style="margin-top:8px;font-size:0.82rem">Membro da Ordem dos Engenheiros · Projetista SCIE reconhecido pela ANEPC</p>
+        <p>&copy; 2025 <span>Engenharia &amp; SCIE</span> · Aveiro, Portugal · Todos os direitos reservados</p>
+        <p style="margin-top:8px;font-size:0.82rem">Engenheiro Mecânico · Membro da Ordem dos Engenheiros · Técnico Especialista em SCIE reconhecido pela ANEPC</p>
     </footer>
 
     <script>
+        // Menu móvel
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('open');
+            navToggle.textContent = navMenu.classList.contains('open') ? '✕' : '☰';
+        });
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('open');
+                navToggle.textContent = '☰';
+            });
+        });
+
         function filterArticles(category) {
             const cards = document.querySelectorAll('.blog-card');
             const buttons = document.querySelectorAll('.filter-btn');
-
             buttons.forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
-
             cards.forEach(card => {
-                if (category === 'all' || card.dataset.category.includes(category)) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-
-            document.querySelectorAll('article.article-section').forEach(article => {
-                article.style.display = 'none';
-            });
-
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    document.querySelectorAll('.filter-btn').forEach(b => b.style.fontWeight = 'normal');
-                    this.style.fontWeight = 'bold';
-                });
+                card.style.display = (category === 'all' || card.dataset.category.includes(category)) ? 'flex' : 'none';
             });
         }
 
-        // Hash scroll
         window.addEventListener('hashchange', function() {
             const target = document.querySelector(window.location.hash);
             if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
 
-        // On page load check hash
         window.addEventListener('DOMContentLoaded', function() {
             if (window.location.hash) {
                 const target = document.querySelector(window.location.hash);
-                if (target) {
-                    setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
-                }
+                if (target) setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
             }
-        });
-
-        // Filter button active state
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-            });
         });
     </script>
 </body>
 </html>
-</head>
