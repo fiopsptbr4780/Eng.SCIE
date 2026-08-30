@@ -209,25 +209,26 @@ Ferramentas · HTML
     </section>
  
     <section class="tool-detail" id="calc-rtsie">
-        <h2>Categoria de Risco RTSCIE</h2>
-        <p class="tool-desc">Estimativa da categoria de risco (1&ordf; a 4&ordf;) com base no criterio geral de altura da UT do RT-SCIE (Portaria 1532/2008, com as alteracoes em vigor).</p>
+        <h2>Categoria de Risco RT-SCIE</h2>
+        <!-- CORRIGIDO: Referência legislativa precisa -->
+        <p class="tool-desc">Estimativa da categoria de risco (1.ª a 4.ª) com base no critério geral de altura da UT do RT-SCIE (Portaria n.º 1532/2008, na redação atual).</p>
         <div class="calculator">
             <div class="calc-input-grid">
                 <div class="calc-input-group">
-                    <label for="rtsie-ut">Utilizacao-Tipo (UT)</label>
+                    <label for="rtsie-ut">Utilização-Tipo (UT)</label>
                     <select id="rtsie-ut">
                         <option value="I">UT I - Habitacionais</option>
                         <option value="II">UT II - Estacionamentos</option>
                         <option value="III" selected>UT III - Administrativos</option>
                         <option value="IV">UT IV - Escolares</option>
                         <option value="V">UT V - Hospitalares e lares de idosos</option>
-                        <option value="VI">UT VI - Espetaculos e reunioes publicas</option>
-                        <option value="VII">UT VII - Hoteleiros e restauracao</option>
+                        <option value="VI">UT VI - Espetáculos e reuniões públicas</option>
+                        <option value="VII">UT VII - Hoteleiros e restauração</option>
                         <option value="VIII">UT VIII - Comerciais e gares de transporte</option>
                         <option value="IX">UT IX - Desportivos e de lazer</option>
                         <option value="X">UT X - Museus e galerias de arte</option>
                         <option value="XI">UT XI - Bibliotecas e arquivos</option>
-                        <option value="XII">UT XII - Industriais, oficinas e armazens</option>
+                        <option value="XII">UT XII - Industriais, oficinas e armazéns</option>
                     </select>
                 </div>
                 <div class="calc-input-group">
@@ -235,7 +236,7 @@ Ferramentas · HTML
                     <input type="number" id="rtsie-altura" value="9" min="0" step="0.5">
                 </div>
                 <div class="calc-input-group">
-                    <label for="rtsie-area">Area bruta total (m&sup2;)</label>
+                    <label for="rtsie-area">Área bruta total (m²)</label>
                     <input type="number" id="rtsie-area" value="500" min="1">
                 </div>
                 <div class="calc-input-group">
@@ -243,7 +244,7 @@ Ferramentas · HTML
                     <input type="number" id="rtsie-efetivo" value="" min="0">
                 </div>
                 <div class="calc-input-group">
-                    <label for="rtsie-pisos-ab">Pisos abaixo do plano de referencia</label>
+                    <label for="rtsie-pisos-ab">Pisos abaixo do plano de referência</label>
                     <input type="number" id="rtsie-pisos-ab" value="0" min="0">
                 </div>
             </div>
@@ -252,10 +253,12 @@ Ferramentas · HTML
                 <h4>Resultado</h4>
                 <ul id="rtsie-results-list"></ul>
             </div>
-            <p class="warning">Nota: O criterio de altura da UT (&le;9m = 1&ordf;, &le;28m = 2&ordf;, &le;28-50m = 3&ordf;, &gt;50m = 4&ordf;) e o mais transversal, mas cada UT tem um quadro proprio no RT-SCIE que pode agravar a categoria em funcao do efetivo, da area, dos pisos abaixo do plano de referencia ou (nas UT II e XII) de criterios especificos de area/potencia calorifica/pisos enterrados. Esta calculadora e apenas indicativa - confirme sempre a categoria final no quadro da UT aplicavel.</p>
+            <!-- CORRIGIDO: Aviso legal mais preciso -->
+            <p class="warning">Nota: O critério de altura da UT (≤9m = 1.ª, ≤28m = 2.ª, 28-50m = 3.ª, >50m = 4.ª) é o mais transversal, mas cada UT tem um quadro próprio no RT-SCIE que pode agravar a categoria em função do efetivo, da área, dos pisos abaixo do plano de referência ou (nas UT II e XII) de critérios específicos. Esta calculadora é apenas indicativa — confirme sempre a categoria final no quadro da UT aplicável do RT-SCIE.</p>
         </div>
     </section>
- 
+
+    
     <section class="tool-detail" id="calc-extintores">
         <h2>Calculadora de Extintores Portateis</h2>
         <p class="tool-desc">Estime a quantidade minima de extintores, o agente extintor e a capacidade indicados, com base na area a proteger, na distancia maxima de percurso e na classe de fogo predominante.</p>
