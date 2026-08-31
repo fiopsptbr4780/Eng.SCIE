@@ -5,23 +5,46 @@
     box-sizing: border-box;
 }
 
-/* Canvas responsivo */
-#gameCanvas {
-    display: block;
+html, body {
     width: 100%;
-    height: 100vh;
-    background: #87ceeb; /* céu azul */
+    height: 100%;
+    overflow: hidden;
+    background: #0b1220; /* fallback escuro, nunca azul plano */
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* Instruções (já incluídas no HTML) */
+/* Canvas responsivo — dimensões reais definidas via JS (devicePixelRatio) */
+#gameCanvas {
+    display: block;
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    cursor: crosshair;
+    touch-action: none;
+}
+
+/* Painel de instruções premium, canto inferior direito (fora da HUD superior) */
 #instructions {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: rgba(255,255,255,0.8);
-    padding: 8px 12px;
-    border-radius: 4px;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    color: #333;
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 5;
+    padding: 12px 16px;
+    border-radius: 14px;
+    font-size: 13px;
+    line-height: 1.55;
+    color: #eaf2ff;
+    background: rgba(12, 20, 38, 0.72);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+    user-select: none;
+    pointer-events: none;
+}
+
+#instructions strong {
+    color: #ffd257;
+    letter-spacing: 0.3px;
 }
