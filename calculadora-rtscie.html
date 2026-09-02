@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🔍 Calculadora Profissional RT-SCIE | Nota Técnica Automática</title>
+  <style>
+    :root {
+      --primary: #1a56ab;
+      --light: #e3f2fd;
+      --dark: #1a3d6a;
+      --text: #333;
+      --border: #ccc;
+      --error: #d32f2f;
+      --success: #388e3c;
+      --bg: #f4f6f9;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      border: 1px solid var(--border);
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-size: 1.9rem;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #555;
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--dark);
+    }
+
+    input[type="number"], select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 16px;
+      transition: border-color 0.3s;
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(26, 86, 171, 0.2);
+    }
+
+    .btn {
+      background-color: var(--primary);
+      color: white;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      display: block;
+      margin: 25px auto;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: var(--dark);
+    }
+
+    .result {
+      margin-top: 25px;
+      padding: 20px;
+      background-color: var(--light);
+      border-radius: 8px;
+      border-left: 4px solid var(--primary);
+      border: 1px solid var(--border);
+      display: none;
+    }
+
+    .result h3 {
+      margin-bottom: 10px;
+      color: var(--primary);
+      font-size: 1.2rem;
+    }
+
+    .result p {
+      margin: 8px 0;
+      font-size: 15px;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    .note {
+      font-size: 13px;
+      color: #666;
+      margin-top: 15px;
+      font-style: italic;
+      background-color: #f9f9f9;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px dashed #aaa;
+    }
+
+    .alert {
+      background-color: #ffebee;
+      color: var(--error);
+      padding: 12px;
+      border-radius: 6px;
+      margin-top: 10px;
+      border: 1px solid var(--error);
+      font-size: 14px;
+    }
+
+    .info {
+      background-color: #e8f5e8;
+      color: var(--success);
+      padding: 12px;
+      border-radius: 6px;
+      margin-top: 10px;
+      border: 1px solid var(--success);
+      font-size: 14px;
+    }
+
+    .legal-ref {
+      font-size: 12px;
+      color: #888;
+      margin-top: 10px;
+      font-style: italic;
+    }
+
+    #notaExplicativa {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #f0f4f8;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      display: none;
+      font-size: 15px;
+      line-height: 1.7;
+      overflow-y: auto;
+      max-height: 400px;
+      border-left: 4px solid var(--primary);
+    }
+
+    #btnNota {
+      background-color: #2e7d32;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      display: block;
+      margin: 15px auto;
+      transition: background-color 0.3s;
+    }
+
+    #btnNota:hover {
+      background-color: #1b5e20;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+      .btn, #btnNota {
+        padding: 12px 20px;
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📊 Calculadora Profissional RT-SCIE</h1>
+    <p class="subtitle">Cálculo automático de efetivo, saídas e UPs com geração de nota técnica</p>
+
+    <div class="form-group">
+      <label for="area">Área útil (m²):</label>
+      <input type="number" id="area" min="1" step="0.1" value="10" placeholder="Ex: 10,0" />
+    </div>
+
+    <div class="form-group">
+      <label for="densidade">O espaço é considerado "área de exposição em espaços muito densos"?</label>
+      <select id="densidade">
+        <option value="nao">Não (circulação adequada)</option>
+        <option value="sim">Sim </option>
+      </select>
+    </div>
+
+    <button class="btn" onclick="calcular()">Calcular Conformidade</button>
+
+    <div id="resultado" class="result">
+      <h3>📌 Resultados conforme o RT-SCIE (DL 159/2017)</h3>
+
+      <p><strong>🔹 Efetivo:</strong> <span id="efetivo"></span> pessoas</p>
+      <p><strong>🔹 Número de saídas necessárias:</strong> <span id="saidas"></span></p>
+      <p><strong>🔹 Largura total em UPs:</strong> <span id="totalUp"></span> UPs</p>
+      <p><strong>🔹 Distribuição sugerida:</strong> <span id="distribuicao"></span></p>
+
+      <div id="verificacao" class="info" style="display: none;"></div>
+      <div id="alerta" class="alert" style="display: none;"></div>
+
+      <p class="legal-ref">
+        Fontes: Artigo 51.º (Quadro XXVII), Artigo 54.º (Quadro XXIX), Artigo 56.º (Quadro XXXI) – RT-SCIE (DL 159/2017)
+      </p>
+    </div>
+
+    <button id="btnNota" onclick="gerarNota()">📄 Gerar Nota Explicativa</button>
+
+    <div id="notaExplicativa">
+      <!-- Inserido via JS -->
+    </div>
+
+    <div class="note">
+      <strong>💡 Dica técnica:</strong> Espaços muito densos incluem aglomeração, corredores estreitos e exposição contínua de mercadorias. Se o layout permitir circulação livre (>1,20 m), use "Não".
+    </div>
+  </div>
+
+  <script>
+    function calcular() {
+      const areaInput = document.getElementById("area");
+      const densidade = document.getElementById("densidade").value;
+
+      let area = parseFloat(areaInput.value.trim());
+      if (!area || area <= 0) {
+        alert("Por favor, insira uma área útil válida maior que zero.");
+        return;
+      }
+
+      let indiceOcupacao;
+      let descricaoIndice = "";
+      let tipoArea = "";
+
+      if (densidade === "sim") {
+        indiceOcupacao = 0.60;
+        descricaoIndice = "0,60 pessoas/m² (área de exposição em espaços muito densos)";
+        tipoArea = "loja comercial com aglomeração intensa";
+      } else {
+        indiceOcupacao = 1 / 6;
+        descricaoIndice = "1 pessoa por 6 m² (circulação adequada)";
+        tipoArea = "loja comercial com baixa densidade";
+      }
+
+      const efetivo = Math.ceil(area * indiceOcupacao);
+
+      let numSaidas;
+      let descSaidas = "";
+      if (efetivo <= 100) {
+        numSaidas = 1;
+        descSaidas = "Até 100 pessoas → 1 saída";
+      } else if (efetivo <= 500) {
+        numSaidas = 2;
+        descSaidas = "101 a 500 pessoas → 2 saídas";
+      } else {
+        numSaidas = 3;
+        descSaidas = "501 a 1000 pessoas → 3 saídas";
+      }
+
+      const upTotal = Math.ceil(efetivo / 100) + 1;
+      const minPorSaida = 1.8;
+      const totalMin = minPorSaida * numSaidas;
+
+      let distribuicao = "";
+      let verificacao = "";
+      let alerta = "";
+
+      if (numSaidas === 1) {
+        const largura = Math.max(upTotal, minPorSaida);
+        distribuicao = `${largura.toFixed(1)} UPs`;
+        verificacao = `→ Saída única com ${largura.toFixed(1)} UPs (≥ 1,8 UPs)`;
+      } else if (numSaidas === 2) {
+        if (upTotal >= totalMin) {
+          const resto = upTotal - 2 * minPorSaida;
+          const a = minPorSaida + resto / 2;
+          const b = minPorSaida + resto / 2;
+          distribuicao = `1ª: ${a.toFixed(1)} UP; 2ª: ${b.toFixed(1)} UP`;
+          verificacao = `→ Ambas as saídas ≥ 1,8 UPs (total: ${upTotal} UPs)`;
+        } else {
+          distribuicao = `Ambas com 1,8 UPs (total mínimo: ${totalMin.toFixed(1)} UPs)`;
+          alerta = `⚠️ A largura total exigida (${upTotal} UPs) é inferior ao mínimo legal total (${totalMin.toFixed(1)} UPs). Ajuste para garantir 1,8 UPs por saída.`;
+        }
+      } else if (numSaidas === 3) {
+        if (upTotal >= totalMin) {
+          const base = Math.floor(upTotal / 3);
+          const resto = upTotal % 3;
+          const a = base + (resto > 0 ? 1 : 0);
+          const b = base + (resto > 1 ? 1 : 0);
+          const c = base;
+          distribuicao = `1ª: ${a} UP; 2ª: ${b} UP; 3ª: ${c} UP`;
+          verificacao = `→ Todas as saídas ≥ 1,8 UPs (total: ${upTotal} UPs)`;
+        } else {
+          distribuicao = `Todas com 1,8 UPs (total mínimo: ${totalMin.toFixed(1)} UPs)`;
+          alerta = `⚠️ A largura total exigida (${upTotal} UPs) é inferior ao mínimo legal total (${totalMin.toFixed(1)} UPs). Requer ajuste.`;
+        }
+      }
+
+      document.getElementById("efetivo").textContent = efetivo;
+      document.getElementById("saidas").textContent = numSaidas;
+      document.getElementById("totalUp").textContent = upTotal;
+      document.getElementById("distribuicao").textContent = distribuicao;
+
+      const divVerif = document.getElementById("verificacao");
+      const divAlerta = document.getElementById("alerta");
+      divVerif.style.display = "block";
+      divVerif.textContent = verificacao;
+      divAlerta.style.display = "none";
+
+      if (alerta) {
+        divAlerta.style.display = "block";
+        divAlerta.textContent = alerta;
+      }
+
+      document.getElementById("resultado").style.display = "block";
+    }
+
+    function gerarNota() {
+      const area = parseFloat(document.getElementById("area").value);
+      const densidade = document.getElementById("densidade").value;
+      const efetivo = parseInt(document.getElementById("efetivo").textContent);
+      const numSaidas = parseInt(document.getElementById("saidas").textContent);
+      const upTotal = parseInt(document.getElementById("totalUp").textContent);
+      const distribuicao = document.getElementById("distribuicao").textContent;
+
+      let tipoArea = densidade === "sim" 
+        ? "área de exposição de mercadorias em espaços muito densos" 
+        : "loja comercial com baixa densidade (corredores amplos, circulação livre)";
+
+      let nota = `
+<h3>📝 Nota Explicativa Técnica – RT-SCIE (DL 159/2017)</h3>
+
+<p><strong>Contexto:</strong> Estabelecimento comercial com área útil de <strong>${area} m²</strong>, caracterizado como ${tipoArea}.</p>
+
+<h4>✅ a) Efetivo (número máximo de pessoas permitidas)</h4>
+<p>De acordo com o <strong>Artigo 51.º, Quadro XXVII</strong> do RT-SCIE:</p>
+<ul>
+  <li>Para áreas com circulação adequada: <strong>1 pessoa por 6 m²</strong></li>
+  <li>Para áreas muito densas: <strong>0,60 pessoas/m²</strong></li>
+</ul>
+<p>Como o espaço é <strong>${densidade === "sim" ? "muito denso" : "não denso"}</strong>, aplica-se:</p>
+<blockquote>
+  Efetivo = ${area} × ${(densidade === "sim" ? "0,60" : "1/6")} = ${efetivo} pessoas
+</blockquote>
+<p>Arredondamento para cima (norma de segurança): <strong>⌈${area * (densidade === "sim" ? 0.6 : 1/6)}⌉ = ${efetivo}</strong>.</p>
+
+<h4>✅ b) Número de saídas necessárias</h4>
+<p>Segundo o <strong>Artigo 54.º, Quadro XXIX</strong>:</p>
+<table border="1" cellpadding="6" cellspacing="0" style="margin: 10px 0;">
+  <tr><th>Efetivo</th><th>Número de saídas</th></tr>
+  <tr><td>Até 100 p</td><td>1</td></tr>
+  <tr><td>101 a 500 p</td><td>2</td></tr>
+  <tr><td>501 a 1000 p</td><td>3</td></tr>
+</table>
+<p>O efetivo é <strong>${efetivo} pessoas</strong>, logo:</p>
+<blockquote>→ <strong>${numSaidas} saída(s)</strong></blockquote>
+
+<h4>✅ c) Largura total em Unidades de Passagem (UP)</h4>
+<p>Conforme o <strong>Artigo 56.º, Quadro XXXI</strong>:</p>
+<blockquote>
+  Para efetivo ≤ 100 p → ⌈efetivo / 100⌉ + 1 = ⌈${efetivo}/100⌉ + 1 = ${upTotal} UPs
+</blockquote>
+<p>Além disso, cada saída deve ter largura mínima de <strong>0,90 m (1,8 UPs)</strong> (Artigo 13.º, n.º 2).</p>
+<p>Distribuição sugerida: <strong>${distribuicao}</strong></p>
+
+<h4>📌 Conclusão</h4>
+<p>Assegurar um número de saídas e larguras de passagem compatíveis com o efetivo e densidade é essencial para a evacuação segura em caso de emergência. Este cálculo garante conformidade com o RT-SCIE vigente.</p>
+
+<h4>📎 Referências Legais</h4>
+<ul>
+  <li>Artigo 51.º, Quadro XXVII – Índices de ocupação</li>
+  <li>Artigo 54.º, Quadro XXIX – Número de saídas</li>
+  <li>Artigo 56.º, Quadro XXXI – Largura em UPs</li>
+  <li>Artigo 13.º, n.º 2 – Largura mínima de saídas (0,90 m)</li>
+</ul>
+`;
+
+      document.getElementById("notaExplicativa").innerHTML = nota;
+      document.getElementById("notaExplicativa").style.display = "block";
+    }
+  </script>
+</body>
+</html>
