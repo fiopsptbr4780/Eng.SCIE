@@ -1,13 +1,10 @@
 # robots.txt - Directivas para web crawlers
 # Engenharia & SCIE - https://fiopsptbr4780.github.io/Eng.SCIE/
 
-# Permitir todos os bots
+# Permitir todos os bots nas páginas públicas
 User-agent: *
 Allow: /
-
-# Desabilitar certos diretórios se necessário (descomente conforme necessário)
-# Disallow: /admin/
-# Disallow: /private/
+Disallow: /portfolio_engenharia_scie.html
 
 # Sitemap
 Sitemap: https://fiopsptbr4780.github.io/Eng.SCIE/sitemap.xml
@@ -18,4 +15,5 @@ Crawl-delay: 1
 # Específico para Googlebot (menos restritivo)
 User-agent: Googlebot
 Allow: /
+Disallow: /portfolio_engenharia_scie.html
 Crawl-delay: 0

@@ -1,13 +1,37 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-PT">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- CORRIGIDO: Title mais assertivo e com termo completo -->
+  <meta name="theme-color" content="#1a3a5c" />
+
+  <!-- Canonical + favicon -->
+  <link rel="canonical" href="https://fiopsptbr4780.github.io/Eng.SCIE/" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="alternate icon" type="image/png" href="favicon-32.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+  <!-- SEO -->
   <title>Engenharia de Segurança Contra Incêndio | Consultoria SCIE</title>
-  <!-- CORRIGIDO: Description otimizada com termos legais corretos -->
   <meta name="description" content="Engenharia Mecânica e SCIE em Portugal. Projetos de segurança contra incêndio conforme RT-SCIE, piping industrial e consultoria técnica. Projetista reconhecido pela ANEPC.">
-  
+  <meta name="author" content="Engenharia & SCIE" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Engenharia & SCIE" />
+  <meta property="og:title" content="Engenharia de Segurança Contra Incêndio | Consultoria SCIE" />
+  <meta property="og:description" content="Engenharia Mecânica e SCIE em Portugal. Projetos conforme RT-SCIE, piping industrial e consultoria técnica. Projetista reconhecido pela ANEPC." />
+  <meta property="og:url" content="https://fiopsptbr4780.github.io/Eng.SCIE/" />
+  <meta property="og:image" content="https://fiopsptbr4780.github.io/Eng.SCIE/og-image.png" />
+  <meta property="og:locale" content="pt_PT" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Engenharia de Segurança Contra Incêndio | Consultoria SCIE" />
+  <meta name="twitter:description" content="Projetos SCIE conforme RT-SCIE, piping industrial e consultoria técnica em Portugal." />
+  <meta name="twitter:image" content="https://fiopsptbr4780.github.io/Eng.SCIE/og-image.png" />
+
   <!-- JSON-LD Schema.org para SEO -->
   <!-- CORRIGIDO: Qualificações corrigidas, localização unificada para Aveiro -->
   <script type="application/ld+json">
@@ -124,6 +148,30 @@
       font-size: 1.5rem;
       cursor: pointer;
       padding: 4px 8px;
+    }
+
+    /* Skip-to-content para teclado/screen readers */
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 8px;
+      background: var(--accent);
+      color: var(--white);
+      padding: 10px 16px;
+      border-radius: 4px;
+      font-weight: 700;
+      text-decoration: none;
+      z-index: 9999;
+      transition: top 0.2s;
+    }
+    .skip-link:focus { top: 8px; outline: 3px solid var(--white); }
+
+    /* Foco visível para todos os elementos interativos (WCAG 2.4.7) */
+    a:focus-visible, button:focus-visible, input:focus-visible,
+    select:focus-visible, textarea:focus-visible, summary:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 2px;
+      border-radius: 4px;
     }
 
     nav ul {
@@ -473,6 +521,14 @@
 
     form { display: flex; flex-direction: column; gap: 16px; }
 
+    .form-field { display: flex; flex-direction: column; gap: 6px; }
+
+    .form-field label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #cfe4f5;
+    }
+
     form input, form textarea, form select {
       background: rgba(255, 255, 255, 0.07);
       border: 1px solid rgba(255, 255, 255, 0.15);
@@ -509,8 +565,59 @@
 
     form button:hover { background: #c44e12; }
 
+    .form-checkbox {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: #cfe4f5;
+      cursor: pointer;
+    }
+    .form-checkbox input[type="checkbox"] { width: 18px; height: 18px; margin-top: 2px; flex-shrink: 0; }
+    .form-checkbox a { color: var(--accent); }
+
     .form-note { font-size: 0.82rem; color: #9ab8d0; }
     .form-note a { color: #cfe4f5; }
+
+    /* Cookie consent banner (RGPD) */
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #0f2238;
+      color: #cfe4f5;
+      padding: 16px 5%;
+      box-shadow: 0 -4px 16px rgba(0,0,0,0.25);
+      z-index: 9998;
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 0.88rem;
+    }
+    .cookie-banner.show { display: flex; }
+    .cookie-banner p { margin: 0; flex: 1; min-width: 240px; }
+    .cookie-banner a { color: var(--accent); text-decoration: underline; }
+    .cookie-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+    .cookie-btn {
+      background: transparent;
+      color: #cfe4f5;
+      border: 1px solid #cfe4f5;
+      padding: 8px 14px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .cookie-btn.accept {
+      background: var(--accent);
+      color: var(--white);
+      border-color: var(--accent);
+    }
+    .cookie-btn:hover { background: rgba(255,255,255,0.1); }
+    .cookie-btn.accept:hover { background: #c44e12; }
 
     footer {
       background: #0f2238;
@@ -553,6 +660,8 @@
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Saltar para o conteúdo principal</a>
+
 <nav aria-label="Menu principal">
   <a href="index.html" class="nav-logo">Eng.<span>SCIE</span></a>
   <button class="nav-toggle" aria-label="Abrir menu" id="navToggle">☰</button>
@@ -569,7 +678,7 @@
   </ul>
 </nav>
 
-<main>
+<main id="main-content" tabindex="-1">
 
 <!-- HERO -->
 <section class="hero">
@@ -790,32 +899,45 @@
       </div>
     </div>
 
-<!-- FORMULÁRIO CORRIGIDO COM REDIRECIONAMENTO AUTOMÁTICO -->
-<form id="contactForm" action="https://formsubmit.co/db9320482ec69a19fda50553b95c6257" method="POST">
-  <!-- REMOVIDO: input _next que causava redirecionamento imediato -->
+<!-- FORMULÁRIO COM LABELS ACESSÍVEIS (WCAG) -->
+<form id="contactForm" action="https://formsubmit.co/tlsengmecanico@gmail.com" method="POST">
   <input type="hidden" name="_subject" value="Novo pedido de orçamento – Site Eng.SCIE" />
   <input type="hidden" name="_captcha" value="false" />
-  <!-- Adicionado para resposta AJAX/JSON -->
   <input type="hidden" name="_format" value="json" />
 
-  <input type="text" name="nome" placeholder="Nome completo" required aria-label="Nome completo" />
-  <input type="email" name="email" placeholder="E-mail" required aria-label="Endereço de e-mail" />
-  <input type="tel" name="telefone" placeholder="Telemóvel (opcional)" aria-label="Número de telefone" />
-  <select name="servico" required aria-label="Tipo de serviço">
-    <option value="" disabled selected>Tipo de serviço</option>
-    <option>Projeto de Especialidade SCIE</option>
-    <option>Sistema de Sprinklers</option>
-    <option>Sistema de Espuma</option>
-    <option>SADI — Deteção de Incêndio</option>
-    <option>Piping Industrial / P&ID</option>
-    <option>Consultoria Técnica</option>
-    <option>Outro</option>
-  </select>
-  <textarea name="mensagem" placeholder="Descreva o seu projeto (utilização-tipo, área, localização, prazo...)"></textarea>
+  <div class="form-field">
+    <label for="nome">Nome completo *</label>
+    <input type="text" id="nome" name="nome" placeholder="Ex.: João Silva" required autocomplete="name" />
+  </div>
+  <div class="form-field">
+    <label for="email">E-mail *</label>
+    <input type="email" id="email" name="email" placeholder="exemplo@dominio.pt" required autocomplete="email" />
+  </div>
+  <div class="form-field">
+    <label for="telefone">Telemóvel (opcional)</label>
+    <input type="tel" id="telefone" name="telefone" placeholder="+351 900 000 000" autocomplete="tel" />
+  </div>
+  <div class="form-field">
+    <label for="servico">Tipo de serviço *</label>
+    <select id="servico" name="servico" required>
+      <option value="" disabled selected>Selecione o serviço</option>
+      <option>Projeto de Especialidade SCIE</option>
+      <option>Sistema de Sprinklers</option>
+      <option>Sistema de Espuma</option>
+      <option>SADI — Deteção de Incêndio</option>
+      <option>Piping Industrial / P&ID</option>
+      <option>Consultoria Técnica</option>
+      <option>Outro</option>
+    </select>
+  </div>
+  <div class="form-field">
+    <label for="mensagem">Mensagem</label>
+    <textarea id="mensagem" name="mensagem" rows="5" placeholder="Descreva o seu projeto (utilização-tipo, área, localização, prazo...)"></textarea>
+  </div>
 
-  <label style="font-size:0.82rem; color:#9ab8d0;">
-    <input type="checkbox" name="privacidade" required />
-    Li e aceito a <a href="privacidade.html" style="color:#cfe4f5;">Política de Privacidade</a>.
+  <label class="form-checkbox" for="consent">
+    <input type="checkbox" id="consent" name="privacidade" required />
+    <span>Li e aceito a <a href="privacidade.html">Política de Privacidade</a>.</span>
   </label>
 
   <button type="submit" id="submitBtn">📩 Enviar Pedido</button>
@@ -833,6 +955,15 @@
 </section>
 </main>
 
+<!-- Cookie consent banner (RGPD) -->
+<div id="cookieBanner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Consentimento de cookies">
+  <p>Este site utiliza apenas cookies essenciais para o seu funcionamento. Não são recolhidos dados de rastreio sem o seu consentimento. <a href="privacidade.html">Política de Privacidade</a></p>
+  <div class="cookie-actions">
+    <button class="cookie-btn" id="cookieDecline">Recusar</button>
+    <button class="cookie-btn accept" id="cookieAccept">Aceitar</button>
+  </div>
+</div>
+
 <footer>
   <p>&copy; 2026 <span>Engenharia & SCIE</span> · Aveiro, Portugal · Todos os direitos reservados</p>
   <p style="margin-top:6px; font-size:0.8rem;">
@@ -845,11 +976,36 @@
   // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const href = this.getAttribute('href');
+      if (href === '#' || href.length <= 1) return;
+      const el = document.querySelector(href);
+      if (el) {
+        e.preventDefault();
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Move focus for accessibility
+        el.setAttribute('tabindex', '-1');
+        el.focus({ preventScroll: true });
+      }
     });
   });
+
+  // Cookie consent (RGPD)
+  const cookieBanner = document.getElementById('cookieBanner');
+  const COOKIE_KEY = 'engscie_cookie_consent';
+  if (cookieBanner) {
+    if (!localStorage.getItem(COOKIE_KEY)) {
+      // pequeno atraso para não atrapalhar a primeira renderização
+      setTimeout(() => cookieBanner.classList.add('show'), 600);
+    }
+    document.getElementById('cookieAccept').addEventListener('click', () => {
+      localStorage.setItem(COOKIE_KEY, 'accepted');
+      cookieBanner.classList.remove('show');
+    });
+    document.getElementById('cookieDecline').addEventListener('click', () => {
+      localStorage.setItem(COOKIE_KEY, 'declined');
+      cookieBanner.classList.remove('show');
+    });
+  }
 
   // Menu móvel
   const navToggle = document.getElementById('navToggle');

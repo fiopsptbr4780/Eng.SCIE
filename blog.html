@@ -1,13 +1,30 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-PT">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1a3a5c">
+
+    <link rel="canonical" href="https://fiopsptbr4780.github.io/Eng.SCIE/blog.html" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+    <title>Artigos Técnicos | Blog Engenharia & SCIE</title>
     <meta name="description" content="Artigos técnicos sobre Engenharia Mecânica, SCIE, Sprinklers EN 12845, SADI, Piping Industrial e normas RT-SCIE. Conteúdo para profissionais em Portugal.">
     <meta name="keywords" content="blog SCIE Portugal, artigos engenharia mecânica, sprinklers EN 12845, SADI, piping industrial, HVAC, RT-SCIE, ANEPC, deteção incêndio, espuma NFPA 11">
     <meta name="author" content="Engenharia & SCIE">
-    <title>Artigos Técnicos | Blog Engenharia & SCIE</title>
-    
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Artigos Técnicos | Blog Engenharia & SCIE" />
+    <meta property="og:description" content="Artigos técnicos sobre SCIE, Sprinklers, SADI, Piping Industrial e Engenharia Mecânica em Portugal." />
+    <meta property="og:url" content="https://fiopsptbr4780.github.io/Eng.SCIE/blog.html" />
+    <meta property="og:image" content="https://fiopsptbr4780.github.io/Eng.SCIE/og-image.png" />
+    <meta property="og:locale" content="pt_PT" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Artigos Técnicos | Blog Engenharia & SCIE" />
+    <meta name="twitter:description" content="Artigos técnicos sobre SCIE, Sprinklers, SADI, Piping Industrial e Engenharia Mecânica." />
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -28,6 +45,9 @@
         .nav-logo {color:var(--white);font-size:1.2rem;font-weight:700;letter-spacing:1px;text-decoration:none}
         .nav-logo span {color:var(--accent)}
         .nav-toggle{display:none;background:transparent;border:none;color:var(--white);font-size:1.5rem;cursor:pointer;padding:4px 8px}
+        .skip-link{position:absolute;top:-100px;left:8px;background:var(--accent);color:var(--white);padding:10px 16px;border-radius:4px;font-weight:700;text-decoration:none;z-index:9999;transition:top 0.2s}
+        .skip-link:focus{top:8px;outline:3px solid var(--white)}
+        a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
         nav ul {list-style:none;display:flex;gap:24px}
         nav ul li a {color:#ccd8e8;text-decoration:none;font-size:0.95rem;transition:color 0.2s}
         nav ul li a:hover, nav ul li a.active {color:var(--accent)}
@@ -85,6 +105,7 @@
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Saltar para o conteúdo principal</a>
     <nav>
         <a href="index.html" class="nav-logo">Eng.<span>SCIE</span></a>
         <button class="nav-toggle" aria-label="Abrir menu" id="navToggle">☰</button>
@@ -99,6 +120,7 @@
         </ul>
     </nav>
 
+    <main id="main-content" tabindex="-1">
     <section class="hero">
         <h1>Artigos Técnicos</h1>
         <p>Conteúdo especializado em Engenharia Mecânica, SCIE, Sprinklers, SADI, Piping Industrial e HVAC — normas, boas práticas e guias para profissionais em Portugal.</p>
@@ -395,11 +417,14 @@
           <strong>Nota técnica:</strong> Este conteúdo tem caráter informativo e não substitui a análise do projeto, a consulta da legislação consolidada, das normas técnicas aplicáveis, das especificações dos fabricantes nem a validação pelas entidades competentes. A aplicabilidade das soluções depende da utilização-tipo, categoria de risco, condições específicas do edifício ou instalação e versão regulamentar em vigor.
         </p>
     </section>
+    </main>
 
-    <!-- CORRIGIDO: Footer consistente com Aveiro -->
     <footer>
-        <p>&copy; 2025 <span>Engenharia &amp; SCIE</span> · Aveiro, Portugal · Todos os direitos reservados</p>
+        <p>&copy; 2026 <span>Engenharia &amp; SCIE</span> · Aveiro, Portugal · Todos os direitos reservados</p>
         <p style="margin-top:8px;font-size:0.82rem">Engenheiro Mecânico · Membro da Ordem dos Engenheiros · Técnico Especialista em SCIE reconhecido pela ANEPC</p>
+        <p style="margin-top:12px;font-size:0.82rem">
+            <a href="index.html">Início</a> · <a href="projetos.html">Projetos</a> · <a href="ferramentas.html">Ferramentas</a> · <a href="faq.html">FAQ</a> · <a href="index.html#contacto">Contacto</a> · <a href="privacidade.html">Privacidade</a>
+        </p>
     </footer>
 
     <script>

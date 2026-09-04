@@ -19,11 +19,36 @@ Destina-se a projetistas, escritórios de projeto, empresas de construção e pr
 | `projetos.html` | Estudos de caso e experiência aplicada em SCIE |
 | `blog.html` | Artigos técnicos sobre SCIE, sprinklers, SADI, piping |
 | `ferramentas.html` | Calculadoras online (sprinklers, queda pressão, RT-SCIE, extintores) |
+| `calculadora-rtscie.html` | Calculadora avançada RT-SCIE (efetivo, saídas, UPs) |
 | `faq.html` | Perguntas frequentes sobre regulamentação e processos |
 | `privacidade.html` | Política de privacidade conforme RGPD |
-| `portfolio_engenharia_scie.html` | Página legacy (noindex) |
+| `404.html` | Página de erro 404 personalizada |
+| `portfolio_engenharia_scie.html` | Página legacy (noindex) — redireciona para `index.html` |
+| `favicon.svg` | Ícone SVG do site |
 | `sitemap.xml` | Mapa do site para motores de busca |
-| `robots.txt` | Diretivas para crawlers |
+| `robots.txt` | Diretivas para crawlers (com `Disallow` para legacy) |
+
+## Melhorias Recentes (set. 2026)
+
+### SEO
+- `canonical` em todas as páginas públicas
+- Open Graph + Twitter Card meta tags
+- `og-image.png` referenciado (criar imagem 1200×630 e colocar em `/`)
+- `sitemap.xml` atualizado com `calculadora-rtscie.html` e datas corretas
+- `robots.txt` com `Disallow: /portfolio_engenharia_scie.html` para evitar canibalização
+- `lang="pt-PT"` em todas as páginas
+- Página 404 personalizada
+
+### Acessibilidade (WCAG 2.1)
+- Skip-to-content link em todas as páginas
+- Foco visível (`:focus-visible`) com outline de 3px accent
+- `<main id="main-content" tabindex="-1">` para gestão de foco
+- Labels reais no formulário de contacto (não apenas `placeholder`/`aria-label`)
+- Estrutura semântica: `<ul>` em tags de projetos
+
+### RGPD / Privacidade
+- Banner de consentimento de cookies (apenas essenciais) no `index.html`
+- Aceitação persistente em `localStorage`
 
 ## Serviços Abordados
 - Projeto de Especialidade SCIE (RT-SCIE / Portaria 1532/2008)
@@ -50,10 +75,24 @@ Destina-se a projetistas, escritórios de projeto, empresas de construção e pr
 - JavaScript vanilla
 - GitHub Pages
 - FormSubmit (formulário de contacto)
-- Schema.org JSON-LD
+- Schema.org JSON-LD (ProfessionalService, Organization, FAQPage, ItemList)
+
+## Como Adicionar uma Nova Página
+1. Copiar a estrutura `<head>` de `index.html` (canonical, OG, favicon, skip-link)
+2. Usar `<main id="main-content" tabindex="-1">` à volta do conteúdo
+4. Inserir cookie banner apenas em `index.html` (ou replicar nas páginas com formulários)
+5. Adicionar entrada no `sitemap.xml`
+
+## Pendente / Próximas Fases
+- [ ] Criar `og-image.png` (1200×630 px) com branding do site
+- [ ] Criar `favicon-32.png` e `apple-touch-icon.png` (alternativas ao SVG)
+- [ ] **Fase B**: centralizar CSS e JS em `assets/style.css` e `assets/main.js`
+- [ ] Adicionar imagens reais nos cards (substituir emojis grandes)
+- [ ] Google Analytics 4 (após consentimento do cookie banner)
+- [ ] Página dedicada "Sobre"
 
 ## Autor
 Engenheiro Mecânico e Técnico Especialista em SCIE reconhecido pela ANEPC. Membro da Ordem dos Engenheiros. Baseado em Aveiro, Portugal.
 
 ## Licença
-MIT License — © 2025 Engenharia & SCIE
+MIT License — © 2026 Engenharia & SCIE

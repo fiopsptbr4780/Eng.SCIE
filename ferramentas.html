@@ -1,29 +1,82 @@
 Ferramentas · HTML
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-PT">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1a3a5c">
+
+    <link rel="canonical" href="https://fiopsptbr4780.github.io/Eng.SCIE/ferramentas.html" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+    <title>Ferramentas SCIE e Engenharia | Calculadoras Online - Sprinklers, Piping, RTSCIE, Extintores</title>
     <meta name="description" content="Ferramentas e calculadoras online para Engenharia Mecanica e SCIE. Calculador de sprinklers, queda de pressao em tubagem, categoria de risco RTSCIE, extintores e efetivo.">
     <meta name="keywords" content="ferramentas SCIE Portugal, calculadora sprinklers EN 12845, calculadora queda pressao tubagem, calculadora categoria risco RTSCIE, calculadora extintores, calculo efetivo">
     <meta name="author" content="Engenharia e SCIE">
-    <title>Ferramentas SCIE e Engenharia | Calculadoras Online - Sprinklers, Piping, RTSCIE, Extintores</title>
- 
-    <!-- JSON-LD Schema para Ferramentas/Calculadoras -->
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Ferramentas SCIE e Engenharia · Calculadoras Online" />
+    <meta property="og:description" content="Calculadoras online para Sprinklers EN 12845, queda de pressão, categoria de risco RTSCIE, extintores e efetivo." />
+    <meta property="og:url" content="https://fiopsptbr4780.github.io/Eng.SCIE/ferramentas.html" />
+    <meta property="og:image" content="https://fiopsptbr4780.github.io/Eng.SCIE/og-image.png" />
+    <meta property="og:locale" content="pt_PT" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ferramentas SCIE e Engenharia" />
+    <meta name="twitter:description" content="Calculadoras online para SCIE: Sprinklers, Piping, RTSCIE, Extintores." />
+
+    <!-- JSON-LD Schema: ItemList de calculadoras (mais correto que WebApplication único) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "Ferramentas SCIE e Engenharia",
+      "@type": "ItemList",
+      "name": "Calculadoras e Ferramentas SCIE",
       "url": "https://fiopsptbr4780.github.io/Eng.SCIE/ferramentas.html",
-      "description": "Calculadoras online para Sprinklers EN 12845, queda de pressão em tubagem, categoria de risco RTSCIE, extintores e efetivo",
-      "applicationCategory": "Engineering Tool",
+      "description": "Lista de calculadoras online para Engenharia Mecânica e Segurança Contra Incêndio: dimensionamento de sprinklers, queda de pressão em tubagem, categoria de risco RT-SCIE, extintores e cálculo de efetivo.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Dimensionamento de Sprinklers (EN 12845 / NFPA 13)",
+          "url": "https://fiopsptbr4780.github.io/Eng.SCIE/ferramentas.html#calc-sprinkler"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Queda de Pressão em Tubagem (Darcy-Weisbach)",
+          "url": "https://fiopsptbr4780.github.io/Eng.SCIE/ferramentas.html#calc-queda"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Categoria de Risco RT-SCIE",
+          "url": "https://fiopsptbr4780.github.io/Eng.SCIE/ferramentas.html#calc-rtsie"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Extintores Portáteis",
+          "url": "https://fiopsptbr4780.github.io/Eng.SCIE/ferramentas.html#calc-extintores"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Cálculo de Efetivo",
+          "url": "https://fiopsptbr4780.github.io/Eng.SCIE/ferramentas.html#calc-efetivo"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Calculadora RT-SCIE Avançada",
+          "url": "https://fiopsptbr4780.github.io/Eng.SCIE/calculadora-rtscie.html"
+        }
+      ],
       "author": {
         "@type": "Organization",
         "name": "Engenharia & SCIE"
       },
-      "availableLanguage": "pt-PT",
-      "inLanguage": "pt"
+      "inLanguage": "pt-PT"
     }
     </script>
  
@@ -76,10 +129,15 @@ Ferramentas · HTML
         .cta-section .btn-primary:hover {background:#c44e12}
         footer {background:#0f2238;color:#7fa8c8;text-align:center;padding:28px 5%;font-size:0.88rem}
         footer span {color:var(--accent);font-weight:700}
+        /* Skip-to-content (WCAG) */
+        .skip-link{position:absolute;top:-100px;left:8px;background:var(--accent);color:var(--white);padding:10px 16px;border-radius:4px;font-weight:700;text-decoration:none;z-index:9999;transition:top 0.2s}
+        .skip-link:focus{top:8px;outline:3px solid var(--white)}
+        a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
         @media (max-width:640px) {nav ul {gap:14px}.hero h1 {font-size:1.8rem}.section-title {font-size:1.5rem}}
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Saltar para o conteúdo principal</a>
     <nav>
         <a href="index.html" class="nav-logo">Eng.<span>SCIE</span></a>
         <button class="nav-toggle" aria-label="Abrir menu" id="navToggle" style="display:none;background:transparent;border:none;color:var(--white);font-size:1.5rem;cursor:pointer;padding:4px 8px">☰</button>
@@ -92,6 +150,7 @@ Ferramentas · HTML
             <li><a href="index.html#contacto">Contacto</a></li>
         </ul>
     </nav>
+    <main id="main-content" tabindex="-1">
     <header class="hero">
         <h1>Ferramentas SCIE</h1>
         <p>Calculadoras e ferramentas online para engenharia mecanica, SCIE e sistemas de seguranca contra incendio.</p>
@@ -343,13 +402,14 @@ Ferramentas · HTML
     <section class="cta-section">
         <h2>Precisa de apoio tecnico especializado?</h2>
         <p>A nossa equipa de engenheiros SCIE esta disponivel para projetos de dimensionamento, auditoria e consultoria.</p>
-        <a href="index.html#contato" class="btn-primary">Fale Connosco</a>
+        <a href="index.html#contacto" class="btn-primary">Fale Connosco</a>
     </section>
- 
+    </main>
+
     <footer>
-        <p>&copy; 2025 <span>Engenharia &amp; SCIE</span> · Aveiro, Portugal · Todos os direitos reservados</p>
+        <p>&copy; 2026 <span>Engenharia &amp; SCIE</span> · Aveiro, Portugal · Todos os direitos reservados</p>
         <p style="margin-top:6px;font-size:0.8rem;">Engenheiro Mecânico · Membro da Ordem dos Engenheiros · Técnico Especialista em SCIE reconhecido pela ANEPC</p>
-        <p style="margin-top:8px;"><a href="blog.html" style="color:#7fa8c8">Artigos Técnicos</a> | <a href="projetos.html" style="color:#7fa8c8">Projetos</a> | <a href="index.html" style="color:#7fa8c8">Início</a></p>
+        <p style="margin-top:8px;"><a href="blog.html" style="color:#7fa8c8">Artigos Técnicos</a> | <a href="projetos.html" style="color:#7fa8c8">Projetos</a> | <a href="index.html" style="color:#7fa8c8">Início</a> | <a href="faq.html" style="color:#7fa8c8">FAQ</a> | <a href="privacidade.html" style="color:#7fa8c8">Privacidade</a></p>
     </footer>
  
     <script>

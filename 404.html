@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Página não encontrada · 404 | Engenharia & SCIE</title>
+  <meta name="description" content="A página que procura não foi encontrada. Explore os recursos de Engenharia e Segurança Contra Incêndio da Engenharia & SCIE." />
+
+  <style>
+    :root {
+      --primary: #1a3a5c;
+      --accent: #e05c1a;
+      --light: #f4f7fb;
+      --text: #2d2d2d;
+      --muted: #6b7280;
+      --white: #ffffff;
+      --border: #dde3ec;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    nav {
+      background: var(--primary);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 5%;
+      height: 64px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    }
+    .nav-logo { color: var(--white); font-size: 1.2rem; font-weight: 700; letter-spacing: 1px; text-decoration: none; }
+    .nav-logo span { color: var(--accent); }
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 5%;
+      background: linear-gradient(135deg, var(--light) 0%, var(--white) 100%);
+    }
+    .error-card {
+      max-width: 640px;
+      text-align: center;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 56px 40px;
+      box-shadow: 0 8px 32px rgba(26,58,92,0.08);
+    }
+    .error-code {
+      font-size: 6rem;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+      letter-spacing: -2px;
+      margin-bottom: 8px;
+    }
+    .error-icon { font-size: 3rem; margin-bottom: 16px; }
+    .error-card h1 {
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 14px;
+    }
+    .error-card p {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 28px;
+    }
+    .error-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: var(--white);
+      padding: 13px 28px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.1s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: #c44e12; transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      padding: 13px 28px;
+      border: 2px solid var(--border);
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+      display: inline-block;
+    }
+    .btn-outline:hover { border-color: var(--primary); color: var(--primary); }
+    .helpful-links {
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+      text-align: left;
+    }
+    .helpful-links h2 {
+      font-size: 1rem;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+    .helpful-links ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .helpful-links a {
+      color: var(--text);
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.2s, color 0.2s;
+    }
+    .helpful-links a:hover { background: var(--light); color: var(--accent); }
+    .helpful-links a span { color: var(--accent); }
+    footer {
+      background: #0f2238;
+      color: #7fa8c8;
+      text-align: center;
+      padding: 24px 5%;
+      font-size: 0.88rem;
+    }
+    footer span { color: var(--accent); font-weight: 700; }
+    @media (max-width: 640px) {
+      .error-card { padding: 40px 24px; }
+      .error-code { font-size: 4.5rem; }
+      .error-card h1 { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Menu principal">
+    <a href="index.html" class="nav-logo">Eng.<span>SCIE</span></a>
+  </nav>
+
+  <main>
+    <div class="error-card">
+      <div class="error-code">404</div>
+      <div class="error-icon" aria-hidden="true">🔥</div>
+      <h1>Página não encontrada</h1>
+      <p>A página que procura pode ter sido movida, removida ou o endereço está incorreto. Utilize os links abaixo para continuar a navegação.</p>
+
+      <div class="error-actions">
+        <a href="index.html" class="btn-primary">← Voltar ao Início</a>
+        <a href="index.html#contacto" class="btn-outline">Falar Connosco</a>
+      </div>
+
+      <div class="helpful-links">
+        <h2>Links úteis</h2>
+        <ul>
+          <li><a href="index.html#servicos">Serviços especializados <span>→</span></a></li>
+          <li><a href="projetos.html">Projetos e experiência <span>→</span></a></li>
+          <li><a href="blog.html">Artigos técnicos <span>→</span></a></li>
+          <li><a href="ferramentas.html">Calculadoras SCIE <span>→</span></a></li>
+          <li><a href="faq.html">Perguntas frequentes <span>→</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 <span>Engenharia & SCIE</span> · Aveiro, Portugal</p>
+  </footer>
+</body>
+</html>
