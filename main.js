@@ -201,4 +201,45 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   }
+
+  // ==========================================================================
+  // Accordion exclusivo para elementos <details> (FAQ, Projetos)
+  // ==========================================================================
+  document.querySelectorAll('details').forEach(d => {
+    d.addEventListener('toggle', () => {
+      if (d.open) {
+        document.querySelectorAll('details').forEach(o => {
+          if (o !== d && o.open) o.removeAttribute('open');
+        });
+      }
+    });
+  });
+
+  // Abre primeiro item de FAQ se existir na página
+  const firstFaq = document.querySelector('.faq-item');
+  if (firstFaq && !document.querySelector('.faq-item.open')) {
+    firstFaq.classList.add('open');
+  }
 });
+
+// Suporte global para FAQ (faq.html)
+window.toggleFaq = function(btn) {
+  const item = btn.closest('.faq-item');
+  if (!item) return;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+};
+
+// Suporte global para Filtro do Blog (blog.html)
+window.filterArticles = function(category) {
+  const cards = document.querySelectorAll('.blog-card');
+  const buttons = document.querySelectorAll('.filter-btn');
+  buttons.forEach(btn => btn.classList.remove('active'));
+  if (window.event && window.event.target) {
+    window.event.target.classList.add('active');
+  }
+  cards.forEach(card => {
+    card.style.display = (category === 'all' || card.dataset.category.includes(category)) ? 'flex' : 'none';
+  });
+};
