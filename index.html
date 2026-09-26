@@ -317,49 +317,157 @@
       margin-bottom: 48px;
     }
 
-    #servicos { background: var(--light); }
+    #servicos {
+      background: #f8fafc;
+      position: relative;
+    }
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
     }
 
     .service-card {
       background: var(--white);
-      border-radius: 12px;
-      padding: 28px 24px;
-      border: 1px solid var(--border);
-      transition: box-shadow 0.2s, transform 0.2s;
+      border-radius: 16px;
+      padding: 32px 28px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                  box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                  border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), #ff8447);
+      opacity: 0;
+      transition: opacity 0.3s ease;
     }
 
     .service-card:hover {
-      box-shadow: 0 8px 28px rgba(26, 58, 92, 0.12);
-      transform: translateY(-3px);
+      box-shadow: 0 20px 35px -8px rgba(26, 58, 92, 0.12), 0 8px 16px -4px rgba(26, 58, 92, 0.06);
+      transform: translateY(-5px);
+      border-color: rgba(224, 92, 26, 0.3);
     }
 
-    .service-icon { font-size: 2.2rem; margin-bottom: 14px; }
+    .service-card:hover::before {
+      opacity: 1;
+    }
+
+    .service-icon-box {
+      width: 54px;
+      height: 54px;
+      border-radius: 14px;
+      background: rgba(224, 92, 26, 0.08);
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      border: 1px solid rgba(224, 92, 26, 0.16);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .service-card:hover .service-icon-box {
+      background: linear-gradient(135deg, var(--accent) 0%, #c44e12 100%);
+      color: var(--white);
+      transform: scale(1.08) rotate(-2deg);
+      box-shadow: 0 8px 18px rgba(224, 92, 26, 0.35);
+      border-color: transparent;
+    }
+
+    .service-svg {
+      width: 26px;
+      height: 26px;
+      transition: transform 0.3s ease;
+    }
 
     .service-card h3 {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
+      font-weight: 700;
       color: var(--primary);
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+      line-height: 1.35;
+      letter-spacing: -0.01em;
     }
 
     .service-card p {
-      font-size: 0.92rem;
-      color: var(--muted);
+      font-size: 0.94rem;
+      color: #556270;
+      line-height: 1.65;
+      flex-grow: 1;
+      margin-bottom: 20px;
     }
 
     .service-tag {
-      display: inline-block;
-      background: #e8f0fb;
+      align-self: flex-start;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #edf3fa;
       color: var(--primary);
-      font-size: 0.72rem;
+      font-size: 0.74rem;
       font-weight: 700;
-      padding: 3px 10px;
-      border-radius: 12px;
-      margin-top: 12px;
+      padding: 5px 12px;
+      border-radius: 20px;
+      border: 1px solid rgba(26, 58, 92, 0.08);
+      letter-spacing: 0.3px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .service-card:hover .service-tag {
+      background: rgba(224, 92, 26, 0.1);
+      color: var(--accent);
+      border-color: rgba(224, 92, 26, 0.2);
+    }
+
+    /* Scroll-Driven Entry Animation (Modern CSS + Progressive Fallback) */
+    @media (prefers-reduced-motion: no-preference) {
+      @supports ((animation-timeline: view()) and (animation-range: entry)) {
+        @keyframes serviceCardFadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(40px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .service-card {
+          animation: serviceCardFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+          animation-timeline: view();
+          animation-range: entry 10% cover 32%;
+        }
+      }
+
+      /* Fallback via class when CSS Scroll-driven animations are not available */
+      .service-card.reveal-init {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                    box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                    border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: opacity, transform;
+      }
+
+      .service-card.reveal-init.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     #sobre { background: var(--white); }
@@ -717,44 +825,99 @@
   <p class="section-sub">Soluções técnicas completas desde a conceção do projeto até à submissão e acompanhamento em obra.</p>
 
   <div class="services-grid">
-    <!-- CORRIGIDO: RTSCIE → RT-SCIE, terminologia precisa -->
     <div class="service-card">
-      <div class="service-icon">🔥</div>
+      <div class="service-icon-box" aria-hidden="true">
+        <svg class="service-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"/>
+          <path d="M12 8c1.66 1.66 2.5 3.08 2.5 4.5a2.5 2.5 0 1 1-5 0c0-1.42.84-2.84 2.5-4.5z"/>
+          <path d="M12 18v-2"/>
+        </svg>
+      </div>
       <h3>Projeto de Especialidade SCIE</h3>
       <p>Elaboração de projetos de segurança contra incêndio em edifícios, conforme RT-SCIE (Portaria n.º 1532/2008) e Regime Jurídico vigente. Apoio na submissão e acompanhamento junto da ANEPC.</p>
       <span class="service-tag">RT-SCIE · ANEPC</span>
     </div>
 
     <div class="service-card">
-      <div class="service-icon">💧</div>
+      <div class="service-icon-box" aria-hidden="true">
+        <svg class="service-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 2h4v3h-4z"/>
+          <path d="M12 5v5"/>
+          <path d="M8 5c0 3.5 1.5 5 4 5s4-1.5 4-5"/>
+          <path d="M6 13h12"/>
+          <path d="M5 16l-2 3"/>
+          <path d="M9 16.5l-1 2.5"/>
+          <path d="M12 17v3"/>
+          <path d="M15 16.5l1 2.5"/>
+          <path d="M19 16l2 3"/>
+        </svg>
+      </div>
       <h3>Sistemas de Sprinklers</h3>
       <p>Dimensionamento e projeto de redes de sprinklers, redes de incêndio armadas e sistemas de extinção automática por água.</p>
       <span class="service-tag">EN 12845 · NFPA 13</span>
     </div>
 
     <div class="service-card">
-      <div class="service-icon">🧯</div>
+      <div class="service-icon-box" aria-hidden="true">
+        <svg class="service-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 21h6"/>
+          <rect x="7" y="7" width="10" height="14" rx="4"/>
+          <path d="M10 3h4"/>
+          <path d="M12 3v4"/>
+          <path d="M14 5h3a2 2 0 0 1 2 2v5a1 1 0 0 1-1 1h-1"/>
+          <circle cx="12" cy="13" r="2"/>
+          <path d="M12 13l1.2-1.2"/>
+        </svg>
+      </div>
       <h3>Sistemas de Espuma</h3>
       <p>Projeto de sistemas fixos de extinção por espuma para armazenagem de líquidos inflamáveis, postos de combustível e instalações industriais.</p>
       <span class="service-tag">NFPA 11 · EN 13565</span>
     </div>
 
     <div class="service-card">
-      <div class="service-icon">🔔</div>
+      <div class="service-icon-box" aria-hidden="true">
+        <svg class="service-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 4h18"/>
+          <path d="M5 4v2a7 7 0 0 0 14 0V4"/>
+          <circle cx="12" cy="9.5" r="2"/>
+          <path d="M12 7.5v-1"/>
+          <path d="M8 15a6 6 0 0 0 8 0"/>
+          <path d="M5 18a10 10 0 0 0 14 0"/>
+          <path d="M3 21a14 14 0 0 0 18 0"/>
+        </svg>
+      </div>
       <h3>SADI — Deteção de Incêndio</h3>
       <p>Dimensionamento e projeto de sistemas automáticos de deteção de incêndio, centrais de alarme e sinalizações de evacuação.</p>
       <span class="service-tag">EN 54 · NP 4428</span>
     </div>
 
     <div class="service-card">
-      <div class="service-icon">⚙️</div>
+      <div class="service-icon-box" aria-hidden="true">
+        <svg class="service-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 15h6a3 3 0 0 0 3-3V4"/>
+          <path d="M12 12a3 3 0 0 0 3 3h6"/>
+          <path d="M3 12v6"/>
+          <path d="M21 12v6"/>
+          <path d="M9 4h6"/>
+          <path d="M7 2h10"/>
+          <circle cx="12" cy="12" r="1.5"/>
+        </svg>
+      </div>
       <h3>Piping Industrial</h3>
       <p>Projeto de tubagens industriais, elaboração de P&IDs, isométricos e documentação técnica com AutoCAD e Plant 3D.</p>
       <span class="service-tag">AutoCAD · Plant 3D · P&ID</span>
     </div>
 
     <div class="service-card">
-      <div class="service-icon">📋</div>
+      <div class="service-icon-box" aria-hidden="true">
+        <svg class="service-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="4" y="4" width="16" height="17" rx="3"/>
+          <path d="M9 2h6a1 1 0 0 1 1 1v2H8V3a1 1 0 0 1 1-1z"/>
+          <path d="M8 11l2 2 4-4"/>
+          <path d="M8 16h8"/>
+          <path d="M8 19h5"/>
+        </svg>
+      </div>
       <h3>Consultoria Técnica</h3>
       <p>Revisão de projetos, pareceres técnicos, acompanhamento de obras e apoio na resposta a pedidos de esclarecimento da ANEPC.</p>
       <span class="service-tag">Consultoria · Revisão</span>
@@ -1068,6 +1231,30 @@
       alert('Ocorreu um erro ao enviar. Por favor, envie diretamente para tlsengmecanico@gmail.com');
     }
   });
+
+  // Scroll reveal fallback para compatibilidade progressiva
+  if (!CSS.supports('(animation-timeline: view()) and (animation-range: entry)')) {
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const serviceCards = document.querySelectorAll('.service-card');
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      serviceCards.forEach((card, index) => {
+        card.classList.add('reveal-init');
+        card.style.transitionDelay = `${(index % 3) * 120}ms`;
+        observer.observe(card);
+      });
+    }
+  }
 </script>
 
 </body>
