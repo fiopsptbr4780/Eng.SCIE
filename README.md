@@ -83,13 +83,16 @@ Destina-se a projetistas, escritórios de projeto, empresas de construção e pr
 4. Inserir cookie banner apenas em `index.html` (ou replicar nas páginas com formulários)
 5. Adicionar entrada no `sitemap.xml`
 
+## Concluído Recentemente
+- [x] Criar `og-image.png` (1200×630 px) com branding do site
+- [x] Criar `favicon-32.png` e `apple-touch-icon.png` (alternativas ao SVG)
+- [x] **Fase B**: centralizar CSS e JS em `styles.css` e `main.js`
+- [x] Substituir emojis por ícones SVG minimalistas nos cards e secções de contacto/sobre
+- [x] Implementar animação suave scroll-driven com progressive fallback
+
 ## Pendente / Próximas Fases
-- [ ] Criar `og-image.png` (1200×630 px) com branding do site
-- [ ] Criar `favicon-32.png` e `apple-touch-icon.png` (alternativas ao SVG)
-- [ ] **Fase B**: centralizar CSS e JS em `assets/style.css` e `assets/main.js`
-- [ ] Adicionar imagens reais nos cards (substituir emojis grandes)
 - [ ] Google Analytics 4 (após consentimento do cookie banner)
-- [ ] Página dedicada "Sobre"
+- [ ] Página dedicada "Sobre" (opcional)
 
 ## Autor
 Engenheiro Mecânico e Técnico Especialista em SCIE reconhecido pela ANEPC. Membro da Ordem dos Engenheiros. Baseado em Aveiro, Portugal.
