@@ -7,37 +7,17 @@
   <title>Página não encontrada · 404 | Engenharia & SCIE</title>
   <meta name="description" content="A página que procura não foi encontrada. Explore os recursos de Engenharia e Segurança Contra Incêndio da Engenharia & SCIE." />
 
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="alternate icon" type="image/png" href="favicon-32.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="stylesheet" href="styles.css" />
+
   <style>
-    :root {
-      --primary: #1a3a5c;
-      --accent: #e05c1a;
-      --light: #f4f7fb;
-      --text: #2d2d2d;
-      --muted: #6b7280;
-      --white: #ffffff;
-      --border: #dde3ec;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      color: var(--text);
-      background: var(--white);
-      line-height: 1.7;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
     }
-    nav {
-      background: var(--primary);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 5%;
-      height: 64px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
-    }
-    .nav-logo { color: var(--white); font-size: 1.2rem; font-weight: 700; letter-spacing: 1px; text-decoration: none; }
-    .nav-logo span { color: var(--accent); }
     main {
       flex: 1;
       display: flex;
@@ -81,34 +61,6 @@
       flex-wrap: wrap;
       margin-bottom: 32px;
     }
-    .btn-primary {
-      background: var(--accent);
-      color: var(--white);
-      padding: 13px 28px;
-      border: none;
-      border-radius: 6px;
-      font-size: 1rem;
-      font-weight: 700;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.1s;
-      display: inline-block;
-    }
-    .btn-primary:hover { background: #c44e12; transform: translateY(-1px); }
-    .btn-outline {
-      background: transparent;
-      color: var(--primary);
-      padding: 13px 28px;
-      border: 2px solid var(--border);
-      border-radius: 6px;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      transition: border-color 0.2s, color 0.2s;
-      display: inline-block;
-    }
-    .btn-outline:hover { border-color: var(--primary); color: var(--primary); }
     .helpful-links {
       border-top: 1px solid var(--border);
       padding-top: 24px;
@@ -132,14 +84,6 @@
     }
     .helpful-links a:hover { background: var(--light); color: var(--accent); }
     .helpful-links a span { color: var(--accent); }
-    footer {
-      background: #0f2238;
-      color: #7fa8c8;
-      text-align: center;
-      padding: 24px 5%;
-      font-size: 0.88rem;
-    }
-    footer span { color: var(--accent); font-weight: 700; }
     @media (max-width: 640px) {
       .error-card { padding: 40px 24px; }
       .error-code { font-size: 4.5rem; }

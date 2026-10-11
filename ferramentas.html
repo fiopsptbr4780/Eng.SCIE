@@ -8,6 +8,8 @@ Ferramentas · HTML
 
     <link rel="canonical" href="https://fiopsptbr4780.github.io/Eng.SCIE/ferramentas.html" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="alternate icon" type="image/png" href="favicon-32.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
     <title>Ferramentas SCIE e Engenharia | Calculadoras Online - Sprinklers, Piping, RTSCIE, Extintores</title>
     <meta name="description" content="Ferramentas e calculadoras online para Engenharia Mecanica e SCIE. Calculador de sprinklers, queda de pressao em tubagem, categoria de risco RTSCIE, extintores e efetivo.">
@@ -80,23 +82,9 @@ Ferramentas · HTML
     }
     </script>
  
+    <link rel="stylesheet" href="styles.css" />
     <style>
-        :root {--primary:#1a3a5c;--accent:#e05c1a;--light:#f4f7fb;--text:#2d2d2d;--muted:#6b7280;--white:#ffffff;--border:#dde3ec;--success:#1a7a3c;--warning:#b7791f;--danger:#b71f1f}
-        * {margin:0;padding:0;box-sizing:border-box}
-        body {font-family:'Segoe UI', Arial, sans-serif;color:var(--text);background:var(--white);line-height:1.7}
-        nav {background:var(--primary);position:sticky;top:0;z-index:999;display:flex;justify-content:space-between;align-items:center;padding:0 5%;height:64px;box-shadow:0 2px 8px rgba(0,0,0,0.18)}
-        .nav-logo {color:var(--white);font-size:1.2rem;font-weight:700;letter-spacing:1px;text-decoration:none}
-        .nav-logo span {color:var(--accent)}
-        nav ul {list-style:none;display:flex;gap:24px}
-        nav ul li a {color:#ccd8e8;text-decoration:none;font-size:0.95rem;transition:color 0.2s}
-        nav ul li a:hover, nav ul li a.active {color:var(--accent)}
-        .hero {background:linear-gradient(135deg,var(--primary) 60%,#2a5298 100%);color:var(--white);padding:80px 5%;text-align:center}
-        .hero h1 {font-size:2.4rem;margin-bottom:12px}
-        .hero p {font-size:1.1rem;color:#b8cde2;max-width:600px;margin:0 auto}
-        section {padding:60px 5%}
-        .section-label {font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--accent);margin-bottom:8px}
-        .section-title {font-size:2rem;color:var(--primary);margin-bottom:12px}
-        .section-sub {color:var(--muted);font-size:1rem;max-width:600px;margin-bottom:48px}
+        :root {--success:#1a7a3c;--warning:#b7791f;--danger:#b71f1f}
         .tools-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-bottom:60px}
         .tool-card {background:var(--white);border-radius:12px;border:1px solid var(--border);padding:24px;transition:box-shadow 0.2s,transform 0.2s;cursor:pointer;display:block}
         .tool-card:hover {box-shadow:0 12px 32px rgba(26,58,92,0.14);transform:translateY(-3px)}
@@ -122,17 +110,8 @@ Ferramentas · HTML
         .btn-calc:disabled {background:var(--muted);cursor:not-allowed}
         .warning {background:rgba(183,121,31,0.1);border:1px solid rgba(183,121,31,0.3);border-radius:8px;padding:14px 16px;margin-top:16px;font-size:0.85rem;color:var(--warning)}
         .error-msg {background:rgba(183,31,31,0.1);border:1px solid rgba(183,31,31,0.3);border-radius:8px;padding:14px 16px;margin-top:16px;font-size:0.85rem;color:var(--danger)}
-        .cta-section {background:var(--primary);color:var(--white);text-align:center;padding:60px 5%}
-        .cta-section h2 {font-size:1.8rem;margin-bottom:16px}
-        .cta-section p {color:#b8cde2;margin-bottom:24px;max-width:500px;margin-left:auto;margin-right:auto}
         .cta-section .btn-primary {background:var(--accent);color:var(--white);padding:14px 32px;border:none;border-radius:8px;font-size:1rem;font-weight:700;text-decoration:none;transition:background 0.2s;display:inline-block}
         .cta-section .btn-primary:hover {background:#c44e12}
-        footer {background:#0f2238;color:#7fa8c8;text-align:center;padding:28px 5%;font-size:0.88rem}
-        footer span {color:var(--accent);font-weight:700}
-        /* Skip-to-content (WCAG) */
-        .skip-link{position:absolute;top:-100px;left:8px;background:var(--accent);color:var(--white);padding:10px 16px;border-radius:4px;font-weight:700;text-decoration:none;z-index:9999;transition:top 0.2s}
-        .skip-link:focus{top:8px;outline:3px solid var(--white)}
-        a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
         @media (max-width:640px) {nav ul {gap:14px}.hero h1 {font-size:1.8rem}.section-title {font-size:1.5rem}}
     </style>
 </head>
@@ -140,7 +119,7 @@ Ferramentas · HTML
     <a href="#main-content" class="skip-link">Saltar para o conteúdo principal</a>
     <nav>
         <a href="index.html" class="nav-logo">Eng.<span>SCIE</span></a>
-        <button class="nav-toggle" aria-label="Abrir menu" id="navToggle" style="display:none;background:transparent;border:none;color:var(--white);font-size:1.5rem;cursor:pointer;padding:4px 8px">☰</button>
+        <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" id="navToggle">☰</button>
         <ul id="navMenu">
             <li><a href="index.html">Início</a></li>
             <li><a href="projetos.html">Projetos</a></li>
@@ -577,18 +556,8 @@ Ferramentas · HTML
             showResult("efet-result", html);
         }
     </script>
-    <script>
-        const navToggle = document.getElementById('navToggle');
-        const navMenu = document.getElementById('navMenu');
-        function checkMobile(){
-            if(window.innerWidth <= 900){navToggle.style.display='block'}else{navToggle.style.display='none';navMenu.style.maxHeight='none';navMenu.style.position='static';navMenu.style.flexDirection='row'}
-        }
-        checkMobile(); window.addEventListener('resize',checkMobile);
-        navToggle.addEventListener('click',()=>{
-            const open=navMenu.classList.toggle('open');
-            navToggle.textContent=open?'✕':'☰';
-        });
-    </script>
+    <script src="main.js" defer></script>
+</body>
 </html>
 
 

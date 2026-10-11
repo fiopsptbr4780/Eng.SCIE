@@ -7,6 +7,8 @@
 
   <link rel="canonical" href="https://fiopsptbr4780.github.io/Eng.SCIE/privacidade.html" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="alternate icon" type="image/png" href="favicon-32.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
   <title>Política de Privacidade | Engenharia & SCIE</title>
   <meta name="description" content="Política de Privacidade e tratamento de dados pessoais da Engenharia & SCIE, em conformidade com o RGPD.">
@@ -40,23 +42,8 @@
   <!-- NOTA: Substitua G-XXXXXXXXXX pelo seu ID real do GA4 quando disponível -->
   <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
   
+  <link rel="stylesheet" href="styles.css" />
   <style>
-    :root {--primary:#1a3a5c;--accent:#e05c1a;--light:#f4f7fb;--text:#2d2d2d;--muted:#6b7280;--white:#ffffff;--border:#dde3ec}
-    * {margin:0;padding:0;box-sizing:border-box}
-    body {font-family:'Segoe UI',Arial,sans-serif;color:var(--text);background:var(--white);line-height:1.7}
-    nav {background:var(--primary);position:sticky;top:0;z-index:999;display:flex;justify-content:space-between;align-items:center;padding:0 5%;height:64px;box-shadow:0 2px 8px rgba(0,0,0,0.18)}
-    .nav-logo {color:var(--white);font-size:1.2rem;font-weight:700;letter-spacing:1px;text-decoration:none}
-    .nav-logo span {color:var(--accent)}
-    .nav-toggle{display:none;background:transparent;border:none;color:var(--white);font-size:1.5rem;cursor:pointer;padding:4px 8px}
-    .skip-link{position:absolute;top:-100px;left:8px;background:var(--accent);color:var(--white);padding:10px 16px;border-radius:4px;font-weight:700;text-decoration:none;z-index:9999;transition:top 0.2s}
-    .skip-link:focus{top:8px;outline:3px solid var(--white)}
-    a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
-    nav ul {list-style:none;display:flex;gap:28px}
-    nav ul li a {color:#ccd8e8;text-decoration:none;font-size:0.95rem;transition:color 0.2s}
-    nav ul li a:hover {color:var(--accent)}
-    .page-header {background:linear-gradient(135deg,var(--primary) 60%,#2a5298 100%);color:var(--white);padding:60px 5% 50px}
-    .page-header h1 {font-size:2rem;margin-bottom:10px}
-    .page-header p {color:#b8cde2;font-size:1rem}
     .content {max-width:860px;margin:0 auto;padding:60px 5%}
     .content h2 {color:var(--primary);font-size:1.25rem;margin:36px 0 12px;border-left:4px solid var(--accent);padding-left:12px}
     .content p {color:var(--muted);margin-bottom:14px}
@@ -65,16 +52,6 @@
     .content a {color:var(--accent)}
     .highlight-box {background:var(--light);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:8px;padding:18px 22px;margin:24px 0}
     .highlight-box p {color:var(--text);margin:0}
-    footer {background:#0f2238;color:#7fa8c8;text-align:center;padding:28px 5%;font-size:0.88rem}
-    footer span {color:var(--accent);font-weight:700}
-    footer a {color:#7fa8c8;text-decoration:none}
-    footer a:hover {color:var(--accent)}
-    @media(max-width:900px){
-        .nav-toggle{display:block}
-        nav ul{position:absolute;top:64px;left:0;right:0;background:var(--primary);flex-direction:column;gap:0;max-height:0;overflow:hidden;transition:max-height 0.25s ease;padding:0}
-        nav ul.open{max-height:400px}
-        nav ul li{padding:12px 5%;border-top:1px solid rgba(255,255,255,0.08)}
-    }
     @media(max-width:640px){.page-header h1{font-size:1.5rem}}
   </style>
 </head>
@@ -166,20 +143,7 @@
   <p style="margin-top:8px;"><a href="index.html">Início</a> · <a href="projetos.html">Projetos</a> · <a href="blog.html">Artigos</a> · <a href="ferramentas.html">Ferramentas</a> · <a href="faq.html">FAQ</a> · <a href="index.html#contacto">Contacto</a> · <a href="privacidade.html">Política de Privacidade</a></p>
 </footer>
 
-<script>
-  const navToggle = document.getElementById('navToggle');
-  const navMenu = document.getElementById('navMenu');
-  navToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('open');
-    navToggle.textContent = navMenu.classList.contains('open') ? '✕' : '☰';
-  });
-  navMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navMenu.classList.remove('open');
-      navToggle.textContent = '☰';
-    });
-  });
-</script>
+<script src="main.js" defer></script>
 
 </body>
 </html>

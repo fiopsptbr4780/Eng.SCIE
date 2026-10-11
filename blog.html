@@ -7,6 +7,8 @@
 
     <link rel="canonical" href="https://fiopsptbr4780.github.io/Eng.SCIE/blog.html" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="alternate icon" type="image/png" href="favicon-32.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
     <title>Artigos Técnicos | Blog Engenharia & SCIE</title>
     <meta name="description" content="Artigos técnicos sobre Engenharia Mecânica, SCIE, Sprinklers EN 12845, SADI, Piping Industrial e normas RT-SCIE. Conteúdo para profissionais em Portugal.">
@@ -37,27 +39,8 @@
     }
     </script>
     
+    <link rel="stylesheet" href="styles.css" />
     <style>
-        :root {--primary:#1a3a5c;--accent:#e05c1a;--light:#f4f7fb;--text:#2d2d2d;--muted:#6b7280;--white:#ffffff;--border:#dde3ec}
-        * {margin:0;padding:0;box-sizing:border-box}
-        body {font-family:'Segoe UI', Arial, sans-serif;color:var(--text);background:var(--white);line-height:1.7}
-        nav {background:var(--primary);position:sticky;top:0;z-index:999;display:flex;justify-content:space-between;align-items:center;padding:0 5%;height:64px;box-shadow:0 2px 8px rgba(0,0,0,0.18)}
-        .nav-logo {color:var(--white);font-size:1.2rem;font-weight:700;letter-spacing:1px;text-decoration:none}
-        .nav-logo span {color:var(--accent)}
-        .nav-toggle{display:none;background:transparent;border:none;color:var(--white);font-size:1.5rem;cursor:pointer;padding:4px 8px}
-        .skip-link{position:absolute;top:-100px;left:8px;background:var(--accent);color:var(--white);padding:10px 16px;border-radius:4px;font-weight:700;text-decoration:none;z-index:9999;transition:top 0.2s}
-        .skip-link:focus{top:8px;outline:3px solid var(--white)}
-        a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
-        nav ul {list-style:none;display:flex;gap:24px}
-        nav ul li a {color:#ccd8e8;text-decoration:none;font-size:0.95rem;transition:color 0.2s}
-        nav ul li a:hover, nav ul li a.active {color:var(--accent)}
-        .hero {background:linear-gradient(135deg,var(--primary) 60%,#2a5298 100%);color:var(--white);padding:80px 5%;text-align:center}
-        .hero h1 {font-size:2.4rem;margin-bottom:12px}
-        .hero p {font-size:1.1rem;color:#b8cde2;max-width:600px;margin:0 auto}
-        section {padding:60px 5%}
-        .section-label {font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--accent);margin-bottom:8px}
-        .section-title {font-size:2rem;color:var(--primary);margin-bottom:12px}
-        .section-sub {color:var(--muted);font-size:1rem;max-width:600px;margin-bottom:48px}
         .blog-filters {display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px}
         .filter-btn {background:var(--light);border:1px solid var(--border);border-radius:20px;padding:8px 16px;font-size:0.85rem;color:var(--text);cursor:pointer;transition:all 0.2s}
         .filter-btn:hover, .filter-btn.active {background:var(--primary);color:var(--white);border-color:var(--primary)}
@@ -88,19 +71,8 @@
         .norm-table th, .norm-table td {border:1px solid var(--border);padding:10px 14px;text-align:left}
         .norm-table th {background:var(--primary);color:var(--white);font-size:0.88rem}
         .norm-table tr:nth-child(even) {background:var(--light)}
-        .cta-section {background:var(--primary);color:var(--white);text-align:center;padding:60px 5%}
-        .cta-section h2 {font-size:1.8rem;margin-bottom:16px}
-        .cta-section p {color:#b8cde2;margin-bottom:24px;max-width:500px;margin-left:auto;margin-right:auto}
         .cta-section .btn-primary {background:var(--accent);color:var(--white);padding:14px 32px;border:none;border-radius:8px;font-size:1rem;font-weight:700;text-decoration:none;transition:background 0.2s;display:inline-block}
         .cta-section .btn-primary:hover {background:#c44e12}
-        footer {background:#0f2238;color:#7fa8c8;text-align:center;padding:28px 5%;font-size:0.88rem}
-        footer span {color:var(--accent);font-weight:700}
-        @media(max-width:900px){
-            .nav-toggle{display:block}
-            nav ul{position:absolute;top:64px;left:0;right:0;background:var(--primary);flex-direction:column;gap:0;max-height:0;overflow:hidden;transition:max-height 0.25s ease;padding:0}
-            nav ul.open{max-height:400px}
-            nav ul li{padding:12px 5%;border-top:1px solid rgba(255,255,255,0.08)}
-        }
         @media (max-width:640px) {.hero h1 {font-size:1.8rem}.section-title {font-size:1.5rem}}
     </style>
 </head>
@@ -427,42 +399,6 @@
         </p>
     </footer>
 
-    <script>
-        // Menu móvel
-        const navToggle = document.getElementById('navToggle');
-        const navMenu = document.getElementById('navMenu');
-        navToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('open');
-            navToggle.textContent = navMenu.classList.contains('open') ? '✕' : '☰';
-        });
-        navMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('open');
-                navToggle.textContent = '☰';
-            });
-        });
-
-        function filterArticles(category) {
-            const cards = document.querySelectorAll('.blog-card');
-            const buttons = document.querySelectorAll('.filter-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-            cards.forEach(card => {
-                card.style.display = (category === 'all' || card.dataset.category.includes(category)) ? 'flex' : 'none';
-            });
-        }
-
-        window.addEventListener('hashchange', function() {
-            const target = document.querySelector(window.location.hash);
-            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        });
-
-        window.addEventListener('DOMContentLoaded', function() {
-            if (window.location.hash) {
-                const target = document.querySelector(window.location.hash);
-                if (target) setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
-            }
-        });
-    </script>
+    <script src="main.js" defer></script>
 </body>
 </html>
